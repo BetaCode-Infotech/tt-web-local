@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+  <g id="grid_icon" transform="translate(-1222 -352)">
+    <g id="Group_1385" data-name="Group 1385" transform="translate(1222 352)">
+      <g id="Rectangle_97" data-name="Rectangle 97" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+        <rect width="6" height="6" rx="2" stroke="none"/>
+        <rect x="0.5" y="0.5" width="5" height="5" rx="1.5" fill="none"/>
+      </g>
+      <g id="Rectangle_98" data-name="Rectangle 98" transform="translate(8)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+        <rect width="6" height="6" rx="2" stroke="none"/>
+        <rect x="0.5" y="0.5" width="5" height="5" rx="1.5" fill="none"/>
+      </g>
+      <g id="Rectangle_99" data-name="Rectangle 99" transform="translate(16)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+        <rect width="6" height="6" rx="2" stroke="none"/>
+        <rect x="0.5" y="0.5" width="5" height="5" rx="1.5" fill="none"/>
+      </g>
+    </g>
+    <g id="Group_1386" data-name="Group 1386" transform="translate(1222 360.067)">
+      <g id="Rectangle_97-2" data-name="Rectangle 97" transform="translate(0 -0.067)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+        <rect width="6" height="6" rx="2" stroke="none"/>
+        <rect x="0.5" y="0.5" width="5" height="5" rx="1.5" fill="none"/>
+      </g>
+      <g id="Rectangle_98-2" data-name="Rectangle 98" transform="translate(8 -0.067)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+        <rect width="6" height="6" rx="2" stroke="none"/>
+        <rect x="0.5" y="0.5" width="5" height="5" rx="1.5" fill="none"/>
+      </g>
+      <g id="Rectangle_99-2" data-name="Rectangle 99" transform="translate(16 -0.067)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+        <rect width="6" height="6" rx="2" stroke="none"/>
+        <rect x="0.5" y="0.5" width="5" height="5" rx="1.5" fill="none"/>
+      </g>
+    </g>
+    <g id="Group_1387" data-name="Group 1387" transform="translate(1222 368.133)">
+      <g id="Rectangle_97-3" data-name="Rectangle 97" transform="translate(0 -0.133)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+        <rect width="6" height="6" rx="2" stroke="none"/>
+        <rect x="0.5" y="0.5" width="5" height="5" rx="1.5" fill="none"/>
+      </g>
+      <g id="Rectangle_98-3" data-name="Rectangle 98" transform="translate(8 -0.133)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+        <rect width="6" height="6" rx="2" stroke="none"/>
+        <rect x="0.5" y="0.5" width="5" height="5" rx="1.5" fill="none"/>
+      </g>
+      <g id="Rectangle_99-3" data-name="Rectangle 99" transform="translate(16 -0.133)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+        <rect width="6" height="6" rx="2" stroke="none"/>
+        <rect x="0.5" y="0.5" width="5" height="5" rx="1.5" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

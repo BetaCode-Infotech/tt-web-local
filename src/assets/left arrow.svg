@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31.953" height="26.456" viewBox="0 0 31.953 26.456">
+  <g id="left_arrow" data-name="left arrow" transform="translate(4.243 4.243)">
+    <line id="Line_19" data-name="Line 19" x1="24.71" transform="translate(0 8.986)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="6"/>
+    <line id="Line_20" data-name="Line 20" x1="8.986" y2="8.986" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="6"/>
+    <line id="Line_21" data-name="Line 21" x1="8.986" y1="8.986" transform="translate(0 8.986)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="6"/>
+  </g>
+</svg>
