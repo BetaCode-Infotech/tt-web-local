@@ -88,6 +88,7 @@ const JobList = () => {
         <div className="green-divider" />
 
         <div className="joblist-container">
+          {/* <div className={`joblist-container ${view === "grid" ? "grid-view" : "card-view"}`}> */}
           <div className="joblist-header">
             <h2>Search Result</h2>
             <div className="sort-section">
@@ -96,14 +97,15 @@ const JobList = () => {
                 <option>Newest first</option>
                 <option>Oldest first</option>
               </select>
+
               <div className="view-toggle">
                 <GridIcon
-                  onClick={() => setView("card")}
-                  className={`icon ${view === "card" ? "active" : ""}`}
-                />
-                <ListIcon
                   onClick={() => setView("grid")}
                   className={`icon ${view === "grid" ? "active" : ""}`}
+                />
+                <ListIcon
+                  onClick={() => setView("card")}
+                  className={`icon ${view === "card" ? "active" : ""}`}
                 />
 
                 {/* <div className="list-view" /> */}
@@ -111,38 +113,51 @@ const JobList = () => {
             </div>
           </div>
 
-          <div className="joblist-titles">
-            <span>Job</span>
-            <span>Skills</span>
-            <span>Location</span>
-            <span>Company</span>
-            <span>Job Type</span>
-            <span>Experience</span>
-          </div>
+          {view === "card" && (
+            <div className="joblist-titles">
+              <span>Job</span>
+              <span>Skills</span>
+              <span>Location</span>
+              <span>Company</span>
+              <span>Job Type</span>
+              <span>Experience</span>
+            </div>
+          )}
 
-          {jobs.map((job, idx) => (
-            <div
-              key={idx}
-              className={`job-card ${job.selected ? "selected" : ""}`}
-            >
-              <div className="job-title">
-                <div className="job-title-text">
-                  {job.title}{" "}
+          <div className={`jobs-wrapper ${view}`}>
+            {jobs.map((job, idx) => (
+              <div
+                key={idx}
+                // className={`job-card ${view} ${job.selected ? "selected" : ""}`}
+                className={`job-card ${view} ${job.selected ? "selected" : ""}`}
+              >
+                <div className="job-title">
+                  <div className="job-title-text">
+                    {job.title}{" "}
+                    {job.premium && (
+                      <div className="premium-badge">
+                        <img src={premium_icon} alt="Premium" />
+                      </div>
+                    )}
+                  </div>
                   {job.premium && (
-                    <div className="premium-badge">
-                      <img src={premium_icon} alt="Premium" />
-                    </div>
+                    <span className="premium-badge-text">Premium</span>
                   )}
                 </div>
-                {job.premium && <span className="premium-badge">Premium</span>}
-              </div>
-              <div>{job.skills}</div>
+                {/* <div>{job.skills}</div>
               <div>{job.location}</div>
               <div>{job.company}</div>
               <div>{job.type}</div>
-              <div>{job.experience}</div>
-            </div>
-          ))}
+              <div>{job.experience}</div> */}
+
+                <div className="company-name">{job.company}</div>
+                <div className="job-detail">{job.skills}</div>
+                <div className="job-detail">{job.location}</div>
+                <div className="job-detail">{job.type}</div>
+                <div className="job-detail">{job.experience}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </Navbar>
