@@ -6,6 +6,7 @@ import Navbar from "../../Navbar/Navbar";
 import { ReactComponent as GridIcon } from "../../assets/grid_icon.svg";
 import { ReactComponent as ListIcon } from "../../assets/row_icon.svg";
 import premium_icon from "../../assets/premium_icon.png";
+import location_icon from "../../assets/location icon.svg";
 
 const jobs = [
   {
@@ -125,38 +126,57 @@ const JobList = () => {
           )}
 
           <div className={`jobs-wrapper ${view}`}>
-            {jobs.map((job, idx) => (
-              <div
-                key={idx}
-                // className={`job-card ${view} ${job.selected ? "selected" : ""}`}
-                className={`job-card ${view} ${job.selected ? "selected" : ""}`}
-              >
-                <div className="job-title">
-                  <div className="job-title-text">
-                    {job.title}{" "}
-                    {job.premium && (
-                      <div className="premium-badge">
-                        <img src={premium_icon} alt="Premium" />
-                      </div>
-                    )}
-                  </div>
-                  {job.premium && (
-                    <span className="premium-badge-text">Premium</span>
-                  )}
-                </div>
-                {/* <div>{job.skills}</div>
-              <div>{job.location}</div>
-              <div>{job.company}</div>
-              <div>{job.type}</div>
-              <div>{job.experience}</div> */}
-
-                <div className="company-name">{job.company}</div>
-                <div className="job-detail">{job.skills}</div>
-                <div className="job-detail">{job.location}</div>
-                <div className="job-detail">{job.type}</div>
-                <div className="job-detail">{job.experience}</div>
+          {jobs.map((job, idx) => (
+  <div
+    key={idx}
+    className={`job-card ${view} ${job.selected ? "selected" : ""}`}
+  >
+    {view === "card" ? (
+      <>
+        <div className="job-title">
+          <div className="job-title-text">
+            {job.title}
+            {job.premium && (
+              <div className="premium-inline">
+                <img src={premium_icon} alt="Premium" />
+                <span className="premium-badge-inline-text">Premium</span>
               </div>
-            ))}
+            )}
+          </div>
+        </div>
+        <div className="job-detail-skill">{job.skills}</div>
+        <div className="job-detail-location">{job.location}</div>
+        <div className="company-name">{job.company}</div>
+        <div className="job-detail-type">{job.type}</div>
+        <div className="job-detail-experience">{job.experience}</div>
+      </>
+    ) : (
+      <>
+        {job.premium && (
+          <div className="premium-badge-topright">
+            <span className="premium-badge-grid-text">Premium</span>
+            <img src={premium_icon} alt="Premium" />
+          </div>
+        )}
+        <div className="job-title-text">{job.title}</div>
+        <div className="company-name">{job.company}</div>
+        <div className="white-separator" />
+        <div className="job-detail-skill">{job.skills}</div>
+        <div className="job-detail-ty-ex-grid">
+          <div className="job-detail-type">{job.type},</div>
+          <div className="job-detail-experience">{job.experience}</div>
+        </div>
+        <div className="location-image">
+          <img src={location_icon} alt="Location" />
+          <div className="job-detail-location">{job.location}</div>
+        </div>
+        
+        
+      </>
+    )}
+  </div>
+))}
+
           </div>
         </div>
       </div>
