@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -8,13 +9,15 @@ import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Slide from "@mui/material/Slide";
-import TrueTalentWhite from "../assets/Group 6068.svg";
-import SearchIcon from "../assets/search icon.svg";
-import Path4452 from "../assets/Path 4452.svg";
-import Path4453 from "../assets/Path 4453.svg";
-import evaluator125703be from "../assets/evaluator.125703be.svg";
-import hideIcon from "../assets/hide icon.svg";
-import unhideIcon from "../assets/unhide icon.svg";
+// import TrueTalentWhite from "../../assets/Group 6068.svg";
+import TrueTalentWhite from "../../assets/Group 6068.svg";
+// import SearchIcon from "../assets/search icon.svg";
+import SearchIcon from "../../assets/search icon.svg"
+import Path4452 from "../../assets/Path 4452.svg";
+import Path4453 from "../../assets/Path 4453.svg";
+import evaluator125703be from "../../assets/evaluator.125703be.svg";
+import hideIcon from "../../assets/hide icon.svg";
+import unhideIcon from "../../assets/unhide icon.svg";
 import {
   Avatar,
   Button,
@@ -78,7 +81,7 @@ export default function Navbar(props) {
   const pages = ["Products", "Pricing", "Blog"];
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
   const [activeTab, setActiveTab] = useState("Job");
-
+  const navigate = useNavigate();
   const tabs = ["Job", "Gig", "Resume Maker"];
   return (
     <React.Fragment>
@@ -111,7 +114,11 @@ export default function Navbar(props) {
                 {tabs.map((tab) => (
                   <Typography
                     key={tab}
-                    onClick={() => setActiveTab(tab)}
+                    // onClick={() => setActiveTab(tab)}
+                    onClick={() => {
+                      setActiveTab(tab);
+                      if (tab === "Job") navigate("/job-list"); // Navigate to job page
+                    }}
                     className={`tab-link ${activeTab === tab ? "active" : ""}`}
                   >
                     {tab}

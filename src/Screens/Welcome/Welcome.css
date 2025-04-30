@@ -633,43 +633,10 @@
   box-shadow: none;
 }
 
-.container-2 .footer {
-  /* max-width: 1200px; */
-  padding: 2rem 3rem;
-  margin: 0 auto;
-}
-
-.container-2 .footer-columns {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  text-align: left;
-}
-
-.container-2 .footer-logo-section {
-  flex: 1 1 250px;
-}
 
 .container-2 .logo {
   font-size: 2rem;
   margin: 0;
-}
-
-.container-2 .logo-light {
-  font-weight: 300;
-  color: #ffffff;
-}
-
-.container-2 .logo-bold {
-  font-weight: 700;
-  color: #00b3b3;
-}
-
-.container-2 .tagline {
-  font-size: 0.95rem;
-  margin: 0.5rem 0 1rem;
 }
 
 .container-2 .contact h4 {
@@ -677,70 +644,9 @@
   margin-bottom: 0.5rem;
 }
 
-.container-2 .footer-section {
-  flex: 1 1 150px;
-}
-
-.container-2 .footer-section h4 {
-  color: #00b3b3;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-.container-2 .footer-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.container-2 .footer-section li {
-  margin-bottom: 0.6rem;
-  font-size: 0.95rem;
-  color: #ffffff;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.container-2 .footer-section li:hover {
-  color: #00b3b3;
-}
-
-.container-2 .footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 1rem;
-}
-
-.container-2 .footer-bottom p {
-  font-size: 0.9rem;
-  color: #ccc;
-  margin: 0;
-}
-
-.container-2 .social-icons {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  font-size: 1.2rem;
-}
-
-.container-2 .social-icons i {
-  color: white;
-  transition: color 0.3s;
-  cursor: pointer;
-}
 
 .container-2 .social-icons i:hover {
   color: #00b3b3;
-}
-
-.container-2 .whatsapp-icon {
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
 }
 
 .container-2 .working-with-us {

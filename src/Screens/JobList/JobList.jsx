@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./JobList.css";
-import Navbar from "../../Navbar/Navbar";
+import Navbar from "../../Components/Navbar/Navbar";
 // import GridIcon from "../assets/grid_icon.svg";
 // import ListIcon from "../assets/row_icon.svg";
 import { ReactComponent as GridIcon } from "../../assets/grid_icon.svg";
@@ -10,6 +10,9 @@ import location_icon from "../../assets/location icon.svg";
 import { getTimeAgo } from "../../utils/constantFunctions";
 import left from "../../assets/left nav.svg";
 import right from "../../assets/right nav.svg";
+import company_logo from "../../assets/Group 6068.svg";
+import Footer from "../../Components/Footer/Footer";
+
 
 const jobs = [
   {
@@ -56,12 +59,232 @@ const jobs = [
     selected: false,
     created_time: "2025-04-30T08:15:00Z",
   },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
+  {
+    title: "Sales executive",
+    skills: "Customer relation, Marketing",
+    location: "Jaipur, Rajasthan",
+    company: "Findr Pro Technologies Pvt Ltd",
+    type: "Full Time",
+    experience: "1Y -3Y",
+    premium: false,
+    selected: false,
+    created_time: "2025-04-30T08:15:00Z",
+  },
 ];
 
 const JobList = () => {
   const [view, setView] = useState("grid");
   const [currentPage, setCurrentPage] = useState(1);
-  const jobsPerPage = 8; // Adjust as needed
+  const jobsPerPage = 16; // Adjust as needed
 
   const indexOfLastJob = currentPage * jobsPerPage;
   const indexOfFirstJob = indexOfLastJob - jobsPerPage;
@@ -152,9 +375,13 @@ const JobList = () => {
               >
                 {view === "card" ? (
                   <>
+                  
                     <div className="job-title">
+                    
                       <div className="job-title-text">
+                      
                         {job.title}
+                        
                         {job.premium && (
                           <div className="premium-inline">
                             <img src={premium_icon} alt="Premium" />
@@ -165,6 +392,7 @@ const JobList = () => {
                         )}
                       </div>
                     </div>
+                    
                     <div className="job-detail-skill">{job.skills}</div>
                     <div className="job-detail-location">{job.location}</div>
                     <div className="company-name">{job.company}</div>
@@ -181,6 +409,7 @@ const JobList = () => {
                         <img src={premium_icon} alt="Premium" />
                       </div>
                     )}
+                    <img src={company_logo} alt="company_logo" className="job-company-logo"/>
                     <div className="job-title-text">{job.title}</div>
                     <div className="company-name">{job.company}</div>
                     <div className="white-separator" />
@@ -234,7 +463,9 @@ const JobList = () => {
           </button>
         </div>
       </div>
+      <Footer/>
     </Navbar>
+    
   );
 };
 
