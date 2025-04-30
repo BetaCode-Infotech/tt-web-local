@@ -7,6 +7,9 @@ import { ReactComponent as GridIcon } from "../../assets/grid_icon.svg";
 import { ReactComponent as ListIcon } from "../../assets/row_icon.svg";
 import premium_icon from "../../assets/premium_icon.png";
 import location_icon from "../../assets/location icon.svg";
+import { getTimeAgo } from "../../utils/constantFunctions";
+import left from "../../assets/left nav.svg";
+import right from "../../assets/right nav.svg";
 
 const jobs = [
   {
@@ -18,6 +21,7 @@ const jobs = [
     experience: "1Y -3Y",
     premium: false,
     selected: false,
+    created_time: "2025-03-10T10:30:00Z",
   },
   {
     title: "Sales executive",
@@ -28,6 +32,7 @@ const jobs = [
     experience: "1Y -3Y",
     premium: false,
     selected: true,
+    created_time: "2025-04-28T12:00:00Z",
   },
   {
     title: "Sales executive",
@@ -38,6 +43,7 @@ const jobs = [
     experience: "1Y -3Y",
     premium: true,
     selected: false,
+    created_time: "2024-04-28T12:00:00Z",
   },
   {
     title: "Sales executive",
@@ -48,11 +54,24 @@ const jobs = [
     experience: "1Y -3Y",
     premium: false,
     selected: false,
+    created_time: "2025-04-30T08:15:00Z",
   },
 ];
 
 const JobList = () => {
   const [view, setView] = useState("grid");
+  const [currentPage, setCurrentPage] = useState(1);
+  const jobsPerPage = 8; // Adjust as needed
+
+  const indexOfLastJob = currentPage * jobsPerPage;
+  const indexOfFirstJob = indexOfLastJob - jobsPerPage;
+  const currentJobs = jobs.slice(indexOfFirstJob, indexOfLastJob);
+
+  const totalPages = Math.ceil(jobs.length / jobsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <Navbar>
@@ -126,58 +145,93 @@ const JobList = () => {
           )}
 
           <div className={`jobs-wrapper ${view}`}>
-          {jobs.map((job, idx) => (
-  <div
-    key={idx}
-    className={`job-card ${view} ${job.selected ? "selected" : ""}`}
-  >
-    {view === "card" ? (
-      <>
-        <div className="job-title">
-          <div className="job-title-text">
-            {job.title}
-            {job.premium && (
-              <div className="premium-inline">
-                <img src={premium_icon} alt="Premium" />
-                <span className="premium-badge-inline-text">Premium</span>
+            {currentJobs.map((job, idx) => (
+              <div
+                key={idx}
+                className={`job-card ${view} ${job.selected ? "selected" : ""}`}
+              >
+                {view === "card" ? (
+                  <>
+                    <div className="job-title">
+                      <div className="job-title-text">
+                        {job.title}
+                        {job.premium && (
+                          <div className="premium-inline">
+                            <img src={premium_icon} alt="Premium" />
+                            <span className="premium-badge-inline-text">
+                              Premium
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                    <div className="job-detail-skill">{job.skills}</div>
+                    <div className="job-detail-location">{job.location}</div>
+                    <div className="company-name">{job.company}</div>
+                    <div className="job-detail-type">{job.type}</div>
+                    <div className="job-detail-experience">
+                      {job.experience}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    {job.premium && (
+                      <div className="premium-badge-topright">
+                        <span className="premium-badge-grid-text">Premium</span>
+                        <img src={premium_icon} alt="Premium" />
+                      </div>
+                    )}
+                    <div className="job-title-text">{job.title}</div>
+                    <div className="company-name">{job.company}</div>
+                    <div className="white-separator" />
+                    <div className="job-detail-skill">{job.skills}</div>
+                    <div className="job-detail-ty-ex-grid">
+                      <div className="job-detail-type">{job.type},</div>
+                      <div className="job-detail-experience">
+                        {job.experience}
+                      </div>
+                    </div>
+                    <div className="location-image">
+                      <img src={location_icon} alt="Location" />
+                      <div className="job-detail-location">{job.location}</div>
+                    </div>
+                    <div className="job-card-footer">
+                      <span className="time-ago">
+                        {getTimeAgo(job.created_time)}
+                      </span>
+                    </div>
+                  </>
+                )}
               </div>
-            )}
+            ))}
           </div>
         </div>
-        <div className="job-detail-skill">{job.skills}</div>
-        <div className="job-detail-location">{job.location}</div>
-        <div className="company-name">{job.company}</div>
-        <div className="job-detail-type">{job.type}</div>
-        <div className="job-detail-experience">{job.experience}</div>
-      </>
-    ) : (
-      <>
-        {job.premium && (
-          <div className="premium-badge-topright">
-            <span className="premium-badge-grid-text">Premium</span>
-            <img src={premium_icon} alt="Premium" />
-          </div>
-        )}
-        <div className="job-title-text">{job.title}</div>
-        <div className="company-name">{job.company}</div>
-        <div className="white-separator" />
-        <div className="job-detail-skill">{job.skills}</div>
-        <div className="job-detail-ty-ex-grid">
-          <div className="job-detail-type">{job.type},</div>
-          <div className="job-detail-experience">{job.experience}</div>
-        </div>
-        <div className="location-image">
-          <img src={location_icon} alt="Location" />
-          <div className="job-detail-location">{job.location}</div>
-        </div>
-        
-        
-      </>
-    )}
-  </div>
-))}
+        <div className="pagination">
+          <button
+            className="page-btn nav-btn"
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            <img src={left} alt="Previous" className="arrow-icon" />
+          </button>
 
-          </div>
+          {Array.from({ length: totalPages }, (_, idx) => (
+            <button
+              key={idx}
+              className={`page-btn ${currentPage === idx + 1 ? "active" : ""}`}
+              onClick={() => handlePageChange(idx + 1)}
+            >
+              {idx + 1}
+            </button>
+          ))}
+
+          <button
+            className="page-btn nav-btn"
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          >
+            <img src={right} alt="Next" className="arrow-icon" />
+          </button>
         </div>
       </div>
     </Navbar>
