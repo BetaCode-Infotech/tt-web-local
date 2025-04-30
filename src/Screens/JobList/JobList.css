@@ -138,7 +138,9 @@
   background-color: #2d4b91;
   border: 3px solid #2d4b91;
   border-radius: 30px;
+  /* margin-bottom: 8px; */
   padding: 1.5rem;
+  width:95%;
   align-items: stretch;
   transition: background-color 0.3s, border 0.3s;
 }
@@ -157,12 +159,15 @@
 .job-list-container .job-card:hover {
   background-color: #0f1e70;
   border: 2px solid #2ce4af;
+  cursor: pointer;
 }
 
 .job-list-container .joblist-container.grid-view {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  /* grid-template-rows: repeat(1, 4fr); */
   gap: 1.5rem;
+  cursor: pointer;
 }
 
 .job-list-container .joblist-container.card-view {
@@ -174,7 +179,12 @@
 .job-list-container .jobs-wrapper.grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2em;
+  gap: 1em;
+}
+
+.job-list-container .job-company-logo{
+  width: 80%;
+  height: 80%;
 }
 
 .job-list-container .jobs-wrapper.card {
@@ -201,14 +211,15 @@
 
 .job-list-container .job-card .job-title-text {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
 .job-list-container .job-card .company-name {
   font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
+  font-size: 15px;
   font-weight: 500;
   color: #cfd8dc;
   margin-bottom: 1rem;
@@ -425,4 +436,3 @@
 .job-list-container .page-btn.nav-btn:disabled {
   opacity: 0.5;
 }
-
