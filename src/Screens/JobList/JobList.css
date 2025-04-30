@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .job-list-container .search-bar-container {
   background-color: #1d2e7a;
   border-radius: 2rem;
@@ -137,7 +139,7 @@
   border: 3px solid #2d4b91;
   border-radius: 30px;
   padding: 1.5rem;
-  align-items: flex-start;
+  align-items: stretch;
   transition: background-color 0.3s, border 0.3s;
 }
 
@@ -178,11 +180,11 @@
 .job-list-container .jobs-wrapper.card {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 
 .job-list-container .job-card {
-  position: relative; /* 🆕 Important */
+  position: relative; /* Important */
   display: flex;
   flex-direction: column;
   background-color: #2d4b91;
@@ -198,16 +200,25 @@
 }
 
 .job-list-container .job-card .job-title-text {
+  font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 .job-list-container .job-card .company-name {
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   color: #cfd8dc;
   margin-bottom: 1rem;
+}
+
+.job-list-container .white-separator {
+  height: 1px;
+  background-color: white;
+  margin: 1rem 0;
+  width: 100%;
 }
 
 /* My Styles End*/
@@ -231,6 +242,7 @@
 }
 
 .job-list-container .joblist-titles {
+  
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   font-weight: bold;
@@ -274,28 +286,143 @@
   align-items: center;
 }
 
-.job-list-container .premium-badge-text {
+.job-list-container .premium-badge-topright {
   position: absolute;
-  top: 1px; 
-  right: 30px;
+  top: -0.5rem;
+  right: -0.5rem;
+  display: flex;
+}
+
+.job-list-container .premium-badge-topright img {
+  width: 30px;
+  height: 30px;
+}
+
+.job-list-container .premium-badge-grid-text {
+  position: absolute;
+  top: 5px; 
+  right: 35px;
   font-size: 0.85rem;
-  color: #ffcc00;
+  font-weight: 100;
+  color: #ffffff;
 }
 
-.job-list-container .premium-badge img {
-  position: absolute;
-  box-shadow: 15px #ffcc00;
-  top: -5px; 
-  right: -5px; 
-  width: 35px;
-  height: 35px;
+.job-list-container .premium-inline {
+  display: flex;
+  gap: 0.1rem;
+  margin-left: 0.8rem;
 }
 
-.job-list-container .premium-badge {
-  top: -5px; 
-  right: -5px;
+.job-list-container .premium-badge-inline-text {
   position: absolute;
-  font-size: 0.7rem;
+  top: 70px; 
+  left: 20px;
+  font-size: 0.85rem;
+  font-weight: 100;
+  color: #ffffff;
+}
+
+.job-list-container .job-detail-skill{
   font-weight: bold;
-  color: #ffcc00; 
+  font-family: "Montserrat", sans-serif;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
+
+.job-list-container .job-detail-location{
+  color: #cfd8dc;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.job-list-container .job-detail-type{
+  color: #cfd8dc;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.job-list-container .job-detail-ty-ex-grid{
+  display: flex;
+  flex-direction: row;
+}
+
+.job-list-container .job-detail-experience{
+  color: #cfd8dc;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.job-list-container .location-image{
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.job-list-container .job-card-footer{
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.job-list-container .time-ago{
+  font-size: 0.75rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.job-list-container .pagination {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.job-list-container .page-btn {
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: "Montserrat", sans-serif;
+  transition: background 0.2s ease;
+}
+
+.job-list-container .page-btn.active {
+  font-weight: bold;
+  color: #b3b5b6;
+  position: relative;
+  background-color: transparent;
+  border: none;
+}
+
+.job-list-container .page-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 1px;
+  background-color: #2ce4af;
+  border-radius: 2px;
+}
+
+.job-list-container .arrow-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.job-list-container .page-btn.nav-btn {
+  background-color:transparent;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+
+.job-list-container .page-btn.nav-btn:disabled {
+  opacity: 0.5;
+}
+
