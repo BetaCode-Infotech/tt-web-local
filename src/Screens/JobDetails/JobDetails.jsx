@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./JobDetails.css";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
@@ -13,6 +13,7 @@ import {
   Tooltip,
 } from "@mui/material";
 import leftNav from "../../assets/left nav.svg";
+import extLink from "../../assets/external link icon.svg";
 
 const JobDetails = () => {
   const [jobDescription, setJobDescription] = useState({
@@ -218,7 +219,11 @@ const JobDetails = () => {
             <div className="company-about">About the Company</div>
 
             <div className="company-logo">LOGO</div>
-            <div className="company-name">Findr Pro Technologies Pvt Ltd</div>
+            <div className="company-header">
+              <div className="company-name">Findr Pro Technologies Pvt Ltd</div>
+              <img src={extLink} alt="logo" className="external-link-icon" />
+            </div>
+
             <div className="company-website">
               <span className="website-label">Website:</span>
               <a
@@ -230,9 +235,16 @@ const JobDetails = () => {
                 http://www.findr.pro
               </a>
             </div>
+            <p className="company-employee">Employee: 1-49</p>
 
             <div className="company-desc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
             </div>
           </div>
         </div>

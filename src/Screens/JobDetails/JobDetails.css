@@ -11,12 +11,12 @@
   justify-content: space-between;
   align-items: center;
 }
-.title-with-icon {
+.job-details-page .header .title-with-icon {
   display: flex;
   align-items: center;
 }
 
-.back-icon {
+.job-details-page .header .title-with-icon .back-icon {
   width: 12px;
   height: auto;
   object-fit: contain;
@@ -43,7 +43,7 @@
 .job-details-page .location-info {
   margin-top: 5px;
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
   margin-left: 32px;
 }
 
@@ -68,18 +68,19 @@
 }
 
 .job-details-page .meta-box .meta-item .meta-label {
-  font-size: 13px;
+  font-size: 15px;
   color: #17c69f;
 }
 
 .job-details-page .meta-box .meta-item .meta-value {
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 17px;
+  font-weight: 600;
   margin-top: 5px;
   color: #fff;
 }
 
-.section {
+.left-side .section,
+.right-side .section {
   margin-bottom: 20px;
 }
 
@@ -102,7 +103,7 @@
   .left-side
   .section
   ul {
-   list-style-type: none;
+  list-style-type: none;
   padding-left: 0;
   margin: 5px 0;
 }
@@ -130,7 +131,7 @@
   color: white;
   flex: 0 30%;
   border-radius: 30px;
-  height: 500px;
+  height: 600px;
 }
 
 .job-details-page .content-container .company-info .company-logo {
@@ -146,6 +147,7 @@
   font-size: 17px;
   font-weight: 600;
   margin-bottom: 5px;
+  margin-right: 10px;
 }
 
 .job-details-page .content-container .company-info .company-about {
@@ -162,8 +164,13 @@
   .company-info
   .company-website
   .website-label {
-  color: #ffffff;
-  font-size: 13px;
+  color: #fff;
+  font-size: 15px;
+  margin-right: 5px;
+}
+.job-details-page .content-container .company-info .company-employee {
+  color: #fff;
+  font-size: 15px;
   margin-right: 5px;
 }
 
@@ -173,7 +180,7 @@
   .company-website
   .company-link {
   color: #4dffdf;
-  font-size: 13px;
+  font-size: 15px;
   text-decoration: none;
 }
 .job-details-page
@@ -185,9 +192,10 @@
 }
 
 .job-details-page .content-container .company-info .company-desc {
-  font-size: 13px;
-  color: #cfcfcf;
+  font-size: 15px;
+  color: #fff;
   margin-top: 10px;
+  text-align: justify;
 }
 .job-details-page .content-container {
   display: flex;
@@ -253,21 +261,43 @@
   margin: 0 8px;
   color: #a6a6a6;
 }
-.job-desc-responsibilities ul,.job-desc-requirements ul,
+.job-desc-responsibilities ul,
+.job-desc-requirements ul,
 .job-desc-benefits ul {
   list-style-type: none;
   padding-left: 0;
   margin-top: 0;
-  color:#333
-
+  color: #333;
 }
-.job-desc-responsibilities p,.job-desc-requirements p,
+.job-desc-responsibilities p,
+.job-desc-requirements p,
 .job-desc-benefits p {
   margin: 0;
-  color:#333
-
+  color: #333;
 }
 .right-side .section .job-desc-text {
-  color:#333
+  color: #333;
 }
 
+.job-details-page .content-container .company-info .company-header {
+  display: flex;
+  align-items: baseline;
+}
+.job-details-page
+  .content-container
+  .company-info
+  .company-header
+  .external-link-icon {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+.job-details-page
+  .content-container
+  .company-info
+  .company-header
+  .external-link-icon:hover {
+  width: 17px;
+  height: 17px;
+  filter: brightness(2) saturate(1.5) hue-rotate(30deg);
+}
