@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.job-list-container{
+  background: linear-gradient(to bottom, rgb(5, 21, 89), rgb(22, 64, 164));
+}
 
 .job-list-container .search-bar-container {
   background-color: #1d2e7a;
@@ -389,6 +392,8 @@
   display: flex;
   justify-content: center;
   gap: 2rem;
+  padding: 2rem;
+  padding-bottom: 3rem;
 }
 
 .job-list-container .page-btn {
@@ -396,7 +401,7 @@
   background-color: transparent;
   color: #ffffff;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: "Montserrat", sans-serif;
   transition: background 0.2s ease;
 }
