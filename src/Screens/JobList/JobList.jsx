@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
+import { useNavigate } from "react-router-dom";
 import "./JobList.css";
 import Navbar from "../../Components/Navbar/Navbar";
 // import GridIcon from "../assets/grid_icon.svg";
@@ -296,6 +297,12 @@ const JobList = () => {
     setCurrentPage(pageNumber);
   };
 
+  const navigate = useNavigate();
+
+  const handleJobClick = () => {
+  navigate("/job-details");
+};
+
   return (
     <Navbar>
       <div className="job-list-container">
@@ -372,6 +379,7 @@ const JobList = () => {
               <div
                 key={idx}
                 className={`job-card ${view} ${job.selected ? "selected" : ""}`}
+                onClick={() => handleJobClick()}
               >
                 {view === "card" ? (
                   <>
