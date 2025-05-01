@@ -11,12 +11,12 @@
   justify-content: space-between;
   align-items: center;
 }
-.title-with-icon {
+.job-details-page .header .title-with-icon {
   display: flex;
   align-items: center;
 }
 
-.back-icon {
+.job-details-page .header .title-with-icon .back-icon {
   width: 12px;
   height: auto;
   object-fit: contain;
@@ -79,7 +79,8 @@
   color: #fff;
 }
 
-.section {
+.left-side .section,
+.right-side .section {
   margin-bottom: 20px;
 }
 
@@ -102,7 +103,7 @@
   .left-side
   .section
   ul {
-   list-style-type: none;
+  list-style-type: none;
   padding-left: 0;
   margin: 5px 0;
 }
@@ -146,8 +147,7 @@
   font-size: 17px;
   font-weight: 600;
   margin-bottom: 5px;
-    margin-right: 10px;
-
+  margin-right: 10px;
 }
 
 .job-details-page .content-container .company-info .company-about {
@@ -168,10 +168,7 @@
   font-size: 15px;
   margin-right: 5px;
 }
-.job-details-page
-  .content-container
-  .company-info
-  .company-employee {
+.job-details-page .content-container .company-info .company-employee {
   color: #fff;
   font-size: 15px;
   margin-right: 5px;
@@ -198,8 +195,7 @@
   font-size: 15px;
   color: #fff;
   margin-top: 10px;
-    text-align: justify;
-
+  text-align: justify;
 }
 .job-details-page .content-container {
   display: flex;
@@ -265,34 +261,42 @@
   margin: 0 8px;
   color: #a6a6a6;
 }
-.job-desc-responsibilities ul,.job-desc-requirements ul,
+.job-desc-responsibilities ul,
+.job-desc-requirements ul,
 .job-desc-benefits ul {
   list-style-type: none;
   padding-left: 0;
   margin-top: 0;
-  color:#333
-
+  color: #333;
 }
-.job-desc-responsibilities p,.job-desc-requirements p,
+.job-desc-responsibilities p,
+.job-desc-requirements p,
 .job-desc-benefits p {
   margin: 0;
-  color:#333
-
+  color: #333;
 }
 .right-side .section .job-desc-text {
-  color:#333
+  color: #333;
 }
 
-.company-header {
+.job-details-page .content-container .company-info .company-header {
   display: flex;
-  align-items:baseline;
+  align-items: baseline;
 }
-.external-link-icon {
+.job-details-page
+  .content-container
+  .company-info
+  .company-header
+  .external-link-icon {
   width: 15px;
   height: 15px;
   cursor: pointer;
 }
-.external-link-icon:hover {
+.job-details-page
+  .content-container
+  .company-info
+  .company-header
+  .external-link-icon:hover {
   width: 17px;
   height: 17px;
   filter: brightness(2) saturate(1.5) hue-rotate(30deg);
