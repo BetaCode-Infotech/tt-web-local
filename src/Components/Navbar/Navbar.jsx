@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -32,7 +32,7 @@ import "./Navbar.css";
 
 function HideOnScroll(props) {
   const { children, window } = props;
-
+  
   // Note that you normally won't need to set the window ref as useScrollTrigger
   // will default to window.
   // This is only being set here because the demo is in an iframe.
@@ -83,6 +83,15 @@ export default function Navbar(props) {
   const [activeTab, setActiveTab] = useState("Job");
   const navigate = useNavigate();
   const tabs = ["Job", "Gig", "Resume Maker"];
+
+  const location = useLocation();
+  const getActiveTab = () => {
+    if (location.pathname.startsWith("/job-list")) return "Job";
+    if (location.pathname.startsWith("/gig-list")) return "Gig";
+    if (location.pathname.startsWith("/resume-maker")) return "Resume Maker";
+    return "";
+  };
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -118,8 +127,11 @@ export default function Navbar(props) {
                     onClick={() => {
                       setActiveTab(tab);
                       if (tab === "Job") navigate("/job-list"); // Navigate to job page
+                      /*else if (tab === "Gig") navigate("/gig-list"); // Navigate to gig list page
+                      else if (tab === "Resume Maker") navigate("/resume-maker"); // Navigate to resume maker page */
                     }}
-                    className={`tab-link ${activeTab === tab ? "active" : ""}`}
+
+                    className={`tab-link ${getActiveTab() === tab ? "active" : ""}`}
                   >
                     {tab}
                   </Typography>

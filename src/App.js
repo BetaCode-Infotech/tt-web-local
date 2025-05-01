@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./Screens/Dashboard/Dashboard";
 import Welcome from "./Screens/Welcome/Welcome";
 import JobList from "./Screens/JobList/JobList";
+import ContactUs from "./Components/Contactus/contact";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Welcome />} />
         <Route path="/job-list" element={<JobList />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
     </BrowserRouter>
   );
