@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    .experience-hiring-container{
+        background:rgb(5, 21, 89);
+    }
+
+    .experience-hiring-container .first-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;     
+    justify-content: center; 
+    padding: 90px 50px; 
+    /* min-height: 80vh;          */
+    text-align: center;
+    /* font-family: "Montserrat", sans-serif; */
+    }
+
+    .experience-hiring-container .experience-text{
+        font-size: 42px;
+        font-weight:600;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .experience-hiring-container .are-you-text{
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .experience-hiring-container .toggle-switch {
+        display: flex;
+        position: relative;
+        width: 550px;
+        height: 65px;
+        background-color: rgb(5, 21, 89);
+        border-radius: 40px;
+        border: 2px solid #00bfa6; 
+      }
+      
+    .experience-hiring-container .toggle-option {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        font-size: 20px;
+        font-weight:400;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        transition: color 0.3s ease;
+      }
+      
+      .experience-hiring-container  .toggle-option.active {
+        color: rgb(255, 255, 255);
+      }
+      
+      .experience-hiring-container .slider {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        background-color: #00bfa6;
+        border-radius: 40px;
+        
+        transition: transform 0.3s ease;
+        z-index: 1;
+      }
+      
+      .experience-hiring-container .slider.employer {
+        transform: translateX(0%);
+      }
+      
+      .experience-hiring-container .slider.candidate {
+        transform: translateX(100%);
+      }
+
+      .experience-hiring-container .love-text{
+        color: #ffffff;
+        font-size: 45px;
+        font-weight:600;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .experience-hiring-container .card-wrapper {
+        display: flex;
+        /* flex-direction:row; */
+        justify-content: center;
+        gap: 45px;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+      
+      .experience-hiring-container .card-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 350px;
+        /* gap: 1px; */
+      }
+      
+      .experience-hiring-container .feature-card {
+        width: 350px;
+        height: 220px;
+        padding: 20px;
+        /* background-color: rgb(5, 21, 89); */
+        border-radius: 40px;
+        border: 2px solid #00bfa6;
+      }
+      
+      .experience-hiring-container .feature-card:hover {
+        cursor: pointer;
+      }
+      
+      .experience-hiring-container .feature-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .experience-hiring-container .card-caption {
+        color: #00bfa6;
+        font-size: 25px;
+        font-weight:550;
+        text-align: left;
+        font-family: "Montserrat", sans-serif;
+        margin-bottom: 4px;
+      }
+
+      .experience-hiring-container .card-caption-text{
+        color: #ffffff;
+        font-size: 15px;
+        text-align: left;
+        font-family: "Montserrat", sans-serif;
+        margin-top: 0;
+      }
+
+      .experience-hiring-container .second-container{
+        background-image:
+        linear-gradient(135deg, #003c8f,rgb(5, 21, 89), #005bea),
+        repeating-linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.05) 1px,
+          transparent 8px,
+          transparent 8px
+        );
+        background-blend-mode: overlay;
+        padding: 100px 10px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .experience-hiring-container .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        max-width: 1200px;
+        width: 100%;
+
+      }
+      
+      .experience-hiring-container .grid-card {
+        background: linear-gradient(135deg, #0157cf, #1765e4);
+        background-blend-mode: overlay;
+        color: white;
+        border: 1px solid #00bfa6;
+        opacity: 0.8;
+        padding: 20px;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 450px;
+      }
+
+      .experience-hiring-container .grid-card:hover {
+        cursor:pointer;
+      }
+      
+      .experience-hiring-container .grid-card.tall {
+        min-height: 480px;
+      }
+
+      .experience-hiring-container .grid-card-text{
+        color: #ffffff;
+        font-size: 15px;
+        text-align: left;
+        font-family: "Montserrat", sans-serif;
+        margin-top: 0;
+      }
+
+      .experience-hiring-container .grid-card-text-head{
+        color: #ffffff;
+        font-size: 25px;
+        text-align: left;
+        font-family: "Montserrat", sans-serif;
+        margin-top: 0;
+      }
+
+    

@@ -7,6 +7,7 @@ import JobList from "./Screens/JobList/JobList";
 // import ContactUs from "./Screens/ContactUs/Contact";
 import ContactUs from "./Screens/ContactUs/ContactUs";
 import JobDetails from "./Screens/JobDetails/JobDetails";
+import ExperienceHiring from "./Screens/ExperienceHiring/ExperienceHiring";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/job-list" element={<JobList />} />
         <Route path="/job-details" element={<JobDetails />} />
+        <Route path="/experience-hiring" element={<ExperienceHiring />} />
       </Routes>
     </BrowserRouter>
   );
