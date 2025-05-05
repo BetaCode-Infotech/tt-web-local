@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Contact.css";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
@@ -8,6 +8,10 @@ import Location from "../../assets/location_img.png";
 import Call from "../../assets/call_img.png";
 
 const ContactUs = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -42,30 +46,35 @@ const ContactUs = () => {
           <p className="reach-text"> Reach out to us</p>
         </div>
         <div className="reach-image-section">
-          <img
-            src={Mail}
-            alt="Mail"
-            className="contact-icon"
-            // onClick={handleSend}
-          />
-          <p className="contact-icon-text">info@truetalent.io</p>
-          <img
-            src={Call}
-            alt="Call"
-            className="contact-icon"
-            // onClick={handleSend}
-          />
-          <p className="contact-icon-text">+919090690936 </p>
-          <img
-            src={Location}
-            alt="Location"
-            className="contact-icon"
-            // onClick={handleSend}
-          />
-          <p className="contact-icon-text">
-            #88 Borewell Road, Whitefield,
-            <br /> Bangalore, 560066, Karnataka{" "}
-          </p>
+          <div className="contact-item">
+            <img src={Mail} alt="Mail" className="contact-icon" />
+            <p className="contact-icon-text">info@truetalent.io</p>
+          </div>
+
+          <div className="contact-item">
+            <img src={Call} alt="Call" className="contact-icon" />
+            <p className="contact-icon-text">+919090690936 </p>
+          </div>
+
+          <div className="contact-item">
+            <img src={Location} alt="Location" className="contact-icon" />
+            <p className="contact-icon-text">
+              #88 Borewell Road, Whitefield,
+              <br /> Bangalore, 560066, Karnataka{" "}
+            </p>
+          </div>
+        </div>
+        <div className="map-container">
+          <iframe
+            title="TrueTalent Location"
+            src="https://www.google.com/maps?q=12.9721576,77.7505628&z=16&output=embed"
+            width="80%"
+            height="350"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
       <Footer />

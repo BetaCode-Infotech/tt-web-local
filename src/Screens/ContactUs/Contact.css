@@ -94,23 +94,45 @@
     font-family: "Montserrat", sans-serif;
   }
 
-  .contact-container .reach-image-section{
+  .contact-container .reach-image-section {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px 90px;
-    width:100%;
-    /* gap: 40px; */
+    justify-content: center;
+    gap: 100px;
   }
-
-  .contact-container .contact-icon{
-    width: 80px;
-    height: 80px;
+  
+  .contact-container .contact-icon {
+    margin-bottom: 0;
+    margin-right: 8px;
+    vertical-align: middle;
   }
-
-  .contact-container .contact-icon-text{
-    font-size: 15px;
+  
+  .contact-container .contact-icon-text {
+    margin-top: 0;
+    font-size: 13px;
     color: #ffffff;
     font-family: "Montserrat", sans-serif;
+    margin-bottom: 16px;
+  }
+
+  .contact-container .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .contact-container .map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 0px 90px 120px 90px;
+    width:100%;
+  }
+  
+  .contact-container .map-container iframe {
+    width: 90%;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
   }
