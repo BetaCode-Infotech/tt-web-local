@@ -3,14 +3,14 @@ import "./JobDetails.css";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import {
-  Avatar,
+  // Avatar,
   Button,
-  IconButton,
-  Menu,
-  MenuItem,
-  Modal,
-  Stack,
-  Tooltip,
+  // IconButton,
+  // Menu,
+  // MenuItem,
+  // Modal,
+  // Stack,
+  // Tooltip,
 } from "@mui/material";
 import leftNav from "../../assets/left nav.svg";
 import extLink from "../../assets/external link icon.svg";

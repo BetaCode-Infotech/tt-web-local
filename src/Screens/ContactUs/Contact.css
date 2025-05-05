@@ -114,3 +114,18 @@
     color: #ffffff;
     font-family: "Montserrat", sans-serif;
   }
+
+  .map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 0px 90px 120px 90px;
+    width:100%;
+  }
+  
+  .map-container iframe {
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
