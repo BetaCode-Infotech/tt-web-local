@@ -154,14 +154,10 @@
       }
 
       .experience-hiring-container .card-grid {
-        /* display: grid; */
-        /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
         column-count: 3;
         gap: 40px;
         max-width: 1150px;
         width: 100%;
-        /* grid-auto-rows: 1fr; */
-        /* align-items: start; */
       }
       
       .experience-hiring-container .grid-card {
@@ -172,22 +168,15 @@
         opacity: 0.8;
         padding: 20px;
         border-radius: 30px;
-        /* display: flex;
-        flex-direction: column;
-        justify-content: flex-start; */
         display: inline-block;
-        margin-bottom: 40px; /* vertical spacing */
-        width: 100%; /* important to avoid stretching */
+        margin-bottom: 40px; 
+        width: 100%; 
         box-sizing: border-box;
       }
 
       .experience-hiring-container .grid-card:hover {
         cursor:pointer;
       }
-      
-      /* .experience-hiring-container .grid-card.tall {
-        min-height: 480px;
-      } */
 
       .experience-hiring-container .grid-card-text{
         color: #ffffff;
