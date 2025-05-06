@@ -63,7 +63,7 @@
 
   .footer .social-icons {
     display: flex;
-    gap: 1rem;
+    gap: 50px;
     align-items: center;
     font-size: 1.2rem;
   }
@@ -119,4 +119,17 @@
   .footer .footer-link {
     color: inherit;
     text-decoration: none;
+  }
+
+  .footer .rights-text{
+    color:#ccc;
+    font-size: 10px;
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .footer .connected-text{
+    color:#ccc;
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
   }

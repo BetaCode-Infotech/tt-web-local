@@ -2,6 +2,7 @@ import "./Footer.css";
 import React from "react";
 import WhatsAppImg from "../../assets/whatsapp.png";
 import { Link } from "react-router-dom";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Footer = () => {
   return (
@@ -84,12 +85,13 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>
+        <p className="rights-text">
           All rights reserved © 2025 FindrPro Technology Solutions Pvt. Ltd.
         </p>
         <div className="social-icons">
-          <i className="fab fa-facebook-f"></i>
-          <i className="fab fa-linkedin-in"></i>
+          <p className="connected-text"> Stay Connected</p>
+          <i className="fa-brands fa-facebook"></i>
+          <i className="fa-brands fa-linkedin"></i>
           <i className="fab fa-twitter"></i>
           <i className="fab fa-instagram"></i>
           <i className="fab fa-youtube"></i>

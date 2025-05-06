@@ -14,6 +14,18 @@ import CustomCarousel from "../../Components/CustomCarousel/CustomCarousel";
 import Footer from "../../Components/Footer/Footer";
 import Navbar from "../../Components/Navbar/Navbar";
 // import WhatsAppImg from "../../assets/whatsapp.png";
+import Technology from "../../assets/technology icon.svg";
+import Education from "../../assets/education icon.svg";
+import Hospitality from "../../assets/hospitality icon.svg";
+import Healthcare from "../../assets/healthcare icon.svg";
+import Engineering from "../../assets/engineering icon.svg";
+import Banking from "../../assets/banking icon.svg";
+import Finance from "../../assets/finance icon.svg";
+import Automotive from "../../assets/automotive icon.svg";
+import Telecom from "../../assets/telecom icon.svg";
+import Chemical from "../../assets/chemical icon.svg";
+import Travel from "../../assets/travel icon.svg";
+import Retail from "../../assets/retail icon.svg";
 
 function Welcome() {
   const jobData = [
@@ -35,22 +47,22 @@ function Welcome() {
   ];
 
   const industries = [
-    { label: "Technology", icon: TrueTalentWhite },
-    { label: "Education", icon: TrueTalentWhite },
-    { label: "Hospitality", icon: TrueTalentWhite },
-    { label: "Healthcare", icon: TrueTalentWhite },
+    { label: "Technology", icon: Technology },
+    { label: "Education", icon: Education },
+    { label: "Hospitality", icon: Hospitality },
+    { label: "Healthcare", icon: Healthcare },
     {
       label: "Engineering",
-      icon: TrueTalentWhite,
+      icon: Engineering,
       highlight: true,
     },
-    { label: "Banking", icon: TrueTalentWhite },
-    { label: "Finance", icon: TrueTalentWhite },
-    { label: "Automotive", icon: TrueTalentWhite },
-    { label: "Telecom", icon: TrueTalentWhite },
-    { label: "Chemical", icon: TrueTalentWhite },
-    { label: "Travel", icon: TrueTalentWhite },
-    { label: "Retail", icon: TrueTalentWhite },
+    { label: "Banking", icon: Banking },
+    { label: "Finance", icon: Finance },
+    { label: "Automotive", icon: Automotive },
+    { label: "Telecom", icon: Telecom },
+    { label: "Chemical", icon: Chemical },
+    { label: "Travel", icon: Travel },
+    { label: "Retail", icon: Retail },
   ];
 
   // const industries = [
@@ -184,7 +196,7 @@ function Welcome() {
               <button className="custom-search-button">View All Jobs</button>
             </div>
             <div className="right">
-              <CustomCarousel showStatus={false} showIndicators={false}>
+              <CustomCarousel showStatus={false} showIndicators={false} showThumbs={false}>
                 <div className="job-cards">
                   {[1, 2, 3].map((job) => (
                     <div key={job} className="job-card">
@@ -244,7 +256,7 @@ function Welcome() {
           </section>
           <section className="featured-jobs-2">
             <div className="left">
-              <CustomCarousel showStatus={false} showIndicators={false}>
+              <CustomCarousel showStatus={false} showIndicators={false} showThumbs={false}>
                 <div className="job-cards">
                   {[1, 2, 3].map((job) => (
                     <div key={job} className="job-card">

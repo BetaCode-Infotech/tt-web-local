@@ -457,7 +457,8 @@
 
 .container-2 .industries-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); */
+  grid-template-columns: repeat(6, 2fr);
   gap: 2rem;
   /* max-width: 1000px; */
   margin: 3rem auto;
