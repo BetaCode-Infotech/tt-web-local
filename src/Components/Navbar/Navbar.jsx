@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,7 +12,7 @@ import Slide from "@mui/material/Slide";
 // import TrueTalentWhite from "../../assets/Group 6068.svg";
 import TrueTalentWhite from "../../assets/Group 6068.svg";
 // import SearchIcon from "../assets/search icon.svg";
-import SearchIcon from "../../assets/search icon.svg"
+import SearchIcon from "../../assets/search icon.svg";
 import Path4452 from "../../assets/Path 4452.svg";
 import Path4453 from "../../assets/Path 4453.svg";
 import evaluator125703be from "../../assets/evaluator.125703be.svg";
@@ -32,7 +32,7 @@ import "./Navbar.css";
 
 function HideOnScroll(props) {
   const { children, window } = props;
-  
+
   // Note that you normally won't need to set the window ref as useScrollTrigger
   // will default to window.
   // This is only being set here because the demo is in an iframe.
@@ -109,16 +109,17 @@ export default function Navbar(props) {
                 marginRight: 20,
               }}
             >
-              <img
-                src={TrueTalentWhite}
-                alt="logo"
-                style={{
-                  width: "150px",
-                  height: "auto",
-                  objectFit: "contain",
-                }}
-              />
-
+              <Link to="/">
+                <img
+                  src={TrueTalentWhite}
+                  alt="logo"
+                  style={{
+                    width: "150px",
+                    height: "auto",
+                    objectFit: "contain",
+                  }}
+                />
+              </Link>
               <Stack direction="row" spacing={4} sx={{ alignItems: "center" }}>
                 {tabs.map((tab) => (
                   <Typography
@@ -130,8 +131,9 @@ export default function Navbar(props) {
                       /*else if (tab === "Gig") navigate("/gig-list"); // Navigate to gig list page
                       else if (tab === "Resume Maker") navigate("/resume-maker"); // Navigate to resume maker page */
                     }}
-
-                    className={`tab-link ${getActiveTab() === tab ? "active" : ""}`}
+                    className={`tab-link ${
+                      getActiveTab() === tab ? "active" : ""
+                    }`}
                   >
                     {tab}
                   </Typography>
