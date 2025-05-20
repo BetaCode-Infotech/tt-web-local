@@ -1,21 +1,16 @@
-import React, { useState} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./JobList.css";
 import Navbar from "../../Components/Navbar/Navbar";
-// import GridIcon from "../assets/grid_icon.svg";
-// import ListIcon from "../assets/row_icon.svg";
 import { ReactComponent as GridIcon } from "../../assets/grid_icon.svg";
 import { ReactComponent as ListIcon } from "../../assets/row_icon.svg";
 import premium_icon from "../../assets/premium_icon.png";
 import location_icon from "../../assets/location icon.svg";
 import { getTimeAgo } from "../../utils/constantFunctions";
-import left from "../../assets/left nav.svg";
-import right from "../../assets/right nav.svg";
 import company_logo from "../../assets/Group 6068.svg";
 import Footer from "../../Components/Footer/Footer";
 
-
-const jobs = [
+const jobsData = [
   {
     title: "Sales executive",
     skills: "Customer relation, Marketing",
@@ -284,24 +279,55 @@ const jobs = [
 
 const JobList = () => {
   const [view, setView] = useState("grid");
-  const [currentPage, setCurrentPage] = useState(1);
-  const jobsPerPage = 16; // Adjust as needed
 
-  const indexOfLastJob = currentPage * jobsPerPage;
-  const indexOfFirstJob = indexOfLastJob - jobsPerPage;
-  const currentJobs = jobs.slice(indexOfFirstJob, indexOfLastJob);
+  const [hasMore, setHasMore] = useState(true);
+  const [visibleJobs, setVisibleJobs] = useState([]);
+  const [jobLimit, setJobLimit] = useState(4);
 
-  const totalPages = Math.ceil(jobs.length / jobsPerPage);
-
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
+  useEffect(() => {
+    setVisibleJobs(jobsData.slice(0, jobLimit));
+    if (jobLimit >= jobsData.length) {
+      setHasMore(false);
+    }
+  }, [jobLimit]);
 
   const navigate = useNavigate();
 
+  const observerRef = useRef();
+
+  useEffect(() => {
+    if (!hasMore) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && hasMore) {
+          loadMoreJobs();
+        }
+      },
+      { threshold: 1 }
+    );
+
+    if (observerRef.current) {
+      observer.observe(observerRef.current);
+    }
+
+    return () => {
+      if (observerRef.current) {
+        observer.unobserve(observerRef.current);
+      }
+    };
+  }, [visibleJobs, hasMore]);
+
+  const loadMoreJobs = () => {
+    setJobLimit((prevLimit) => {
+      const newLimit = prevLimit + 2;
+      return newLimit > jobsData.length ? jobsData.length : newLimit;
+    });
+  };
+
   const handleJobClick = () => {
-  navigate("/job-details");
-};
+    navigate("/job-details");
+  };
 
   return (
     <Navbar>
@@ -338,7 +364,6 @@ const JobList = () => {
         <div className="green-divider" />
 
         <div className="joblist-container">
-          {/* <div className={`joblist-container ${view === "grid" ? "grid-view" : "card-view"}`}> */}
           <div className="joblist-header">
             <h2>Search Result</h2>
             <div className="sort-section">
@@ -357,8 +382,6 @@ const JobList = () => {
                   onClick={() => setView("card")}
                   className={`icon ${view === "card" ? "active" : ""}`}
                 />
-
-                {/* <div className="list-view" /> */}
               </div>
             </div>
           </div>
@@ -375,7 +398,7 @@ const JobList = () => {
           )}
 
           <div className={`jobs-wrapper ${view}`}>
-            {currentJobs.map((job, idx) => (
+            {visibleJobs.map((job, idx) => (
               <div
                 key={idx}
                 className={`job-card ${view} ${job.selected ? "selected" : ""}`}
@@ -383,13 +406,10 @@ const JobList = () => {
               >
                 {view === "card" ? (
                   <>
-                  
                     <div className="job-title">
-                    
                       <div className="job-title-text">
-                      
                         {job.title}
-                        
+
                         {job.premium && (
                           <div className="premium-inline">
                             <img src={premium_icon} alt="Premium" />
@@ -400,7 +420,7 @@ const JobList = () => {
                         )}
                       </div>
                     </div>
-                    
+
                     <div className="job-detail-skill">{job.skills}</div>
                     <div className="job-detail-location">{job.location}</div>
                     <div className="company-name">{job.company}</div>
@@ -408,6 +428,8 @@ const JobList = () => {
                     <div className="job-detail-experience">
                       {job.experience}
                     </div>
+
+                    <div ref={observerRef} style={{ height: "1px" }}></div>
                   </>
                 ) : (
                   <>
@@ -417,7 +439,11 @@ const JobList = () => {
                         <img src={premium_icon} alt="Premium" />
                       </div>
                     )}
-                    <img src={company_logo} alt="company_logo" className="job-company-logo"/>
+                    <img
+                      src={company_logo}
+                      alt="company_logo"
+                      className="job-company-logo"
+                    />
                     <div className="job-title-text">{job.title}</div>
                     <div className="company-name">{job.company}</div>
                     <div className="white-separator" />
@@ -442,38 +468,13 @@ const JobList = () => {
               </div>
             ))}
           </div>
-        </div>
-        <div className="pagination">
-          <button
-            className="page-btn nav-btn"
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-          >
-            <img src={left} alt="Previous" className="arrow-icon" />
-          </button>
-
-          {Array.from({ length: totalPages }, (_, idx) => (
-            <button
-              key={idx}
-              className={`page-btn ${currentPage === idx + 1 ? "active" : ""}`}
-              onClick={() => handlePageChange(idx + 1)}
-            >
-              {idx + 1}
-            </button>
-          ))}
-
-          <button
-            className="page-btn nav-btn"
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-          >
-            <img src={right} alt="Next" className="arrow-icon" />
-          </button>
+          <div ref={observerRef} style={{ height: "1px" }}>
+            <p> You Have reached the end section</p>
+          </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </Navbar>
-    
   );
 };
 

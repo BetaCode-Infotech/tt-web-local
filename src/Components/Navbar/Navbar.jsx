@@ -80,13 +80,13 @@ export default function Navbar(props) {
 
   const pages = ["Products", "Pricing", "Blog"];
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
-  const [activeTab, setActiveTab] = useState("Job");
+  const [activeTab, setActiveTab] = useState("Jobs");
   const navigate = useNavigate();
-  const tabs = ["Job", "Gig", "Resume Maker"];
+  const tabs = ["Jobs", "Gig", "Resume Maker"];
 
   const location = useLocation();
   const getActiveTab = () => {
-    if (location.pathname.startsWith("/job-list")) return "Job";
+    if (location.pathname.startsWith("/job-list")) return "Jobs";
     if (location.pathname.startsWith("/gig-list")) return "Gig";
     if (location.pathname.startsWith("/resume-maker")) return "Resume Maker";
     return "";
@@ -127,13 +127,16 @@ export default function Navbar(props) {
                     // onClick={() => setActiveTab(tab)}
                     onClick={() => {
                       setActiveTab(tab);
-                      if (tab === "Job") navigate("/job-list"); // Navigate to job page
+                      if (tab === "Jobs") navigate("/job-list"); // Navigate to job page
                       /*else if (tab === "Gig") navigate("/gig-list"); // Navigate to gig list page
                       else if (tab === "Resume Maker") navigate("/resume-maker"); // Navigate to resume maker page */
                     }}
                     className={`tab-link ${
                       getActiveTab() === tab ? "active" : ""
                     }`}
+                    sx={{
+                      fontWeight: "bold",
+                    }}
                   >
                     {tab}
                   </Typography>
