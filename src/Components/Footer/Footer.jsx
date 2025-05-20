@@ -33,12 +33,12 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Jobs By Skills</h4>
           <ul>
-            <li>Sap</li>
+            <li>SAP</li>
             <li>Java</li>
             <li>React</li>
             <li>Full stack</li>
             <li>Sales</li>
-            <li>Hr</li>
+            <li>HR</li>
           </ul>
         </div>
 
