@@ -82,12 +82,12 @@ export default function Navbar(props) {
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
   const [activeTab, setActiveTab] = useState("Jobs");
   const navigate = useNavigate();
-  const tabs = ["Jobs", "Gig", "Resume Maker"];
+  const tabs = ["Jobs", "Gigs", "Resume Maker"];
 
   const location = useLocation();
   const getActiveTab = () => {
     if (location.pathname.startsWith("/job-list")) return "Jobs";
-    if (location.pathname.startsWith("/gig-list")) return "Gig";
+    if (location.pathname.startsWith("/gig-list")) return "Gigs";
     if (location.pathname.startsWith("/resume-maker")) return "Resume Maker";
     return "";
   };
