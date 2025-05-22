@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./Accordion.css";
 
 const Accordion = ({ title, content, image, isOpen, onClick }) => {
