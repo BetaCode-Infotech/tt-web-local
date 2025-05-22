@@ -2,6 +2,10 @@ import "./Welcome.css";
 import Group468 from "../../assets/Group 468.png";
 import { useState } from "react";
 import { Divider } from "@mui/material";
+import JDCreation from "../../assets/JD creation_img.png";
+import MultiUser from "../../assets/multi user_img.png";
+import JobPosting from "../../assets/job posting_img.png";
+import PayAsYouGo from "../../assets/pay as you go_img.png";
 
 // import TrueTalentWhite from "../assets/Group 6068.svg";
 import TrueTalentWhite from "../../assets/Group 6068.svg";
@@ -28,6 +32,37 @@ import Travel from "../../assets/travel icon.svg";
 import Retail from "../../assets/retail icon.svg";
 
 function Welcome() {
+  const data = [
+    {
+      id: 1,
+      title: "AI Driven JD Creation",
+      subheading:
+        "Do not have a JD? Fret not! In just 2 minutes, TrueTalent assists you in creating a well articulated and thorough JD for each position you have.",
+      image: JDCreation,
+    },
+    {
+      id: 2,
+      title: "Free Multi-user Access",
+      subheading:
+        "Why pay additional charges to access the same database for each recruiter? TrueTalent lets you create multiple user accesses without any aditional charge.",
+      image: MultiUser,
+    },
+    {
+      id: 3,
+      title: "Unlimited Free Job Posting",
+      subheading:
+        "Why spend large sums of money for job posting, without the surety of getting applicants? TrueTalent has a zero charge foryour job postings. Go ahead and post all your open positions.",
+      image: JobPosting,
+    },
+    {
+      id: 4,
+      title: "Pay-as-you-go",
+      subheading:
+        "Are you paying for the service you never use? We do not sell packages unless you need them. All our offerings come with a Pay-as-you-go model; on TrueTalent you pay for only what you need.",
+      image: PayAsYouGo,
+    },
+  ];
+
   const jobData = [
     {
       company: "Commvault Systems India",
@@ -83,6 +118,31 @@ function Welcome() {
   //   { label: "Travel", icon: travelIcon },
   //   { label: "Retail", icon: retailIcon },
   // ];
+
+  const [activeId, setActiveId] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(data[0].image);
+
+  const toggleAccordion = (id, image) => {
+    if (activeId === id) {
+      setActiveId(null);
+    } else {
+      setActiveId(id);
+      setSelectedImage(image);
+
+      const imageContainer = document.querySelector(".smart-image");
+      if (imageContainer) {
+        imageContainer.classList.add("fade-out");
+      }
+
+      setTimeout(() => {
+        setSelectedImage(image);
+        if (imageContainer) {
+          imageContainer.classList.remove("fade-out");
+        }
+      }, 500);
+    }
+  };
+
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {
@@ -196,7 +256,11 @@ function Welcome() {
               <button className="custom-search-button">View All Jobs</button>
             </div>
             <div className="right">
-              <CustomCarousel showStatus={false} showIndicators={false} showThumbs={false}>
+              <CustomCarousel
+                showStatus={false}
+                showIndicators={false}
+                showThumbs={false}
+              >
                 <div className="job-cards">
                   {[1, 2, 3].map((job) => (
                     <div key={job} className="job-card">
@@ -256,7 +320,11 @@ function Welcome() {
           </section>
           <section className="featured-jobs-2">
             <div className="left">
-              <CustomCarousel showStatus={false} showIndicators={false} showThumbs={false}>
+              <CustomCarousel
+                showStatus={false}
+                showIndicators={false}
+                showThumbs={false}
+              >
                 <div className="job-cards">
                   {[1, 2, 3].map((job) => (
                     <div key={job} className="job-card">
@@ -324,7 +392,8 @@ function Welcome() {
               <button className="custom-search-button">View All Gigs</button>
             </div>
           </section>
-          <section className="smart-search">
+
+          {/* <section className="smart-search">
             <div className="smart-image">
               <img src={SmartSearch} alt="Smart Search Illustration" />
             </div>
@@ -343,7 +412,46 @@ function Welcome() {
                 <strong>Smart JD</strong>
               </p>
             </div>
-          </section>
+          </section> */}
+
+          <div className="smart-search">
+            {/* Left Side Image */}
+            <div className="smart-image">
+              <img src={selectedImage} alt="Selected" />
+            </div>
+
+            {/* Right Side Accordions */}
+            <div className="smart-content">
+              {data.map((item) => (
+                <div key={item.id}>
+                  <div
+                    onClick={() => toggleAccordion(item.id, item.image)}
+                    className="smart-content-title"
+                  >
+                    <h3
+                      className={`smart-search-title ${
+                        activeId === item.id ? "active" : ""
+                      }`}
+                    >
+                      {item.title}
+                    </h3>
+                  </div>
+                  {activeId === item.id && (
+                    <div className="smart-content-description">
+                      <p
+                        className={`smart-search-subheading ${
+                          activeId === item.id ? "open" : ""
+                        }`}
+                      >
+                        {item.subheading}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
           <section className="industries-section">
             <h2 className="section-subtitle">Popular</h2>
             <h1 className="section-title">Industries</h1>
@@ -416,7 +524,7 @@ function Welcome() {
             </div>
           </div>
           <div className="container-2">
-            <Footer/>
+            <Footer />
           </div>
         </section>
       </Navbar>

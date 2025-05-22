@@ -222,8 +222,8 @@
 
 .job-list-container .job-card .company-name {
   font-family: "Montserrat", sans-serif;
-  font-size: 15px;
-  font-weight: 500;
+  /* font-size: 15px; */
+  /* font-weight: 500; */
   color: #cfd8dc;
   margin-bottom: 1rem;
 }
