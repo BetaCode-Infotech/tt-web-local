@@ -2,14 +2,15 @@ import "./WelcomeRecruiter.css";
 // import Group468 from "../../assets/Group 468.png";
 import hiringkeyimage from "../../assets/hiring key image.png";
 import candidate from "../../assets/candidate_img.png";
-import Accordion from "../../Components/Accordion/Accordion";
+
 import JDCreation from "../../assets/JD creation_img.png";
 import MultiUser from "../../assets/multi user_img.png";
 import JobPosting from "../../assets/job posting_img.png";
 import PayAsYouGo from "../../assets/pay as you go_img.png";
+
 import right from "../../assets/right nav.svg";
 import left from "../../assets/left nav.svg";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Divider } from "@mui/material";
 // import TrueTalentWhite from "../assets/Group 6068.svg";
 import TrueTalentWhite from "../../assets/Group 6068.svg";
@@ -37,13 +38,43 @@ import Travel from "../../assets/travel icon.svg";
 import Retail from "../../assets/retail icon.svg";
 
 function WelcomeRecruiter() {
-
-    const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(null);
 
   const handleAccordionClick = (index) => {
-    setOpenIndex(prevIndex => prevIndex === index ? null : index);
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
   };
-  
+
+  const data = [
+    {
+      id: 1,
+      title: "AI Driven JD Creation",
+      subheading:
+        "Do not have a JD? Fret not! In just 2 minutes, TrueTalent assists you in creating a well articulated and thorough JD for each position you have.",
+      image: JDCreation,
+    },
+    {
+      id: 2,
+      title: "Free Multi-user Access",
+      subheading:
+        "Why pay additional charges to access the same database for each recruiter? TrueTalent lets you create multiple user accesses without any aditional charge.",
+      image: MultiUser,
+    },
+    {
+      id: 3,
+      title: "Unlimited Free Job Posting",
+      subheading:
+        "Why spend large sums of money for job posting, without the surety of getting applicants? TrueTalent has a zero charge foryour job postings. Go ahead and post all your open positions.",
+      image: JobPosting,
+    },
+    {
+      id: 4,
+      title: "Pay-as-you-go",
+      subheading:
+        "Are you paying for the service you never use? We do not sell packages unless you need them. All our offerings come with a Pay-as-you-go model; on TrueTalent you pay for only what you need.",
+      image: PayAsYouGo,
+    },
+  ];
+
   const jobData = [
     {
       company: "Commvault Systems India",
@@ -99,6 +130,30 @@ function WelcomeRecruiter() {
   //   { label: "Travel", icon: travelIcon },
   //   { label: "Retail", icon: retailIcon },
   // ];
+  const [activeId, setActiveId] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(data[0].image);
+
+  const toggleAccordion = (id, image) => {
+    if (activeId === id) {
+      setActiveId(null);
+    } else {
+      setActiveId(id);
+      setSelectedImage(image);
+
+      const imageContainer = document.querySelector(".smart-image");
+      if (imageContainer) {
+        imageContainer.classList.add("fade-out");
+      }
+
+      setTimeout(() => {
+        setSelectedImage(image);
+        if (imageContainer) {
+          imageContainer.classList.remove("fade-out");
+        }
+      }, 500);
+    }
+  };
+
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {
@@ -276,201 +331,43 @@ function WelcomeRecruiter() {
             </div>
           </section>
 
-
-
-
-          {/* <section className="smart-search">
+          <div className="smart-search">
+            {/* Left Side Image */}
             <div className="smart-image">
-              <img src={JDCreation} alt="Smart Search Illustration" />
+              <img src={selectedImage} alt="Selected" />
             </div>
+
+            {/* Right Side Accordions */}
             <div className="smart-content">
-              <p>
-                <strong>Skill Match</strong>
-              </p>
-
-              <h3>AI Driven JD Creation</h3>
-              <span>
-                Do not have a JD? Fret not! In just 2 minutes, TrueTalent
-                assists you in creating a well articulated and thorough JD for
-                each position you have.
-              </span>
-              <p>
-                <strong>Free Multi-user Access</strong>
-              </p>
-              <p>
-                <strong>Unlimited Free Job Posting</strong>
-              </p>
-              <p>
-                <strong>Pay-as-you-go</strong>
-              </p>
+              {data.map((item) => (
+                <div key={item.id}>
+                  <div
+                    onClick={() => toggleAccordion(item.id, item.image)}
+                    className="smart-content-title"
+                  >
+                    <h3
+                      className={`smart-search-title ${
+                        activeId === item.id ? "active" : ""
+                      }`}
+                    >
+                      {item.title}
+                    </h3>
+                  </div>
+                  {activeId === item.id && (
+                    <div className="smart-content-description">
+                      <p
+                        className={`smart-search-subheading ${
+                          activeId === item.id ? "open" : ""
+                        }`}
+                      >
+                        {item.subheading}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
-          </section>
-
-          <section className="smart-search">
-            <div className="smart-image">
-              <img src={MultiUser} alt="Smart Search Illustration" />
-            </div>
-            <div className="smart-content">
-              <p>
-                <strong>Skill Match</strong>
-              </p>
-              <p>
-                <strong>AI Driven JD Creation</strong>
-              </p>
-              <h3>Free Multi-user Access</h3>
-              <span>
-                Why pay additional charges to access the same database for each
-                recruiter? TrueTalent lets you create multiple user accesses
-                without any aditional charge.
-              </span>
-              <p>
-                <strong>Unlimited Free Job Posting</strong>
-              </p>
-              <p>
-                <strong>Pay-as-you-go</strong>
-              </p>
-            </div>
-          </section>
-
-          <section className="smart-search">
-            <div className="smart-image">
-              <img src={JobPosting} alt="Smart Search Illustration" />
-            </div>
-            <div className="smart-content">
-              <p>
-                <strong>Skill Match</strong>
-              </p>
-              <p>
-                <strong>AI Driven JD Creation</strong>
-              </p>
-              <p>
-                <strong>Free Multi-user Access</strong>
-              </p>
-              <h3>Unlimited Free Job Posting</h3>
-              <span>
-                Why spend large sums of money for job posting, without the
-                surety of getting applicants? TrueTalent has a zero charge for
-                your job postings. Go ahead and post all your open positions.
-              </span>
-              <p>
-                <strong>Pay-as-you-go</strong>
-              </p>
-            </div>
-          </section>
-
-          <section className="smart-search">
-            <div className="smart-image">
-              <img src={PayAsYouGo} alt="Smart Search Illustration" />
-            </div>
-            <div className="smart-content">
-              <p>
-                <strong>Skill Match</strong>
-              </p>
-              <p>
-                <strong>AI Driven JD Creation</strong>
-              </p>
-              <p>
-                <strong>Free Multi-user Access</strong>
-              </p>
-              <p>
-                <strong>Unlimited Free Job Posting</strong>
-              </p>
-
-              <h3>Pay-as-you-go</h3>
-              <span>
-                Are you paying for the service you never use? We do not sell
-                packages unless you need them. All our offerings come with a
-                Pay-as-you-go model; on TrueTalent you pay for only what you
-                need.
-              </span>
-            </div>
-          </section> */}
-
-
-          <>
-      <Accordion
-        title="AI Driven JD Creation"
-        image={JDCreation}
-        isOpen={openIndex === 0}
-        onClick={() => handleAccordionClick(0)}
-        content={
-          <>
-            <p><strong>Skill Match</strong></p>
-            <h3>AI Driven JD Creation</h3>
-            <span>
-              Do not have a JD? Fret not! In just 2 minutes, TrueTalent assists you in
-              creating a well articulated and thorough JD for each position you have.
-            </span>
-            <p><strong>Free Multi-user Access</strong></p>
-            <p><strong>Unlimited Free Job Posting</strong></p>
-            <p><strong>Pay-as-you-go</strong></p>
-          </>
-        }
-      />
-
-      <Accordion
-        title="Free Multi-user Access"
-        image={MultiUser}
-        isOpen={openIndex === 1}
-        onClick={() => handleAccordionClick(1)}
-        content={
-          <>
-            <p><strong>Skill Match</strong></p>
-            <p><strong>AI Driven JD Creation</strong></p>
-            <h3>Free Multi-user Access</h3>
-            <span>
-              Why pay additional charges to access the same database for each recruiter?
-              TrueTalent lets you create multiple user accesses without any additional charge.
-            </span>
-            <p><strong>Unlimited Free Job Posting</strong></p>
-            <p><strong>Pay-as-you-go</strong></p>
-          </>
-        }
-      />
-
-      <Accordion
-        title="Unlimited Free Job Posting"
-        image={JobPosting}
-        isOpen={openIndex === 2}
-        onClick={() => handleAccordionClick(2)}
-        content={
-          <>
-            <p><strong>Skill Match</strong></p>
-            <p><strong>AI Driven JD Creation</strong></p>
-            <p><strong>Free Multi-user Access</strong></p>
-            <h3>Unlimited Free Job Posting</h3>
-            <span>
-              Why spend large sums of money for job posting, without the surety of getting applicants?
-              TrueTalent has a zero charge for your job postings.
-            </span>
-            <p><strong>Pay-as-you-go</strong></p>
-          </>
-        }
-      />
-
-      <Accordion
-        title="Pay-as-you-go"
-        image={PayAsYouGo}
-        isOpen={openIndex === 3}
-        onClick={() => handleAccordionClick(3)}
-        content={
-          <>
-            <p><strong>Skill Match</strong></p>
-            <p><strong>AI Driven JD Creation</strong></p>
-            <p><strong>Free Multi-user Access</strong></p>
-            <p><strong>Unlimited Free Job Posting</strong></p>
-            <h3>Pay-as-you-go</h3>
-            <span>
-              Are you paying for the service you never use? We do not sell packages unless you need them.
-              All our offerings come with a Pay-as-you-go model; on TrueTalent you pay for only what you need.
-            </span>
-          </>
-        }
-      />
-    </>
-
-
-
+          </div>
 
           <section className="industries-section">
             <h2 className="section-subtitle">Popular</h2>

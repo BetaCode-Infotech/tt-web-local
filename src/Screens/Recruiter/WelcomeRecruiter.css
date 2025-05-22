@@ -424,7 +424,13 @@ font-size: 0.9rem;
   background-color: #00d0b0;
 }
 
-/* .container-2-recruiter .smart-search {
+
+
+
+
+
+
+.container-2-recruiter .smart-search {
   background-image: url("../../assets/background-rounded.png");
   background-size: contain;
   background-position: center;
@@ -433,19 +439,27 @@ font-size: 0.9rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem;
+  padding: 5rem;
 }
 .container-2-recruiter .smart-image {
   flex: 0 0 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.5s ease-out;
 }
 
 .container-2-recruiter .smart-image img {
-  max-width: 80%;
-  height: auto;
+  width:25rem;
+  height:25rem; 
   object-fit: contain;
+  opacity: 1;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.smart-image.fade-out img {
+  opacity: 0;
+  transform: scale(0.8);
 }
 
 .container-2-recruiter .smart-content {
@@ -456,26 +470,48 @@ font-size: 0.9rem;
   color: white;
 }
 
-.container-2-recruiter .smart-content span {
-  margin: 0.5rem 0;
-  text-align: left;
-  font-size: 12px;
-  width: 60%;
+.container-2-recruiter .smart-content-title{
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 0;
   font-family: "Montserrat", sans-serif;
 }
-.container-2-recruiter .smart-content p {
-  margin: 0.5rem 0;
-  text-align: left;
-  font-size: 1rem;
-  width: 60%;
-  font-family: "Montserrat", sans-serif;
+
+.container-2-recruiter .smart-search-title {
+  color: white;
+  transition: color 0.3s ease-in-out;
 }
-.container-2-recruiter .smart-content h3 {
-  margin: 0.5rem 0;
-  text-align: left;
+
+.container-2-recruiter .smart-search-title.active {
   color: #ff7059;
+}
+
+.smart-search-subheading {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 1s ease, opacity 1s ease;
+  font-size: 15px;
   font-family: "Montserrat", sans-serif;
-} */
+  color: rgb(180, 179, 179);
+}
+
+.smart-search-subheading.open {
+  max-height: 500px; 
+  opacity: 1;
+}
+
+.container-2-recruiter .smart-content-description{
+  cursor: pointer;
+  margin: 0.5rem 0;
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(180, 179, 179);
+}
+
+
+
 
 .custom-search-button-recruiter {
   background: #ff7059;
