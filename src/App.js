@@ -8,6 +8,7 @@ import JobList from "./Screens/JobList/JobList";
 import ContactUs from "./Screens/ContactUs/ContactUs";
 import JobDetails from "./Screens/JobDetails/JobDetails";
 import ExperienceHiring from "./Screens/ExperienceHiring/ExperienceHiring";
+import WelcomeRecruiter from "./Screens/Recruiter/WelcomeRecruiter";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/job-list" element={<JobList />} />
         <Route path="/job-details" element={<JobDetails />} />
         <Route path="/experience-hiring" element={<ExperienceHiring />} />
+        <Route path="/homepage-recruiter" element={<WelcomeRecruiter/>} />
       </Routes>
     </BrowserRouter>
   );

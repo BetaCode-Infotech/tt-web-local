@@ -1,0 +1,102 @@
+.accordion-item {
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion-item:hover{
+  cursor: pointer;
+  border: 2px solid #ff7059;
+}
+
+.accordion-header {
+  background-color: rgba(37, 46, 102, 0.9);
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-header h3 {
+  margin: 0;
+}
+
+.accordion-content {
+    position: relative;
+  /* padding: 20px; */
+  background-image: url("../../assets/background-rounded.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  z-index: 1;
+  overflow: hidden;
+  max-height: 0;
+  background-color: rgb(5, 21, 89);
+  transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+
+.accordion-content.open {
+  max-height: 1000px; 
+  /* padding: 2rem 0;  */
+}
+
+.smart-image img {
+  max-width: 150px;
+  margin-right: 1rem;
+}
+
+.container-2-recruiter .smart-search {
+  background-image: url("../../assets/background-rounded.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem;
+}
+.container-2-recruiter .smart-image {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-2-recruiter .smart-image img {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+.container-2-recruiter .smart-content {
+  flex: 0 0 30%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.container-2-recruiter .smart-content span {
+  margin: 0.5rem 0;
+  text-align: left;
+  font-size: 12px;
+  width: 60%;
+  font-family: "Montserrat", sans-serif;
+}
+.container-2-recruiter .smart-content p {
+  margin: 0.5rem 0;
+  text-align: left;
+  font-size: 1rem;
+  width: 60%;
+  font-family: "Montserrat", sans-serif;
+}
+.container-2-recruiter .smart-content h3 {
+  margin: 0.5rem 0;
+  text-align: left;
+  color: #ff7059;
+  font-family: "Montserrat", sans-serif;
+}

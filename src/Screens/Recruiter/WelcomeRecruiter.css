@@ -1,0 +1,749 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.container-2-recruiter * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-2-recruiter {
+  /* background: linear-gradient(to bottom, #002c90, #00a8e8); */
+  font-family: "Segoe UI", sans-serif;
+  color: white;
+  /* padding: 2rem; */
+}
+.container-2-recruiter .the-ultimate-hiring-recruiter {
+  font-family: "Segoe UI", sans-serif;
+  background-image: url("../../assets/hero-image-desktop.jpg");
+  background-size: 100%; /* adjust this as needed to reduce width */
+  background-repeat: no-repeat;
+  background-position: left center; /* aligns image to the left */
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+}
+
+/* Left Section */
+.container-2-recruiter .the-ultimate-hiring-recruiter .left {
+  flex: 0.1;
+  padding-left: 10px;
+  text-align: left;
+}
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .left h1 {
+  font-size: 48px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  /* text-align: left; */
+}
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .left .highlight {
+  color: #ff7059;
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .dots {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0 20px;
+}
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .dots span {
+  width: 10px;
+  height: 10px;
+  background-color: #ff7059;
+  border-radius: 50%;
+}
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .dots span:nth-child(2) {
+  background-color: #ccc;
+}
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .dots span:nth-child(3) {
+  background-color: #ccc;
+}
+
+/* .container-2 .hero .halfcircle-image {
+  font-size: 200px;
+  font-weight: 900;
+  background: radial-gradient(circle, #ff7059 0%, #ff7059 70%);
+  color: rgba(255, 255, 255, 0.05);
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+} */
+
+/* Right Section */
+.container-2-recruiter .the-ultimate-hiring-recruiter .right {
+  flex: 1;
+  padding: 40px;
+  /* background: rgba(42, 58, 127, 0.5); */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 1;
+  max-width: 420px;
+}
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .right h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+.container-2-recruiter .divider-container {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .right input[type="text"] {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 16px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+}
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .search-type1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.search[type="radio"] {
+  accent-color: #ff7059; 
+}
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .search-type1 .search[type="radio"] {
+  margin-right: 8px;
+}
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin-bottom: 20px;
+  font-size: 14px;
+  /* color: #00ffb3; */
+  color: #fff;
+  text-align: left;
+  /* padding: 0 3rem; */
+}
+.container-2-recruiter .the-ultimate-hiring-recruiter .options span::before {
+  content: "✔"; /* Use basic Unicode character instead of emoji */
+  color: #ff7059;
+  margin-right: 8px;
+}
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .search-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-2-recruiter .the-ultimate-hiring-recruiter .search-btn {
+  width: 150px;
+  background: linear-gradient(90deg, #ff7059);
+  border: none;
+  border-radius: 30px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: opacity 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* adds spacing between text and image */
+}
+.container-2-recruiter .the-ultimate-hiring-recruiter .search-btn img {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .search-btn:hover {
+  opacity: 0.9;
+}
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .recruiter {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  font-weight: bold;
+  text-align: center;
+  color: #ccc;
+}
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .check-out {
+  display: inline-block;
+  
+  margin-top: 8px;
+  background: linear-gradient(to right, #3700ff, #00f0c8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .check-out:hover {
+  background: linear-gradient(to right, #3700ff, #ff4d4d);
+}
+
+/* Hero Section */
+.container-2-recruiter .hero {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  flex-wrap: wrap;
+  /* gap: 4rem; */
+  min-height: 70vh;
+  padding: 4rem;
+}
+.container-2-recruiter .hero-text {
+  /* position: absolute; */
+  right: 120px;
+  text-align: left;
+}
+
+.container-2-recruiter .hero-left {
+  flex: 1;
+  align-items: center;
+  text-align: right;
+  padding-left:3rem;
+  width:80%
+}
+
+.container-2-recruiter .hero-left-image {
+  display: flex;
+  width:35rem;
+  height:35rem;
+}
+
+.container-2-recruiter .subtext {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.container-2-recruiter .hero-right h3 {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.container-2-recruiter .highlight {
+  color: #ff7059;
+  font-size: 3rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container-2-recruiter .description {
+  margin-top: 1rem;
+  font-size: 18px;
+  color: #bdbdbd;
+  font-family: "Montserrat", sans-serif;
+  max-width: 30rem;
+}
+
+.container-2-recruiter .hero-right {
+  flex: 2;
+  display: flex;
+  /* width:40%; */
+  justify-content: center;
+}
+
+/* .container-2-recruiter .hero-right img {
+  max-width: 80%;
+  height: auto;
+} */
+
+/* Featured Jobs Section */
+.container-2-recruiter .featured-jobs-recruiter {
+  margin-top: 1rem;
+  text-align: left;
+  display: flex;
+  margin-bottom: 4rem;
+  padding: 1rem 5rem;
+}
+/* .container-2 .featured-jobs-2 {
+  margin-top: 4rem;
+  text-align: left;
+  display: flex;
+  gap: 1rem;
+  margin-top: 4rem;
+  padding: 0 4rem;
+} */
+/* .container-2 .featured-jobs-2 .left {
+  width: 80%;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+} */
+/* .container-2 .featured-jobs-2 .right {
+  width: 20%;
+  border-radius: 1px;
+} */
+
+/* .container-2 .featured-jobs-2 h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+} */
+.container-2-recruiter .featured-jobs-recruiter .left-recruiter {
+  width: 30%;
+  padding: 3rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  text-align: left;
+}
+.container-2-recruiter .featured-jobs-recruiter .right {
+  width: 70%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 40px;
+}
+
+.container-2-recruiter .featured-jobs-recruiter h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container-2-recruiter .faded {
+  color: rgb(63, 67, 123);
+  font-size: 3rem;
+}
+
+.container-2-recruiter .job-cards-recruiter {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-2-recruiter .job-card-recruiter {
+  background-color: rgba(37, 46, 102, 0.9);
+  border-radius: 30px;
+  border-width: 2px;
+  padding: 1rem;
+  width: 15rem;
+  height: 20rem;
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); */
+}
+
+.container-2-recruiter .job-card-recruiter:hover {
+  cursor: pointer;
+    /* background-color: #0f1e70; */
+  border: 2px solid #ff7059;
+}
+
+.container-2-recruiter .job-header {
+  display: flex;
+  justify-content: flex-start; /* ensures content aligns to the left */
+  align-items: center; /* vertically center the image */
+  gap: 0.5rem;
+  text-align: left;
+}
+
+/* .container-2-recruiter .job-header img {
+  height: 30px !important;
+  object-fit: contain;
+  display: block; 
+} */
+
+.container-2-recruiter .company-name {
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container-2-recruiter .designation {
+    font-size: 1rem;
+  color: #cfcfcf;
+  text-align: left;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* .container-2 .job-title {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  text-align: left;
+} */
+
+.container-2-recruiter .experience{
+  font-size: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  color: #bdbdbd;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container-2-recruiter .skills{
+font-size: 0.9rem;
+  /* margin-top: 0.3rem; */
+  color: #bdbdbd;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* .container-2 .posted {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  color: #bdbdbd;
+  text-align: right;
+} */
+
+.container-2-recruiter .view-btn:hover {
+  background-color: #00d0b0;
+}
+
+/* .container-2-recruiter .smart-search {
+  background-image: url("../../assets/background-rounded.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem;
+}
+.container-2-recruiter .smart-image {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-2-recruiter .smart-image img {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+.container-2-recruiter .smart-content {
+  flex: 0 0 30%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.container-2-recruiter .smart-content span {
+  margin: 0.5rem 0;
+  text-align: left;
+  font-size: 12px;
+  width: 60%;
+  font-family: "Montserrat", sans-serif;
+}
+.container-2-recruiter .smart-content p {
+  margin: 0.5rem 0;
+  text-align: left;
+  font-size: 1rem;
+  width: 60%;
+  font-family: "Montserrat", sans-serif;
+}
+.container-2-recruiter .smart-content h3 {
+  margin: 0.5rem 0;
+  text-align: left;
+  color: #ff7059;
+  font-family: "Montserrat", sans-serif;
+} */
+
+.custom-search-button-recruiter {
+  background: #ff7059;
+  color: white;
+  padding: 15px 20px; /* paddingX: 3 = 24px */
+  border-radius: 25px;
+  font-weight: 400;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.custom-search-button-recruiter:hover {
+  /* background: linear-gradient(to right, #1a73e8, #00bfa6); */
+  opacity: 0.9;
+}
+
+.container-2-recruiter .industries-section {
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  padding: 4rem 2rem 0rem 2rem;
+  box-sizing: border-box;
+}
+
+.container-2-recruiter .section-subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.container-2-recruiter .section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: -0.5rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.container-2-recruiter .industries-grid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); */
+  grid-template-columns: repeat(6, 2fr);
+  gap: 2rem;
+  /* max-width: 1000px; */
+  margin: 3rem auto;
+}
+
+.container-2-recruiter .industry-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.container-2-recruiter .industry-card img {
+  width: 40px;
+  height: 40px;
+}
+
+.container-2-recruiter .industry-card.highlight {
+  color: #ff7059;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.container-2-recruiter .cta-box {
+  margin: 3rem auto 0;
+  background: linear-gradient(90deg, #00f0c8, rgba(26, 41, 188, 1));
+  border-radius: 3rem;
+  padding: 1.5rem 3rem;
+  max-width: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.container-2-recruiter .cta-box p {
+  color: white;
+  font-size: 20px;
+  margin: 0;
+  flex: 1;
+  max-width: 70%;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container-2-recruiter .cta-box button {
+  background: linear-gradient(90deg, #00f0c8, rgba(26, 41, 188, 1));
+  color: white;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 400;
+  cursor: pointer;
+  min-width: 200px;
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+}
+.container-2-recruiter .know-more-container {
+  position: absolute;
+  /* bottom: -1.5rem; */
+  left: 100%;
+  transform: translateX(-50%);
+  
+}
+
+.container-2-recruiter h2 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+/* .container-2-recruiter .carousel-section {
+  
+  position: relative;
+  min-height: 50vh;
+  padding-top: 1rem;
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2720%27%20height%3D%274%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Ccircle%20cx%3D%272%27%20cy%3D%272%27%20r%3D%272%27%20fill%3D%27white%27%20/%3E%3C/svg%3E");
+  background: linear-gradient(to bottom, #002c90, #00a8e8);
+}
+.container-2-recruiter .carousel-section h2 {
+  
+  text-align: center;
+} */
+
+.container-2-recruiter .academia-wrapper {
+  position: relative;
+  overflow: hidden;
+  /* max-width: 1000px; */
+  margin: 0 auto;
+}
+
+/* .container-2-recruiter .carousel-track {
+  display: flex;
+  gap: 7rem;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2720%27%20height%3D%274%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Ccircle%20cx%3D%272%27%20cy%3D%272%27%20r%3D%272%27%20fill%3D%27white%27%20/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center center;
+  background-size: 14px 4px;
+  height: 160px;
+} */
+.container-2-recruiter .academia-track {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+  margin-top: 10px;
+}
+
+.container-2-recruiter .carousel-track img,
+.container-2-recruiter .academia-track img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 4px #ffffff, 0 0 0 6px #00a8e8;
+}
+
+.container-2-recruiter .carousel-controls {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.container-2-recruiter .carousel-controls .arrow {
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  padding: 0.5rem 0.9rem;
+  transition: background 0.3s;
+}
+
+.container-2-recruiter .carousel-controls .arrow:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.container-2-recruiter .academia-section {
+  padding: 4rem 2rem;
+  background-color: #fff;
+
+  border-radius: 10rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.container-2-recruiter .academia-section-container {
+  background: linear-gradient(to bottom, #002c90,#00a8e8 ); 
+  padding: 6rem 2rem;
+}
+
+.container-2-recruiter .academia-section h2 {
+  color: black;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.container-2-recruiter .academia-track img {
+  width: 160px;
+  height: auto;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+
+.container-2-recruiter .logo {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.container-2-recruiter .contact h4 {
+  color: #00b3b3;
+  margin-bottom: 0.5rem;
+}
+
+
+.container-2-recruiter .social-icons i:hover {
+  color: #00b3b3;
+}
+
+.container-2-recruiter .working-with-us {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  /* gap: 2rem; */
+  /* padding: 2rem; */
+  /* background: linear-gradient(to bottom, #1e1eff, #ff6e57); */
+  /* border-radius: 20px; */
+  background: linear-gradient(to bottom, rgb(5, 21, 89), #002c90); 
+}
+
+.container-2-recruiter .working-with-us .aligned-image-wrapper {
+  position: relative;
+  width: 70rem;
+  background-image: url("../../assets/green half circle@2x.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* padding: 5rem; */
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+.container-2-recruiter .working-with-us .aligned-image-wrapper img {
+  width: 35%;
+    padding: 2rem;
+  /* border-radius: 20px; */
+}
+
+.container-2-recruiter .footer-recruiter{
+  padding: 1rem;
+}
