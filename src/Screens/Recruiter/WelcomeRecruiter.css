@@ -216,7 +216,6 @@
   padding: 4rem;
 }
 .container-2-recruiter .hero-text {
-  /* position: absolute; */
   right: 120px;
   text-align: left;
 }
@@ -268,10 +267,6 @@
   justify-content: center;
 }
 
-/* .container-2-recruiter .hero-right img {
-  max-width: 80%;
-  height: auto;
-} */
 
 /* Featured Jobs Section */
 .container-2-recruiter .featured-jobs-recruiter {
@@ -281,32 +276,7 @@
   margin-bottom: 4rem;
   padding: 1rem 5rem;
 }
-/* .container-2 .featured-jobs-2 {
-  margin-top: 4rem;
-  text-align: left;
-  display: flex;
-  gap: 1rem;
-  margin-top: 4rem;
-  padding: 0 4rem;
-} */
-/* .container-2 .featured-jobs-2 .left {
-  width: 80%;
-  padding: 1rem;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: left;
-} */
-/* .container-2 .featured-jobs-2 .right {
-  width: 20%;
-  border-radius: 1px;
-} */
 
-/* .container-2 .featured-jobs-2 h2 {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-} */
 .container-2-recruiter .featured-jobs-recruiter .left-recruiter {
   width: 30%;
   padding: 3rem;
@@ -351,12 +321,10 @@
   padding: 1rem;
   width: 15rem;
   height: 20rem;
-  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); */
 }
 
 .container-2-recruiter .job-card-recruiter:hover {
   cursor: pointer;
-    /* background-color: #0f1e70; */
   border: 2px solid #ff7059;
 }
 
@@ -367,12 +335,6 @@
   gap: 0.5rem;
   text-align: left;
 }
-
-/* .container-2-recruiter .job-header img {
-  height: 30px !important;
-  object-fit: contain;
-  display: block; 
-} */
 
 .container-2-recruiter .company-name {
   font-size: 1rem;
@@ -413,22 +375,9 @@ font-size: 0.9rem;
   font-family: "Montserrat", sans-serif;
 }
 
-/* .container-2 .posted {
-  font-size: 0.8rem;
-  margin-top: 0.3rem;
-  color: #bdbdbd;
-  text-align: right;
-} */
-
 .container-2-recruiter .view-btn:hover {
   background-color: #00d0b0;
 }
-
-
-
-
-
-
 
 .container-2-recruiter .smart-search {
   background-image: url("../../assets/background-rounded.png");
@@ -510,13 +459,10 @@ font-size: 0.9rem;
   color: rgb(180, 179, 179);
 }
 
-
-
-
 .custom-search-button-recruiter {
   background: #ff7059;
   color: white;
-  padding: 15px 20px; /* paddingX: 3 = 24px */
+  padding: 15px 20px;
   border-radius: 25px;
   font-weight: 400;
   font-size: 20px;
@@ -528,7 +474,6 @@ font-size: 0.9rem;
 }
 
 .custom-search-button-recruiter:hover {
-  /* background: linear-gradient(to right, #1a73e8, #00bfa6); */
   opacity: 0.9;
 }
 
@@ -635,38 +580,12 @@ font-size: 0.9rem;
   margin-bottom: 2rem;
 }
 
-/* .container-2-recruiter .carousel-section {
-  
-  position: relative;
-  min-height: 50vh;
-  padding-top: 1rem;
-  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2720%27%20height%3D%274%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Ccircle%20cx%3D%272%27%20cy%3D%272%27%20r%3D%272%27%20fill%3D%27white%27%20/%3E%3C/svg%3E");
-  background: linear-gradient(to bottom, #002c90, #00a8e8);
-}
-.container-2-recruiter .carousel-section h2 {
-  
-  text-align: center;
-} */
-
 .container-2-recruiter .academia-wrapper {
   position: relative;
   overflow: hidden;
-  /* max-width: 1000px; */
   margin: 0 auto;
 }
 
-/* .container-2-recruiter .carousel-track {
-  display: flex;
-  gap: 7rem;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.5s ease;
-  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2720%27%20height%3D%274%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Ccircle%20cx%3D%272%27%20cy%3D%272%27%20r%3D%272%27%20fill%3D%27white%27%20/%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-position: center center;
-  background-size: 14px 4px;
-  height: 160px;
-} */
 .container-2-recruiter .academia-track {
   display: flex;
   gap: 2rem;
@@ -735,7 +654,6 @@ font-size: 0.9rem;
   box-shadow: none;
 }
 
-
 .container-2-recruiter .logo {
   font-size: 2rem;
   margin: 0;
@@ -755,10 +673,6 @@ font-size: 0.9rem;
   display: flex; 
   justify-content: center;
   align-items: center;
-  /* gap: 2rem; */
-  /* padding: 2rem; */
-  /* background: linear-gradient(to bottom, #1e1eff, #ff6e57); */
-  /* border-radius: 20px; */
   background: linear-gradient(to bottom, rgb(5, 21, 89), #002c90); 
 }
 
@@ -769,7 +683,6 @@ font-size: 0.9rem;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  /* padding: 5rem; */
   display: flex; 
   justify-content: center; 
   align-items: center;
@@ -777,7 +690,6 @@ font-size: 0.9rem;
 .container-2-recruiter .working-with-us .aligned-image-wrapper img {
   width: 35%;
     padding: 2rem;
-  /* border-radius: 20px; */
 }
 
 .container-2-recruiter .footer-recruiter{
