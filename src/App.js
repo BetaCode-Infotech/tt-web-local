@@ -21,7 +21,7 @@ function App() {
         <Route path="/job-list" element={<JobList />} />
         <Route path="/job-details" element={<JobDetails />} />
         <Route path="/experience-hiring" element={<ExperienceHiring />} />
-        <Route path="/homepage-recruiter" element={<WelcomeRecruiter/>} />
+        <Route path="/recruiter-welcome" element={<WelcomeRecruiter/>} />
       </Routes>
     </BrowserRouter>
   );

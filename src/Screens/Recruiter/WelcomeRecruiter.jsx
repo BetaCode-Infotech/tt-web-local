@@ -36,6 +36,7 @@ import Telecom from "../../assets/telecom icon.svg";
 import Chemical from "../../assets/chemical icon.svg";
 import Travel from "../../assets/travel icon.svg";
 import Retail from "../../assets/retail icon.svg";
+import { Link } from "react-router-dom";
 
 function WelcomeRecruiter() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -44,7 +45,7 @@ function WelcomeRecruiter() {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
-  const data = [
+  const smartContentData = [
     {
       id: 1,
       title: "AI Driven JD Creation",
@@ -70,7 +71,7 @@ function WelcomeRecruiter() {
       id: 4,
       title: "Pay-as-you-go",
       subheading:
-        "Are you paying for the service you never use? We do not sell packages unless you need them. All our offerings come with a Pay-as-you-go model; on TrueTalent you pay for only what you need.",
+        "Are you paying for the service you never use? We do not sell packages unless you need them. All our offerings come with a Pay-as-you-go model, on TrueTalent you pay for only what you need.",
       image: PayAsYouGo,
     },
   ];
@@ -130,12 +131,12 @@ function WelcomeRecruiter() {
   //   { label: "Travel", icon: travelIcon },
   //   { label: "Retail", icon: retailIcon },
   // ];
-  const [activeId, setActiveId] = useState(null);
-  const [selectedImage, setSelectedImage] = useState(data[0].image);
+  const [activeId, setActiveId] = useState(1);
+  const [selectedImage, setSelectedImage] = useState(smartContentData[0].image);
 
   const toggleAccordion = (id, image) => {
     if (activeId === id) {
-      setActiveId(null);
+      // setActiveId(null);
     } else {
       setActiveId(id);
       setSelectedImage(image);
@@ -224,9 +225,9 @@ function WelcomeRecruiter() {
               </div>
               <div className="recruiter">
                 Are you a candidate? <br />
-                <a href="#" className="check-out">
+                <Link to="/" className="check-out">
                   Check out ➚
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -339,7 +340,7 @@ function WelcomeRecruiter() {
 
             {/* Right Side Accordions */}
             <div className="smart-content">
-              {data.map((item) => (
+              {smartContentData.map((item) => (
                 <div key={item.id}>
                   <div
                     onClick={() => toggleAccordion(item.id, item.image)}
