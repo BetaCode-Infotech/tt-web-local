@@ -1,5 +1,5 @@
-.css-rizt0-MuiTypography-root{
-font-weight: bold;
+.css-rizt0-MuiTypography-root {
+  font-weight: bold;
 }
 
 .tab-link {
@@ -88,8 +88,7 @@ font-weight: bold;
   padding: 16px;
   border-radius: 2rem;
   box-shadow: 0px 24px 38px rgba(0, 0, 0, 0.14),
-              0px 9px 46px rgba(0, 0, 0, 0.12),
-              0px 11px 15px rgba(0, 0, 0, 0.2);
+    0px 9px 46px rgba(0, 0, 0, 0.12), 0px 11px 15px rgba(0, 0, 0, 0.2);
 }
 
 .login-modal-style .modal-container {
@@ -99,7 +98,7 @@ font-weight: bold;
 }
 
 .login-modal-style .modal {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(38, 45, 66, 0.9);
   color: #fff;
   border-radius: 20px;
   padding: 30px;
@@ -233,4 +232,3 @@ font-weight: bold;
   font-size: 13px;
   color: #ccc;
 }
-

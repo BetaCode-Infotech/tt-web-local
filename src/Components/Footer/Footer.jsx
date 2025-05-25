@@ -70,8 +70,13 @@ const Footer = () => {
           <h4>Navigate</h4>
           <ul>
             <li>Home</li>
-            <li>About Us</li>
+            {/* <li>About Us</li> */}
             {/* <li>Contact Us</li> */}
+            <li>
+              <Link to="/experience-hiring" className="footer-link">
+                About US
+              </Link>
+            </li>
             <li>
               <Link to="/contact-us" className="footer-link">
                 Contact Us
