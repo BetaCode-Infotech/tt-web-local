@@ -18,6 +18,7 @@ import CustomCarousel from "../../Components/CustomCarousel/CustomCarousel";
 import Footer from "../../Components/Footer/Footer";
 import Navbar from "../../Components/Navbar/Navbar";
 // import WhatsAppImg from "../../assets/whatsapp.png";
+import AIimage from "../../assets/hero-image-mobile.jpg";
 import Technology from "../../assets/technology icon.svg";
 import Education from "../../assets/education icon.svg";
 import Hospitality from "../../assets/hospitality icon.svg";
@@ -156,9 +157,11 @@ function Welcome() {
   return (
     <div className="App">
       <Navbar>
+        {/* <div className="ai-circle">AI</div> */}
+        <img src={AIimage} alt={AIimage} className="ai-circle"/>
         <section className="container-2">
           <div className="the-ultimate-hiring">
-            <div className="left">
+             <div className="left">
               <h1>
                 The <span className="highlight">Ultimate</span>
                 <br />
@@ -394,26 +397,6 @@ function Welcome() {
             </div>
           </section>
 
-          {/* <section className="smart-search">
-            <div className="smart-image">
-              <img src={SmartSearch} alt="Smart Search Illustration" />
-            </div>
-            <div className="smart-content">
-              <h3>Smart Search</h3>
-              <span>
-                First of its kind and a unique feature for job seekers, where
-                our AI handles job applications for you—applying to the most
-                relevant job roles automatically, so your resume gets noticed by
-                the best recruiters!
-              </span>
-              <p>
-                <strong>Smart Apply</strong>
-              </p>
-              <p>
-                <strong>Smart JD</strong>
-              </p>
-            </div>
-          </section> */}
 
           <div className="smart-search">
             {/* Left Side Image */}

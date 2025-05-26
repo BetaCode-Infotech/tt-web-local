@@ -750,10 +750,7 @@
   display: flex; /* Use flex for horizontal alignment */
   justify-content: center;
   align-items: center;
-  /* gap: 2rem; */
   padding: 2rem;
-  /* background: linear-gradient(to bottom, #1e1eff, #ff6e57); */
-  /* border-radius: 20px; */
   background: linear-gradient(to bottom, rgb(5, 2, 135), rgb(22, 64, 164));
 }
 
@@ -774,4 +771,161 @@
   width: 60%;
   padding: 2rem;
   /* border-radius: 20px; */
+}
+
+
+
+
+/* @media (max-width: 1024px) {
+  .container-2 .the-ultimate-hiring {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    height: auto;
+  }
+
+  .container-2 .the-ultimate-hiring .left {
+    flex: 1;
+    padding-left: 0;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .container-2 .the-ultimate-hiring .left h1 {
+    font-size: 36px;
+  }
+
+  .container-2 .the-ultimate-hiring .left .highlight {
+    font-size: 3rem;
+  }
+
+  .container-2 .the-ultimate-hiring .right {
+    max-width: 100%;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .container-2 .hero {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .container-2 .hero-text {
+    position: static;
+    margin: 0;
+    text-align: center;
+  }
+
+  .container-2 .featured-jobs,
+  .container-2 .featured-jobs-2 {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .container-2 .featured-jobs .left,
+  .container-2 .featured-jobs .right,
+  .container-2 .featured-jobs-2 .left,
+  .container-2 .featured-jobs-2 .right {
+    width: 100%;
+    margin: 0;
+  }
+} */
+
+/* ----------------------------------
+   Mobile Devices (< 766px)
+---------------------------------- */
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .container-2 .the-ultimate-hiring {
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+    width:auto;
+    /* background-size: cover; */
+    /* background-image: url("../../assets/hero-image-mobile.jpg"); */
+    /* background-position: center; */
+  }
+
+  .container-2 .the-ultimate-hiring .left {
+    align-self: start;
+    /* margin-top: 50%; */
+    padding-left: 0;
+    text-align: left;
+    width:100%;
+    max-width: 100%;
+  }
+
+   .container-2 .the-ultimate-hiring .dots{
+    justify-content: right;
+  }
+
+  .container-2 .the-ultimate-hiring .left h1 {
+    font-size: 32px;
+  }
+
+  .container-2 .the-ultimate-hiring .left .highlight {
+    font-size: 2.5rem;
+  }
+
+  .container-2 .the-ultimate-hiring .ai-circle {
+    font-size: 120px;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+  }
+
+  .container-2 .the-ultimate-hiring .right {
+    padding: 20px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .container-2 .the-ultimate-hiring .recruiter {
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+  }
+
+   .container-2 .the-ultimate-hiring .check-out {
+    align-self: right;
+  }
+
+  .container-2 .hero {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .container-2 .hero-text {
+    position: static;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .container-2 .hero-left h1,
+  .container-2 .highlight {
+    font-size: 2rem;
+  }
+
+  .container-2 .featured-jobs,
+  .container-2 .featured-jobs-2 {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .container-2 .featured-jobs .left,
+  .container-2 .featured-jobs .right,
+  .container-2 .featured-jobs-2 .left,
+  .container-2 .featured-jobs-2 .right {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .container-2 .job-cards {
+    justify-content: center;
+  }
 }
