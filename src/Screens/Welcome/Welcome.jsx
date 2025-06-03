@@ -158,12 +158,15 @@ function Welcome() {
     <div className="App">
       <Navbar>
         {/* <div className="ai-circle">AI</div> */}
-        <img src={AIimage} alt={AIimage} className="ai-circle"/>
+
         <section className="container-2">
+          <img src={AIimage} alt={AIimage} className="hero-mobile-img" />
+
           <div className="the-ultimate-hiring">
-             <div className="left">
+            <div className="left">
               <h1>
-                The <span className="highlight">Ultimate</span>
+                The <br />
+                <span className="highlight">Ultimate</span>
                 <br />
                 Hiring
                 <br />
@@ -260,129 +263,60 @@ function Welcome() {
               <button className="custom-search-button">View All Jobs</button>
             </div>
             <div className="right">
-              <CustomCarousel
-                showStatus={false}
-                showIndicators={false}
-                showThumbs={false}
-              >
-                <div className="job-cards">
-                  {[1, 2, 3].map((job) => (
-                    <div key={job} className="job-card">
-                      <div className="job-header">
-                        <img
-                          src={TrueTalentWhite}
-                          alt="Company Logo"
-                          className="job-header-logo"
-                        />
-                      </div>
-
-                      <p className="company-name">Commvault Systems India</p>
-
-                      <Divider
-                        sx={{
-                          backgroundColor: "#fff",
-                        }}
+              <CustomCarousel>
+                {/* <div className="job-cards"> */}
+                {[1, 2, 3, 4, 5, 6].map((job) => (
+                  <div key={"card2" + job} className="job-card">
+                    <div className="job-header">
+                      <img
+                        src={TrueTalentWhite}
+                        alt="Company Logo"
+                        className="job-header-logo"
                       />
-                      <h3 className="job-title">
-                        Associate, Global Employment
-                      </h3>
-                      <p className="job-info">Full Time . 2Y - 3Y</p>
-                      <p className="location">📍 Bangalore</p>
-                      <p className="posted">1 mo ago</p>
                     </div>
-                  ))}
-                </div>
-                <div className="job-cards">
-                  {[1, 2, 3].map((job) => (
-                    <div key={job} className="job-card">
-                      <div className="job-header">
-                        <img
-                          src={TrueTalentWhite}
-                          alt="Company Logo"
-                          className="job-header-logo"
-                        />
-                      </div>
 
-                      <p className="company-name">Commvault Systems India</p>
+                    <p className="company-name">Commvault Systems India</p>
 
-                      <Divider
-                        sx={{
-                          backgroundColor: "#fff",
-                        }}
-                      />
-                      <h3 className="job-title">
-                        Associate, Global Employment
-                      </h3>
-                      <p className="job-info">Full Time . 2Y - 3Y</p>
-                      <p className="location">📍 Bangalore</p>
-                      <p className="posted">1 mo ago</p>
-                    </div>
-                  ))}
-                </div>
+                    <Divider
+                      sx={{
+                        backgroundColor: "#fff",
+                      }}
+                    />
+                    <h3 className="job-title">Associate, Global Employment</h3>
+                    <p className="job-info">Full Time . 2Y - 3Y</p>
+                    <p className="location">📍 Bangalore</p>
+                    <p className="posted">1 mo ago</p>
+                  </div>
+                ))}
               </CustomCarousel>
             </div>
           </section>
           <section className="featured-jobs-2">
             <div className="left">
-              <CustomCarousel
-                showStatus={false}
-                showIndicators={false}
-                showThumbs={false}
-              >
-                <div className="job-cards">
-                  {[1, 2, 3].map((job) => (
-                    <div key={job} className="job-card">
-                      <div className="job-header">
-                        <img
-                          src={TrueTalentWhite}
-                          alt="Company Logo"
-                          className="job-header-logo"
-                        />
-                      </div>
-
-                      <p className="company-name">Commvault Systems India</p>
-
-                      <Divider
-                        sx={{
-                          backgroundColor: "#fff",
-                        }}
+              <CustomCarousel>
+                {[1, 2, 3, 4, 5, 6].map((job) => (
+                  <div key={"card1" + job} className="job-card">
+                    <div className="job-header">
+                      <img
+                        src={TrueTalentWhite}
+                        alt="Company Logo"
+                        className="job-header-logo"
                       />
-                      <h3 className="job-title">
-                        Associate, Global Employment
-                      </h3>
-                      <p className="job-info">Full Time . 2Y - 3Y</p>
-                      <p className="location">📍 Bangalore</p>
-                      <p className="posted">1 mo ago</p>
                     </div>
-                  ))}
-                </div>
-                <div className="job-cards">
-                  {[1, 2, 3].map((job) => (
-                    <div key={job} className="job-card">
-                      <div className="job-header">
-                        <img
-                          src={TrueTalentWhite}
-                          alt="Company Logo"
-                          className="job-header-logo"
-                        />
-                      </div>
 
-                      <p className="company-name">Commvault Systems India</p>
+                    <p className="company-name">Commvault Systems India</p>
 
-                      <Divider
-                        sx={{
-                          backgroundColor: "#fff",
-                        }}
-                      />
-                      <h3 className="job-title">
-                        Associate, Global Employment
-                      </h3>
-                      <p className="job-info">Full Time . 2Y - 3Y</p>
-                      <p className="location">📍 Bangalore</p>
-                      <p className="posted">1 mo ago</p>
-                    </div>
-                  ))}
-                </div>
+                    <Divider
+                      sx={{
+                        backgroundColor: "#fff",
+                      }}
+                    />
+                    <h3 className="job-title">Associate, Global Employment</h3>
+                    <p className="job-info">Full Time . 2Y - 3Y</p>
+                    <p className="location">📍 Bangalore</p>
+                    <p className="posted">1 mo ago</p>
+                  </div>
+                ))}
               </CustomCarousel>
             </div>
 
@@ -396,7 +330,6 @@ function Welcome() {
               <button className="custom-search-button">View All Gigs</button>
             </div>
           </section>
-
 
           <div className="smart-search">
             {/* Left Side Image */}
@@ -507,9 +440,7 @@ function Welcome() {
               <span className="arrow">&#8594;</span>
             </div>
           </div>
-          <div className="container-2">
-            <Footer />
-          </div>
+          <Footer />
         </section>
       </Navbar>
     </div>

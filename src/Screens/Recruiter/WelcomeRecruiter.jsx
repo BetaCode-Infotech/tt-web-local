@@ -18,6 +18,8 @@ import TrueTalentDark from "../../assets/Group 5956.svg";
 import SmartSearch from "../../assets/smart search-img@2x.png";
 import RecruitersImg from "../../assets/recruiter_img.png";
 import SearchIcon from "../../assets/search icon.svg";
+import AIimage from "../../assets/hero-image-mobile.jpg";
+
 import CustomCarousel from "../../Components/CustomCarousel/CustomCarousel";
 // import Navbar from "../../Navbar/Navbar";
 // import Footer from "../../Components/Footer/Footer";
@@ -168,6 +170,7 @@ function WelcomeRecruiter() {
     <div className="App-recruiter">
       <Navbar>
         <section className="container-2-recruiter">
+          <img src={AIimage} alt={AIimage} className="hero-mobile-img" />
           <div className="the-ultimate-hiring-recruiter">
             <div className="left">
               <h1>
@@ -278,56 +281,27 @@ function WelcomeRecruiter() {
               </button>
             </div>
             <div className="right">
-              <CustomCarousel
-                showStatus={false}
-                showIndicators={false}
-                showThumbs={false}
-              >
-                <div className="job-cards-recruiter">
-                  {[1, 2, 3].map((job) => (
-                    <div key={job} className="job-card-recruiter">
-                      <div className="job-header"></div>
-                      <p className="company-name">Rajkumar Rao</p>
-                      <p className="company-name">Longer Name</p>
-                      <p className="designation">Software developer</p>
+              <CustomCarousel>
+                {[1, 2, 3, 4, 5, 6].map((job) => (
+                  <div key={job} className="job-card-recruiter">
+                    <div className="job-header"></div>
+                    <p className="company-name">Rajkumar Rao</p>
+                    <p className="company-name">Longer Name</p>
+                    <p className="designation">Software developer</p>
 
-                      <Divider
-                        sx={{
-                          backgroundColor: "#fff",
-                        }}
-                      />
+                    <Divider
+                      sx={{
+                        backgroundColor: "#fff",
+                      }}
+                    />
 
-                      <p className="experience">Experience: 6 years</p>
-                      <p className="skills">
-                        Skills: HTML, CSS, JAVA, Design. Photoshop, Illustrator
-                        etc. Multiple skills come here.
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="job-cards-recruiter">
-                  {[1, 2, 3].map((job) => (
-                    <div key={job} className="job-card-recruiter">
-                      <div className="job-header"></div>
-                      <p className="company-name">Rajkumar Rao</p>
-                      <p className="company-name">Longer Name</p>
-                      <p className="designation">Software developer</p>
-
-                      <Divider
-                        sx={{
-                          backgroundColor: "#fff",
-                        }}
-                      />
-
-                      <p className="experience">Experience: 6 years</p>
-                      <p className="skills">
-                        Skills: HTML, CSS, JAVA, Design. Photoshop, Illustrator
-                        etc. Multiple skills come here.
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                    <p className="experience">Experience: 6 years</p>
+                    <p className="skills">
+                      Skills: HTML, CSS, JAVA, Design. Photoshop, Illustrator
+                      etc. Multiple skills come here.
+                    </p>
+                  </div>
+                ))}
               </CustomCarousel>
             </div>
           </section>

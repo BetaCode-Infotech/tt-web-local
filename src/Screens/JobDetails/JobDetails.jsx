@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./JobDetails.css";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
@@ -14,8 +14,11 @@ import {
 } from "@mui/material";
 import leftNav from "../../assets/left nav.svg";
 import extLink from "../../assets/external link icon.svg";
+import { useNavigate } from "react-router-dom";
 
 const JobDetails = () => {
+  const navigate = useNavigate();
+
   const [jobDescription, setJobDescription] = useState({
     description:
       "This position reports to the Human Resources (HR) director and interfaces with company managers and HR staff. Company XYZ is committed to an employee-orientated, high performance culture that emphasizes empowerment, quality, continuous improvement, and the recruitment and ongoing development of a superior workforce.",
@@ -58,15 +61,27 @@ const JobDetails = () => {
     closing:
       "At Findr Pro, we believe in empowering our people and offering them opportunities to grow and excel. If you're passionate, driven, and ready to be part of a fast-paced, dynamic environment — we'd love to hear from you! Join us in our mission to revolutionize the industry and make a difference.",
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Navbar>
       <div className="job-details-page">
         <div className="header">
           <div className="title-with-icon">
-            <img src={leftNav} alt="logo" className="back-icon" />
+            <img
+              src={leftNav}
+              alt="logo"
+              className="back-icon"
+              onClick={() => {
+                navigate(-1);
+              }}
+            />
             <div className="title">Sales Executive</div>
           </div>
           <Button
+            className="apply-btn-web"
             sx={{
               background: "linear-gradient(to right, #1a73e8, #00bfa6)",
               color: "white",
@@ -94,6 +109,27 @@ const JobDetails = () => {
           <span>Posted By Tapan kumar Jena</span>
           <span className="dot"> • </span>
           <span>Updated 20 hours ago</span>
+        </div>
+        <div className="apply-btn-mobile">
+          <Button
+            className="apply-btn-mobile"
+            sx={{
+              background: "linear-gradient(to right, #1a73e8, #00bfa6)",
+              color: "white",
+              paddingX: 3,
+              width: "130px",
+              borderRadius: "25px",
+              fontWeight: 600,
+              textTransform: "none",
+              gap: 1,
+              "&:hover": {
+                background: "linear-gradient(to right, #1a73e8, #00bfa6)",
+                opacity: 0.9,
+              },
+            }}
+          >
+            Apply
+          </Button>
         </div>
 
         <div className="meta-box">
