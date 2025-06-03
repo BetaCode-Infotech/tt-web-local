@@ -1,37 +1,31 @@
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Make sure this is imported only once in your app
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import "./CustomCarousel.css";
+
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 768 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 767, min: 0 },
+    items: 1,
+  },
+};
 
 const CustomCarousel = ({ children, ...props }) => {
   return (
     <Carousel
-      showStatus={false}
-      
-      showIndicators={false}
-      //   renderArrowPrev={(onClickHandler, hasPrev, label) =>
-      //     hasPrev && (
-      //       <button
-      //         type="button"
-      //         onClick={onClickHandler}
-      //         className="arrow arrow-left"
-      //         aria-label={label}
-      //       >
-      //         ◀
-      //       </button>
-      //     )
-      //   }
-      //   renderArrowNext={(onClickHandler, hasNext, label) =>
-      //     hasNext && (
-      //       <button
-      //         type="button"
-      //         onClick={onClickHandler}
-      //         className="arrow arrow-right"
-      //         aria-label={label}
-      //       >
-      //         ▶
-      //       </button>
-      //     )
-      //   }
+      responsive={responsive}
+      arrows={true}
+      infinite={false}
+      keyBoardControl={true}
+      itemClass="carousel-item"
       {...props}
     >
       {children}

@@ -1,7 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 .css-rizt0-MuiTypography-root {
   font-weight: bold;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+body.no-scroll {
+  position: fixed;
+  width: 100%;
+}
 .tab-link {
   color: white;
   cursor: pointer;
@@ -231,4 +240,140 @@
 .login-modal-style .profile-card p {
   font-size: 13px;
   color: #ccc;
+}
+.navbar-container-web-view {
+  display: flex;
+}
+.navbar-container-mobile-view {
+  display: none;
+}
+
+.navbar-container-mobile-view .mobile-view-hamburger {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.mobile-nav-modal {
+  position: fixed;
+  top: -100%; /* Off-screen initially */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #001f75;
+  color: white;
+  z-index: 1000;
+  transition: top 0.4s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 80px;
+  pointer-events: none;   /* Prevent clicks when hidden */
+  opacity: 0;
+}
+
+.mobile-nav-modal.open {
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;   /* Enable interaction when open */
+}
+
+.mobile-nav-content {
+  width: 100%;
+  text-align: left;
+}
+
+.mobile-nav-content ul {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.mobile-nav-content li {
+  padding: 20px 0;
+  font-size: 20px;
+  border-bottom: 1px solid #30498f;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  font-size: 28px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar-container-web-view {
+    display: none;
+  }
+  .navbar-container-mobile-view {
+    display: flex;
+  }
+  .mobile-nav-modal {
+    display: block;
+  }
+  /* .mobile-view-hamburger {
+    display: none;
+  } */
+
+  .login-modal-style {
+    width: 90%;
+    min-width: auto;
+    max-width: 95%;
+    padding: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .login-modal-style .modal {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .login-modal-style .profile-options {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .login-modal-style .sign-in-btn {
+    width: 100%;
+  }
+
+  .login-modal-style .options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .login-modal-style .input-field {
+    font-size: 14px;
+  }
+
+  .login-modal-style .modal h2 {
+    font-size: 1rem;
+  }
+
+  .login-modal-style .profile-card {
+    padding: 12px;
+  }
+
+  .login-modal-style .profile-card p {
+    font-size: 12px;
+  }
+
+  .login-modal-style .close-btn {
+    top: 12px;
+    right: 12px;
+    font-size: 20px;
+  }
+   
 }

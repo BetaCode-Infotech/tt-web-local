@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-.job-list-container{
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+.job-list-container {
   background: linear-gradient(to bottom, rgb(5, 21, 89), rgb(22, 64, 164));
 }
 
@@ -143,7 +143,7 @@
   border-radius: 30px;
   /* margin-bottom: 8px; */
   padding: 1.5rem;
-  width:95%;
+  width: 95%;
   align-items: stretch;
   transition: background-color 0.3s, border 0.3s;
 }
@@ -185,7 +185,7 @@
   gap: 1em;
 }
 
-.job-list-container .job-company-logo{
+.job-list-container .job-company-logo {
   width: 80%;
   height: 80%;
 }
@@ -256,7 +256,6 @@
 }
 
 .job-list-container .joblist-titles {
-  
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   font-weight: bold;
@@ -269,7 +268,7 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   background-color: #2d4b91;
-   border: 2px solid #2d4b91;
+  border: 2px solid #2d4b91;
   border-radius: 12px;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -314,7 +313,7 @@
 
 .job-list-container .premium-badge-grid-text {
   position: absolute;
-  top: 5px; 
+  top: 5px;
   right: 35px;
   font-size: 0.85rem;
   font-weight: 100;
@@ -329,53 +328,53 @@
 
 .job-list-container .premium-badge-inline-text {
   position: absolute;
-  top: 70px; 
+  top: 70px;
   left: 20px;
   font-size: 0.85rem;
   font-weight: 100;
   color: #ffffff;
 }
 
-.job-list-container .job-detail-skill{
+.job-list-container .job-detail-skill {
   font-weight: bold;
   font-family: "Montserrat", sans-serif;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
-.job-list-container .job-detail-location{
+.job-list-container .job-detail-location {
   color: #cfd8dc;
   font-family: "Montserrat", sans-serif;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
-.job-list-container .job-detail-type{
+.job-list-container .job-detail-type {
   color: #cfd8dc;
   font-family: "Montserrat", sans-serif;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
-.job-list-container .job-detail-ty-ex-grid{
+.job-list-container .job-detail-ty-ex-grid {
   display: flex;
   flex-direction: row;
 }
 
-.job-list-container .job-detail-experience{
+.job-list-container .job-detail-experience {
   color: #cfd8dc;
   font-family: "Montserrat", sans-serif;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
-.job-list-container .location-image{
+.job-list-container .location-image {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
 }
 
-.job-list-container .job-card-footer{
+.job-list-container .job-card-footer {
   margin-top: auto;
   display: flex;
   justify-content: flex-end;
@@ -383,7 +382,7 @@
   color: #ffffff;
 }
 
-.job-list-container .time-ago{
+.job-list-container .time-ago {
   font-size: 0.75rem;
   font-family: "Montserrat", sans-serif;
 }
@@ -417,7 +416,7 @@
 .job-list-container .page-btn.active::after {
   content: "";
   position: absolute;
-  bottom: -2px; 
+  bottom: -2px;
   left: 50%;
   transform: translateX(-50%);
   width: 70%;
@@ -432,12 +431,45 @@
 }
 
 .job-list-container .page-btn.nav-btn {
-  background-color:transparent;
+  background-color: transparent;
   display: flex;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
 .job-list-container .page-btn.nav-btn:disabled {
   opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .job-list-container .jobs-wrapper.grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1em;
+  }
+  .job-list-container .search-bar-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    gap: 1rem;
+    align-items: flex-start; /* Optional: aligns children to the start of the column */
+  }
+  .job-list-container .search-input {
+    /* flex: 1; */
+    width: 100%;
+    padding: 1rem;
+    border-radius: 2rem;
+    border: none;
+    background-color: #e7e7e7;
+    font-size: 1rem;
+    color: #333;
+  }
+}
+
+/* iPad Portrait */
+@media screen and (min-width: 768px) and (max-width: 991px) and (orientation: portrait) {
+  .job-list-container .jobs-wrapper.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+  }
 }

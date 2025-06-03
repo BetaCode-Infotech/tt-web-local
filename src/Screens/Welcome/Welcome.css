@@ -24,6 +24,10 @@
   position: relative;
 }
 
+.container-2 .hero-mobile-img {
+  display: none;
+}
+
 /* Left Section */
 .container-2 .the-ultimate-hiring .left {
   flex: 0.1;
@@ -62,18 +66,6 @@
 
 .container-2 .the-ultimate-hiring .dots span:nth-child(3) {
   background-color: #ccc;
-}
-
-.container-2 .the-ultimate-hiring .ai-circle {
-  font-size: 200px;
-  font-weight: 900;
-  background: radial-gradient(circle, #0033ff 0%, #000c3f 70%);
-  color: rgba(255, 255, 255, 0.05);
-  position: absolute;
-  left: 10%;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 0;
 }
 
 /* Right Section */
@@ -275,13 +267,12 @@
   width: 20%;
   border-radius: 10px;
 }
-
-.container-2 .featured-jobs-2 h2 {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-}
 .container-2 .featured-jobs .left {
   width: 20%;
+  border-radius: 10px;
+}
+.container-2 .featured-jobs .right {
+  width: 80%;
   padding: 1rem;
   border-radius: 10px;
   display: flex;
@@ -289,12 +280,10 @@
   justify-content: space-between;
   text-align: left;
 }
-.container-2 .featured-jobs .right {
-  width: 80%;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  margin-left: 40px;
+
+.container-2 .featured-jobs-2 h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .container-2 .featured-jobs h2 {
@@ -317,9 +306,14 @@
 .container-2 .job-card {
   background-color: rgba(37, 46, 102, 0.9);
   border-radius: 10px;
+  border: 2px solid rgba(37, 46, 102, 0.9);
   padding: 1rem;
   width: 250px;
   /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); */
+}
+.container-2 .job-card:hover {
+  cursor: pointer;
+  border: 2px solid #00d0b0;
 }
 
 .container-2 .job-header {
@@ -366,56 +360,6 @@
 .container-2 .view-btn:hover {
   background-color: #00d0b0;
 }
-
-/* .container-2 .smart-search {
-  background-image: url("../../assets/background-rounded.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6rem;
-}
-.container-2 .smart-image {
-  flex: 0 0 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container-2 .smart-image img {
-  max-width: 80%;
-  height: auto;
-  object-fit: contain;
-}
-
-.container-2 .smart-content {
-  flex: 0 0 30%;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  color: white;
-}
-
-.container-2 .smart-content span {
-  margin: 0.5rem 0;
-  text-align: left;
-  font-size: 12px;
-  width: 60%;
-}
-.container-2 .smart-content p {
-  margin: 0.5rem 0;
-  text-align: left;
-  font-size: 1rem;
-  width: 60%;
-}
-.container-2 .smart-content h3 {
-  margin: 0.5rem 0;
-  text-align: left;
-  color: #00bfa6;
-} */
 
 .container-2 .smart-search {
   background-image: url("../../assets/background-rounded.png");
@@ -583,7 +527,7 @@
   font-size: 0.9rem;
 }
 
-.container-2 .cta-box {
+.container-2 .industries-section .cta-box {
   margin: 3rem auto 0;
   background: linear-gradient(90deg, rgba(229, 117, 93), rgba(26, 41, 188, 1));
   border-radius: 3rem;
@@ -597,7 +541,7 @@
   position: relative;
 }
 
-.container-2 .cta-box p {
+.container-2 .industries-section .cta-box p {
   color: white;
   font-size: 1rem;
   margin: 0;
@@ -606,7 +550,7 @@
   text-align: left;
 }
 
-.container-2 .cta-box button {
+.container-2 .industries-section .cta-box button {
   background-color: #ff6b4a;
   color: white;
   border: none;
@@ -616,7 +560,7 @@
   cursor: pointer;
   min-width: 200px;
 }
-.container-2 .know-more-container {
+.container-2 .industries-section .know-more-container {
   position: absolute;
   /* bottom: -1.5rem; */
   left: 100%;
@@ -706,7 +650,6 @@
 .container-2 .academia-section {
   padding: 4rem 2rem;
   background-color: #fff;
-
   border-radius: 10rem;
   max-width: 1000px;
   margin: 0 auto;
@@ -747,7 +690,7 @@
 }
 
 .container-2 .working-with-us {
-  display: flex; /* Use flex for horizontal alignment */
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
@@ -762,88 +705,22 @@
   background-position: center;
   background-repeat: no-repeat;
   padding: 5rem;
-  display: flex; /* ✅ Add this */
-  justify-content: center; /* ✅ Center horizontally */
+  display: flex;
+  justify-content: center;
   align-items: center;
-  /* border-radius: 20px; */
 }
 .container-2 .working-with-us .aligned-image-wrapper img {
   width: 60%;
   padding: 2rem;
-  /* border-radius: 20px; */
 }
 
-
-
-
-/* @media (max-width: 1024px) {
-  .container-2 .the-ultimate-hiring {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-    height: auto;
-  }
-
-  .container-2 .the-ultimate-hiring .left {
-    flex: 1;
-    padding-left: 0;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .container-2 .the-ultimate-hiring .left h1 {
-    font-size: 36px;
-  }
-
-  .container-2 .the-ultimate-hiring .left .highlight {
-    font-size: 3rem;
-  }
-
-  .container-2 .the-ultimate-hiring .right {
-    max-width: 100%;
-    width: 100%;
-    padding: 20px;
-  }
-
-  .container-2 .hero {
-    flex-direction: column;
-    padding: 2rem;
-  }
-
-  .container-2 .hero-text {
-    position: static;
-    margin: 0;
-    text-align: center;
-  }
-
-  .container-2 .featured-jobs,
-  .container-2 .featured-jobs-2 {
-    flex-direction: column;
-    padding: 2rem;
-  }
-
-  .container-2 .featured-jobs .left,
-  .container-2 .featured-jobs .right,
-  .container-2 .featured-jobs-2 .left,
-  .container-2 .featured-jobs-2 .right {
-    width: 100%;
-    margin: 0;
-  }
-} */
-
-/* ----------------------------------
-   Mobile Devices (< 766px)
----------------------------------- */
 /* Mobile Styles */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .container-2 .the-ultimate-hiring {
     flex-direction: column;
     padding: 20px;
     height: auto;
-    width:auto;
-    /* background-size: cover; */
-    /* background-image: url("../../assets/hero-image-mobile.jpg"); */
-    /* background-position: center; */
+    width: auto;
   }
 
   .container-2 .the-ultimate-hiring .left {
@@ -851,11 +728,11 @@
     /* margin-top: 50%; */
     padding-left: 0;
     text-align: left;
-    width:100%;
+    width: 100%;
     max-width: 100%;
   }
 
-   .container-2 .the-ultimate-hiring .dots{
+  .container-2 .the-ultimate-hiring .dots {
     justify-content: right;
   }
 
@@ -867,13 +744,6 @@
     font-size: 2.5rem;
   }
 
-  .container-2 .the-ultimate-hiring .ai-circle {
-    font-size: 120px;
-    left: 50%;
-    top: 30%;
-    transform: translate(-50%, -50%);
-  }
-
   .container-2 .the-ultimate-hiring .right {
     padding: 20px;
     max-width: 100%;
@@ -881,7 +751,6 @@
   }
 
   .container-2 .the-ultimate-hiring .recruiter {
-    /* padding: 20px; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -890,7 +759,7 @@
     width: 100%;
   }
 
-   .container-2 .the-ultimate-hiring .check-out {
+  .container-2 .the-ultimate-hiring .check-out {
     align-self: right;
   }
 
@@ -902,8 +771,7 @@
 
   .container-2 .hero-text {
     position: static;
-    text-align: center;
-    margin-top: 0;
+    text-align: left;
   }
 
   .container-2 .hero-left h1,
@@ -927,5 +795,189 @@
 
   .container-2 .job-cards {
     justify-content: center;
+  }
+  .container-2 .the-ultimate-hiring {
+    background-image: none;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .container-2 .hero-mobile-img {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .container-2 .the-ultimate-hiring .left {
+    margin-top: -70%;
+  }
+  .container-2 .hero {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+    min-height: 70vh;
+    padding: 0 4rem;
+  }
+  .container-2 .hero-right {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .container-2 .smart-search {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+    text-align: left;
+    margin-top: 5rem;
+  }
+
+  .container-2 .smart-search::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vh;
+    height: 100%;
+    background-image: url("../../assets/background-rounded.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%) rotate(90deg);
+    transform-origin: center;
+    z-index: 0;
+  }
+
+  .container-2 .smart-search > * {
+    position: relative;
+    z-index: 1;
+  }
+  .container-2 .industries-grid {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); */
+    grid-template-columns: repeat(2, 2fr);
+    gap: 2rem;
+    /* max-width: 1000px; */
+    margin: 3rem auto;
+  }
+  .container-2 .industry-card img {
+    width: 40px;
+    height: 40px;
+  }
+  .container-2 .industries-section .cta-box {
+    flex-direction: column;
+
+    background: none;
+    align-items: flex-start; /* align content to start in column */
+    gap: 1.5rem;
+    max-width: 100%; /* full width on smaller screens */
+    padding: 2rem; /* optional, a bit more padding for smaller */
+  }
+
+  .container-2 .industries-section .cta-box p {
+    max-width: 100%; /* take full width */
+    background: linear-gradient(
+      90deg,
+      rgba(229, 117, 93),
+      rgba(26, 41, 188, 1)
+    );
+    border-radius: 4rem;
+    padding: 1rem 3rem;
+    flex: none; /* reset flex */
+    text-align: left;
+  }
+
+  .container-2 .industries-section .know-more-container {
+    position: static; /* remove absolute */
+    transform: none;
+    width: 100%; /* full width for button container */
+    display: flex;
+    justify-content: center;
+  }
+
+  .container-2 .industries-section .know-more-container button {
+    width: 100%; /* make button full width */
+    max-width: 100px;
+  }
+  .container-2 .working-with-us .aligned-image-wrapper {
+    padding: 2rem;
+  }
+  .container-2 .working-with-us .aligned-image-wrapper img {
+    width: 100%;
+  }
+  .container-2 .academia-section {
+    padding: 4rem 2rem;
+    background-color: #fff;
+
+    border-radius: 0rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .container-2 .carousel-controls {
+    display: none;
+  }
+}
+/* iPad Portrait */
+@media screen and (min-width: 768px) and (max-width: 991px) and (orientation: portrait) {
+  .container-2 .industries-section .cta-box {
+    flex-direction: column;
+
+    background: none;
+    align-items: flex-start; /* align content to start in column */
+    gap: 1.5rem;
+    max-width: 100%; /* full width on smaller screens */
+    padding: 2rem; /* optional, a bit more padding for smaller */
+  }
+
+  .container-2 .industries-section .cta-box p {
+    max-width: 100%; /* take full width */
+    background: linear-gradient(
+      90deg,
+      rgba(229, 117, 93),
+      rgba(26, 41, 188, 1)
+    );
+    border-radius: 4rem;
+    padding: 1rem 3rem;
+    flex: none; /* reset flex */
+    text-align: left;
+  }
+
+  .container-2 .industries-section .know-more-container {
+    position: static; /* remove absolute */
+    transform: none;
+    width: 100%; /* full width for button container */
+    display: flex;
+    justify-content: center;
+  }
+
+  .container-2 .industries-section .know-more-container button {
+    width: 100%; /* make button full width */
+    max-width: 100px;
+  }
+
+  .container-2 .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    min-height: 70vh;
+    padding: 0 4rem;
+  }
+  .container-2 .hero-text {
+    position: absolute;
+    right: 160px;
+    margin-top: -200px;
+    text-align: left;
+  }
+
+  .container-2 .hero-left {
+    flex: 1;
   }
 }
