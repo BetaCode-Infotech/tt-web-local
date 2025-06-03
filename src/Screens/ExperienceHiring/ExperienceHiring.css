@@ -8,10 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* padding: 90px 50px;  */
-  /* min-height: 80vh;          */
   text-align: center;
-  /* font-family: "Montserrat", sans-serif; */
 }
 
 .experience-hiring-container .experience-text {
@@ -29,7 +26,8 @@
 .experience-hiring-container .toggle-switch {
   display: flex;
   position: relative;
-  width: 550px;
+  width: 90%;
+  max-width: 550px;
   height: 65px;
   background-color: rgb(5, 21, 89);
   border-radius: 40px;
@@ -162,7 +160,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;;
+  width: 100vw;
 }
 
 .experience-hiring-container .card-grid {
@@ -204,4 +202,19 @@
   text-align: left;
   font-family: "Montserrat", sans-serif;
   margin-top: 0;
+}
+@media (max-width: 768px) {
+  .experience-hiring-container .card-grid {
+    column-count: 1;
+    gap: 30px;
+    padding: 0 20px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) and (orientation: portrait) {
+  .experience-hiring-container .card-grid {
+    column-count: 2;
+    gap: 30px;
+    padding: 0 20px;
+  }
 }
