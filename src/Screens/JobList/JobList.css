@@ -94,6 +94,10 @@
   color: #2ce4af;
 }
 
+.list-view {
+  display: block;
+}
+
 .job-list-container .joblist-container {
   color: white;
   padding: 2rem;
@@ -462,6 +466,9 @@
     background-color: #e7e7e7;
     font-size: 1rem;
     color: #333;
+  }
+  .list-view {
+    display: none;
   }
 }
 

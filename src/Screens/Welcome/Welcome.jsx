@@ -8,8 +8,8 @@ import JobPosting from "../../assets/job posting_img.png";
 import PayAsYouGo from "../../assets/pay as you go_img.png";
 
 // import TrueTalentWhite from "../assets/Group 6068.svg";
-import TrueTalentWhite from "../../assets/Group 6068.svg";
-import TrueTalentDark from "../../assets/Group 5956.svg";
+import TrueTalentWhite from "../../assets/TT logo-new-white.png";
+import TrueTalentDark from "../../assets/TT logo-new-black.png";
 import SmartSearch from "../../assets/smart search-img@2x.png";
 import RecruitersImg from "../../assets/recruiter_img.png";
 import SearchIcon from "../../assets/search icon.svg";
@@ -161,7 +161,7 @@ function Welcome() {
 
         <section className="container-2">
           <img src={AIimage} alt={AIimage} className="hero-mobile-img" />
-
+          <div className="hero-image-top-filled" />
           <div className="the-ultimate-hiring">
             <div className="left">
               <h1>
@@ -415,10 +415,10 @@ function Welcome() {
                 <img src={TrueTalentDark} alt="Bharti AXA" />
                 <img src={TrueTalentDark} alt="Reliance again" />
               </div>
-              <div className="carousel-controls">
+              {/* <div className="carousel-controls">
                 <span className="arrow">&#8592;</span>
                 <span className="arrow">&#8594;</span>
-              </div>
+              </div> */}
             </div>
           </section>
 
@@ -427,12 +427,19 @@ function Welcome() {
             <section className="academia-section">
               <h2>Trusted Academia Partners</h2>
               <div className="academia-wrapper">
-                <div className="academia-track">
-                  <img src={TrueTalentDark} alt="App Ringer" />
-                  <img src={TrueTalentDark} alt="Learnbay" />
-                  <img src={TrueTalentDark} alt="Innovate Technologies" />
-                  <img src={TrueTalentDark} alt="Imarticus Learning" />
-                </div>
+                <CustomCarousel arrows={false} showDots>
+                  {[1, 2, 3, 4, 5, 6].map((job) => {
+                    return (
+                      <div>
+                        <img
+                          src={TrueTalentDark}
+                          alt="App Ringer"
+                          className="academia-track-image"
+                        />
+                      </div>
+                    );
+                  })}
+                </CustomCarousel>
               </div>{" "}
             </section>
             <div className="carousel-controls">

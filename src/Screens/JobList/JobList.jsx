@@ -7,7 +7,7 @@ import { ReactComponent as ListIcon } from "../../assets/row_icon.svg";
 import premium_icon from "../../assets/premium_icon.png";
 import location_icon from "../../assets/location icon.svg";
 import { getTimeAgo } from "../../utils/constantFunctions";
-import company_logo from "../../assets/Group 6068.svg";
+import company_logo from "../../assets/TT logo-new-white.png";
 import Footer from "../../Components/Footer/Footer";
 
 const jobsData = [
@@ -376,16 +376,19 @@ const JobList = () => {
               <div className="view-toggle">
                 <GridIcon
                   onClick={() => setView("grid")}
-                  className={`icon ${view === "grid" ? "active" : ""}`}
+                  className={`list-view icon ${view === "grid" ? "active" : ""}`}
                 />
                 <ListIcon
                   onClick={() => setView("card")}
-                  className={`icon ${view === "card" ? "active" : ""}`}
+                  className={`list-view icon ${
+                    view === "card" ? "active" : ""
+                  }`}
                 />
               </div>
             </div>
           </div>
 
+          {/* List View start */}
           {view === "card" && (
             <div className="joblist-titles">
               <span>Job</span>
@@ -468,6 +471,8 @@ const JobList = () => {
               </div>
             ))}
           </div>
+          {/* List View end */}
+
           <div ref={observerRef} style={{ height: "1px" }}>
             <p> You Have reached the end section</p>
           </div>

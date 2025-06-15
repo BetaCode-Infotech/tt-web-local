@@ -12,9 +12,9 @@ import right from "../../assets/right nav.svg";
 import left from "../../assets/left nav.svg";
 import React, { useState } from "react";
 import { Divider } from "@mui/material";
-// import TrueTalentWhite from "../assets/Group 6068.svg";
-import TrueTalentWhite from "../../assets/Group 6068.svg";
-import TrueTalentDark from "../../assets/Group 5956.svg";
+
+import TrueTalentWhite from "../../assets/TT logo-new-white.png";
+import TrueTalentDark from "../../assets/TT logo-new-black.png";
 import SmartSearch from "../../assets/smart search-img@2x.png";
 import RecruitersImg from "../../assets/recruiter_img.png";
 import SearchIcon from "../../assets/search icon.svg";
@@ -171,6 +171,8 @@ function WelcomeRecruiter() {
       <Navbar>
         <section className="container-2-recruiter">
           <img src={AIimage} alt={AIimage} className="hero-mobile-img" />
+          <div className="hero-image-top-filled" />
+
           <div className="the-ultimate-hiring-recruiter">
             <div className="left">
               <h1>

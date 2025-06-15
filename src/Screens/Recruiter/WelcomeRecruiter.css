@@ -11,6 +11,10 @@
   color: white;
   /* padding: 2rem; */
 }
+.container-2-recruiter .hero-image-top-filled {
+  background-color: #00115f;
+  height: 2rem;
+}
 .container-2-recruiter .the-ultimate-hiring-recruiter {
   font-family: "Segoe UI", sans-serif;
   background-image: url("../../assets/hero-image-desktop.jpg");
