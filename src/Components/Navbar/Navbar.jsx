@@ -9,8 +9,8 @@ import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Slide from "@mui/material/Slide";
-// import TrueTalentWhite from "../../assets/Group 6068.svg";
-import TrueTalentWhite from "../../assets/Group 6068.svg";
+
+import TrueTalentWhite from "../../assets/TT logo-new-white.png";
 import HamburgerMenu from "../../assets/hamburger-menu.png";
 // import SearchIcon from "../assets/search icon.svg";
 import SearchIcon from "../../assets/search icon.svg";
@@ -97,7 +97,7 @@ export default function Navbar(props) {
   return (
     <React.Fragment>
       <CssBaseline />
-      <HideOnScroll {...props}>
+      {/* <HideOnScroll {...props}> */}
         <AppBar elevation={0}>
           <Toolbar disableGutters style={{ backgroundColor: "rgb(5, 21, 89)" }}>
             <Box
@@ -272,7 +272,7 @@ export default function Navbar(props) {
             </Box>
           </Toolbar>
         </AppBar>
-      </HideOnScroll>
+      {/* </HideOnScroll> */}
       <Toolbar />
       <div style={{}}>
         {props.children}
@@ -281,17 +281,17 @@ export default function Navbar(props) {
           open={loginModalOpen}
           onClose={() => setLoginModalOpen(false)}
           aria-labelledby="modal-modal-title"
-       disableAutoFocus
+          disableAutoFocus
           sx={{
-            outline: 'none',
-            '&:focus': {
-              outline: 'none',
-              border: 'none',
+            outline: "none",
+            "&:focus": {
+              outline: "none",
+              border: "none",
             },
-            '&:focus-visible': {
-              outline: 'none',
-              border: 'none',
-            }
+            "&:focus-visible": {
+              outline: "none",
+              border: "none",
+            },
           }}
           tabIndex={-1} // optional, if Box is focusable
           aria-describedby="modal-modal-description"

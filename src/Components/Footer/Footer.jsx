@@ -3,6 +3,7 @@ import React from "react";
 import WhatsAppImg from "../../assets/whatsapp.png";
 import { Link } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import TrueTalentWhite from "../../assets/TT logo-new-white.png";
 
 const Footer = () => {
   return (
@@ -10,9 +11,17 @@ const Footer = () => {
       <div className="footer-columns">
         <div className="footer-logo-section">
           <h2 className="logo">
-            <span className="logo-light">true</span>
+            {/* <span className="logo-light">true</span>
             <span className="logo-bold">Talent</span>
-            <sup>TM</sup>
+            <sup>TM</sup> */}
+            <img
+              src={TrueTalentWhite}
+              style={{
+                width: "150px",
+                height: "auto",
+                objectFit: "contain",
+              }}
+            />
           </h2>
           <p className="tagline">The Ultimate AI driven Job Platform</p>
           <div className="contact">
