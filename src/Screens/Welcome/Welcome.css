@@ -585,7 +585,7 @@
   min-height: 50vh;
   padding-top: 1rem;
   background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2720%27%20height%3D%274%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Ccircle%20cx%3D%272%27%20cy%3D%272%27%20r%3D%272%27%20fill%3D%27white%27%20/%3E%3C/svg%3E");
-  background: linear-gradient(to bottom, #002c90, #00a8e8);
+  background: linear-gradient(to bottom, rgb(22, 64, 164), #00a8e8);
 }
 .container-2 .carousel-section h2 {
   /* margin-bottom: 4rem; */
@@ -669,7 +669,6 @@
 }
 .container-2 .academia-section-container {
   background: linear-gradient(to bottom, #00a8e8, rgb(78, 173, 198));
-
   min-height: 50vh;
 }
 
@@ -707,7 +706,7 @@
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  background: linear-gradient(to bottom, rgb(5, 2, 135), rgb(22, 64, 164));
+  background: linear-gradient(to bottom, rgb(0, 17, 95), rgb(22, 64, 164));
 }
 
 .container-2 .working-with-us .aligned-image-wrapper {
@@ -722,6 +721,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.container-2 .working-with-us {
+  padding: 0 2rem 0 2rem;
+}
+
 .container-2 .working-with-us .aligned-image-wrapper img {
   width: 60%;
   padding: 2rem;
@@ -787,15 +791,28 @@
     text-align: left;
   }
 
+  .container-2 .subtext {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 0rem;
+  text-align: left;
+}
+
   .container-2 .hero-left h1,
   .container-2 .highlight {
     font-size: 2rem;
   }
 
+  .container-2 .hero-left {
+    flex: 0;
+    margin-bottom:1rem;
+}
+
   .container-2 .featured-jobs,
   .container-2 .featured-jobs-2 {
     flex-direction: column;
-    padding: 1rem;
+    padding: 0 1rem 0 1rem;
+    margin:0;
   }
 
   .container-2 .featured-jobs .left,
@@ -829,13 +846,14 @@
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    gap: 2rem;
-    min-height: 70vh;
+    /* gap: 2rem; */
+    min-height: 55vh;
     padding: 0 4rem;
   }
   .container-2 .hero-right {
     flex-direction: column-reverse;
     align-items: center;
+    justify-content: end;
   }
   .container-2 .smart-search {
     min-height: 100vh;
@@ -848,7 +866,7 @@
     justify-content: center;
     padding: 5rem;
     text-align: left;
-    margin-top: 5rem;
+    margin-top: 1rem;
   }
 
   .container-2 .smart-search::before {
@@ -883,14 +901,23 @@
     width: 40px;
     height: 40px;
   }
+
+  .container-2 .industries-section {
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
   .container-2 .industries-section .cta-box {
     flex-direction: column;
-
     background: none;
     align-items: flex-start; /* align content to start in column */
     gap: 1.5rem;
     max-width: 100%; /* full width on smaller screens */
-    padding: 2rem; /* optional, a bit more padding for smaller */
+    padding: 0 2rem 1rem 2rem; /* optional, a bit more padding for smaller */
+    margin: 0 ;
   }
 
   .container-2 .industries-section .cta-box p {
@@ -921,20 +948,48 @@
   .container-2 .working-with-us .aligned-image-wrapper {
     padding: 2rem;
   }
+
   .container-2 .working-with-us .aligned-image-wrapper img {
     width: 100%;
+    padding: 0 2rem 0 2rem;
   }
-  .container-2 .academia-section {
-    padding: 4rem 2rem;
-    background-color: #fff;
 
+  .container-2 .academia-section-container {
+  background: linear-gradient(to bottom, #00a8e8, rgb(78, 173, 198));
+  min-height: 40vh;
+}
+
+  .container-2 .academia-section {
+    padding: 2rem 1rem;
+    background-color: #fff;
     border-radius: 0rem;
     max-width: 1000px;
     margin: 0 auto;
   }
+
+  .container-2 .academia-section h2 {
+  color: black;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+  .container-2 .carousel-section {
+  /* margin-bottom: 4rem; */
+  /* position: relative; */
+  min-height: 35vh;
+  /* padding-top: 1rem; */
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2720%27%20height%3D%274%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Ccircle%20cx%3D%272%27%20cy%3D%272%27%20r%3D%272%27%20fill%3D%27white%27%20/%3E%3C/svg%3E");
+  background: linear-gradient(to bottom, rgb(22, 64, 164), #00a8e8);
+}
+.container-2 .carousel-section h2 {
+  /* margin-bottom: 4rem; */
+  text-align: center;
+}
+
   .container-2 .carousel-controls {
     display: none;
   }
+
 }
 /* iPad Portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
