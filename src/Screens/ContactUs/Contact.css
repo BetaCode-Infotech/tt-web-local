@@ -160,7 +160,19 @@
 } */
 
 @media (max-width: 768px) {
+
+  .contact-container .center-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
   .contact-container .map-container {
+    margin:0;
     padding: 20px;
   }
   .contact-container .map-container iframe {
@@ -170,6 +182,14 @@
     border: 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
+
+  .contact-container .reach-text {
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  margin-top: 2rem;
+  font-family: "Montserrat", sans-serif;
+}
 
   .contact-container .reach-image-section {
     display: flex;
