@@ -238,13 +238,13 @@ function WelcomeRecruiter() {
           </div>
           {/* Hero Section */}
           <section className="hero">
-            <div className="hero-left">
+            {/* <div className="hero-left"> */}
               <img
                 src={hiringkeyimage}
                 alt="Hero"
                 className="hero-left-image"
               />
-            </div>
+            {/* </div> */}
 
             <div className="hero-right">
               <div className="hero-text">

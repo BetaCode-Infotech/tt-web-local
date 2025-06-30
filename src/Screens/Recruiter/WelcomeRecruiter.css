@@ -287,7 +287,6 @@
   display: flex;
   gap: 1rem;
   margin-top: 4rem;
-
   padding: 0 4rem;
 }
 
@@ -603,7 +602,7 @@
 .container-2-recruiter .academia-wrapper {
   position: relative;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 3rem auto;
 }
 
 .container-2-recruiter .academia-track {
@@ -656,7 +655,7 @@
 }
 .container-2-recruiter .academia-section-container {
   background: linear-gradient(to bottom, #002c90, #00a8e8);
-  padding: 6rem 2rem;
+  min-height: 36vh;
 }
 
 .container-2-recruiter .academia-section h2 {
@@ -791,10 +790,16 @@
   .container-2-recruiter .featured-jobs-recruiter {
     flex-direction: column;
     padding: 1rem;
+    margin-top: 0rem;
+    
   }
 
   .container-2-recruiter .featured-jobs-recruiter .left-recruiter {
-    padding: 100px;
+    
+    padding: 20px 100px 20px 100px;
+    /* padding-bottom: 20px; */
+
+  
   }
 
   .container-2-recruiter .featured-jobs-recruiter .left,
@@ -847,7 +852,8 @@
     justify-content: center;
     padding: 5rem;
     text-align: left;
-    margin-top: 5rem;
+    margin-top: 1rem ;
+    /* margin-bottom: 1rem; */
   }
 
   .container-2-recruiter .smart-search::before {
@@ -882,14 +888,24 @@
     width: 40px;
     height: 40px;
   }
-  .container-2-recruiter .industries-section .cta-box {
-    flex-direction: column;
 
+  .container-2-recruiter .industries-section {
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  padding: 0rem 2rem 0rem 2rem;
+  box-sizing: border-box;
+}
+
+  .container-2-recruiter .industries-section .cta-box {
+    /* margin: */
+    margin: 1rem auto 0;
+    flex-direction: column;
     background: none;
     align-items: flex-start; /* align content to start in column */
     gap: 1.5rem;
     max-width: 100%; /* full width on smaller screens */
-    padding: 2rem; /* optional, a bit more padding for smaller */
+    padding: 0rem;
   }
 
   .container-2-recruiter .industries-section .cta-box p {
@@ -914,18 +930,25 @@
     max-width: 100px;
   }
   .container-2-recruiter .working-with-us .aligned-image-wrapper {
-    padding: 2rem;
+    padding: 1rem 2rem;
   }
   .container-2-recruiter .working-with-us .aligned-image-wrapper img {
     width: 60%;
   }
   .container-2-recruiter .academia-section {
-    padding: 4rem 2rem;
+    padding: 2rem 1rem;
     background-color: #fff;
     border-radius: 0rem;
     max-width: 1000px;
-    margin: 0;
+    margin: 0 auto;
   }
+
+  .container-2-recruiter .academia-section h2 {
+  color: black;
+  margin-bottom: 0;
+  text-align: center;
+}
+
   .container-2-recruiter .carousel-controls {
     display: none;
   }
