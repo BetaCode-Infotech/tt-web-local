@@ -655,6 +655,7 @@
 }
 .container-2-recruiter .academia-section-container {
   background: linear-gradient(to bottom, #002c90, #00a8e8);
+  padding:20px;
   min-height: 36vh;
 }
 
@@ -691,6 +692,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding:30px;
   background: linear-gradient(to bottom, rgb(5, 21, 89), #002c90);
 }
 
@@ -731,6 +733,25 @@
     width: 100%;
     max-width: 100%;
   }
+
+  .container-2-recruiter .the-ultimate-hiring-recruiter .recruiter {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  align-items: center;
+  flex-direction: row;
+  font-weight: bold;
+  text-align: center;
+  color: #ccc;
+}
+
+  .container-2-recruiter .hero-left {
+  flex: 1;
+  align-items: center;
+  text-align: right;
+  padding-left: 0;
+}
 
   .container-2-recruiter .hero-left-image {
     display: flex;
@@ -835,7 +856,7 @@
     align-items: center;
     gap: 2rem;
     min-height: 70vh;
-    padding: 0 4rem;
+    padding: 0 2rem;
   }
   .container-2-recruiter .hero-right {
     flex-direction: column-reverse;
@@ -929,6 +950,13 @@
     width: 100%; /* make button full width */
     max-width: 100px;
   }
+  .container-2-recruiter .working-with-us {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:0;
+  background: linear-gradient(to bottom, rgb(5, 21, 89), #002c90);
+}
   .container-2-recruiter .working-with-us .aligned-image-wrapper {
     padding: 1rem 2rem;
   }
@@ -947,6 +975,12 @@
   color: black;
   margin-bottom: 0;
   text-align: center;
+}
+
+.container-2-recruiter .academia-section-container {
+  background: linear-gradient(to bottom, #002c90, #00a8e8);
+  padding:0;
+  min-height: 36vh;
 }
 
   .container-2-recruiter .carousel-controls {
@@ -993,4 +1027,9 @@
     margin-right: 40px;
     /* height: 35rem; */
   }
+  .container-2-recruiter .academia-section-container {
+  background: linear-gradient(to bottom, #002c90, #00a8e8);
+  padding:0;
+  min-height: 36vh;
+}
 }

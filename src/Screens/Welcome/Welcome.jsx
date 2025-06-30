@@ -321,7 +321,7 @@ function Welcome() {
             </div>
 
             <div className="right">
-              <h2>
+              <h2 >
                 Featured <br />
                 <span className="faded">Gigs</span>
                 <br />
