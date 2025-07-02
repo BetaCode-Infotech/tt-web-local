@@ -76,7 +76,6 @@
 .container-2 .the-ultimate-hiring .right {
   flex: 1;
   padding: 40px;
-  /* background: rgba(42, 58, 127, 0.5); */
   background: rgba(255, 255, 255, 0.2);
   border-radius: 30px;
   backdrop-filter: blur(10px);
@@ -474,6 +473,7 @@
   border: none;
   cursor: pointer;
   transition: opacity 0.3s ease;
+  
 }
 
 .custom-search-button:hover {
@@ -772,6 +772,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 0 10px;
     max-width: 100%;
     width: 100%;
   }
@@ -780,11 +781,7 @@
     align-self: right;
   }
 
-  .container-2 .hero {
-    flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
-  }
+  
 
   .container-2 .hero-text {
     position: static;
@@ -794,7 +791,7 @@
   .container-2 .subtext {
   font-size: 1rem;
   color: #fff;
-  margin-bottom: 0rem;
+  margin: 0 15px;
   text-align: left;
 }
 
@@ -814,6 +811,18 @@
     padding: 0 1rem 0 1rem;
     margin:0;
   }
+
+  .container-2 .featured-jobs-2 h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 0 20px;
+}
+
+  .container-2 .featured-jobs h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 0 20px;
+}
 
   .container-2 .featured-jobs .left,
   .container-2 .featured-jobs .right,
@@ -842,14 +851,28 @@
   .container-2 .the-ultimate-hiring .left {
     margin-top: -70%;
   }
+
+  .custom-search-button {
+  background: linear-gradient(to right, #1a73e8, #00bfa6);
+  color: white;
+  padding: 8px 24px; /* paddingX: 3 = 24px */
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  margin: 0 15px;
+}
+
   .container-2 .hero {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    /* gap: 2rem; */
     min-height: 55vh;
-    padding: 0 4rem;
+    padding: 0 20px;
   }
+
   .container-2 .hero-right {
     flex-direction: column-reverse;
     align-items: center;
@@ -993,6 +1016,27 @@
 }
 /* iPad Portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+  .container-2 .the-ultimate-hiring .right {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .container-2 .right-container{
+    width:100%;
+  }
+
+  .container-2 .the-ultimate-hiring .recruiter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:20rem;
+    align-items: center;
+    padding: 0 10px;
+    max-width: 100%;
+    width: 100%;
+  }
+
   .container-2 .industries-section .cta-box {
     flex-direction: column;
 
