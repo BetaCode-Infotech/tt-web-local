@@ -75,7 +75,7 @@
 /* Right Section */
 .container-2 .the-ultimate-hiring .right {
   flex: 1;
-  padding: 40px;
+      padding: 40px 40px 0px 40px;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 30px;
   backdrop-filter: blur(10px);
@@ -163,6 +163,10 @@
 }
 
 .container-2 .the-ultimate-hiring .recruiter {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
@@ -198,7 +202,7 @@
 .container-2 .hero-text {
   position: absolute;
   right: 160px;
-  margin-top: -70px;
+  /* margin-top: -70px; */
   text-align: left;
 }
 
@@ -231,12 +235,13 @@
 .container-2 .hero-right {
   flex: 2;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .container-2 .hero-right img {
   max-width: 80%;
   height: auto;
+  margin-top: 80px;
 }
 
 /* Featured Jobs Section */
@@ -366,6 +371,7 @@
 }
 
 .container-2 .smart-search {
+  
   background-image: url("../../assets/background-rounded.png");
   background-size: contain;
   background-position: center;
@@ -485,7 +491,7 @@
   margin: 0 auto;
   text-align: center;
   color: white;
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 2rem;
   box-sizing: border-box;
 }
 
@@ -716,7 +722,7 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 5rem;
+  padding: 0 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -805,12 +811,19 @@
     margin-bottom:1rem;
 }
 
-  .container-2 .featured-jobs,
-  .container-2 .featured-jobs-2 {
+    .container-2 .featured-jobs{
     flex-direction: column;
     padding: 0 1rem 0 1rem;
     margin:0;
   }
+
+  .container-2 .featured-jobs-2{
+    /* flex-direction: column; */
+    flex-direction: column-reverse;
+    padding: 0 1rem 0 1rem;
+    margin:0;
+  }
+
 
   .container-2 .featured-jobs-2 h2 {
   font-size: 1.5rem;
@@ -1037,9 +1050,22 @@
     width: 100%;
   }
 
+    .container-2 .smart-search {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 10rem;
+    text-align: left;
+    margin-top: 1rem;
+  }
+
   .container-2 .industries-section .cta-box {
     flex-direction: column;
-
     background: none;
     align-items: flex-start; /* align content to start in column */
     gap: 1.5rem;
