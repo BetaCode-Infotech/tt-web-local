@@ -231,11 +231,17 @@ function Welcome() {
             <div className="hero-left">
               <p className="subtext">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
               </p>
             </div>
             <div className="hero-right">
-              <img src={Group468} alt="Hero" />
+
+              
+                <img src={Group468} alt="Hero" />
+              
+
               <div className="hero-text">
                 <h1>
                   Get the
@@ -321,7 +327,7 @@ function Welcome() {
             </div>
 
             <div className="right">
-              <h2 >
+              <h2>
                 Featured <br />
                 <span className="faded">Gigs</span>
                 <br />

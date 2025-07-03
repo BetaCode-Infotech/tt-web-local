@@ -185,10 +185,16 @@
     }
   
     .footer-bottom {
-      flex-direction: column;
       gap: 1rem;
-      text-align: left;
+      text-align: center;
     }
+
+    .footer .rights-text{
+    color:#ccc;
+    font-size: 10px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+  }
   
     .footer .social-icons {
       justify-content: center;
@@ -198,6 +204,22 @@
     .footer .whatsapp-icon {
       margin: 0 auto;
     }
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    
+    .footer-bottom {
+      justify-content: center;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .footer .rights-text{
+    color:#ccc;
+    font-size: 10px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+  }
   }
   
   
