@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useImperativeHandle, forwardRef, useRef } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./CustomCarousel.css";
@@ -18,9 +18,22 @@ const responsive = {
   },
 };
 
-const CustomCarousel = ({ children, ...props }) => {
+const CustomCarousel = forwardRef(({ children, ...props }, ref) => {
+
+  const carouselRef = useRef();
+
+  useImperativeHandle(ref, () => ({
+    next: () => {
+      carouselRef.current?.next();
+    },
+    prev: () => {
+      carouselRef.current?.previous();
+    },
+  }));
+
   return (
     <Carousel
+      ref={carouselRef}
       responsive={responsive}
       arrows={true}
       infinite={false}
@@ -31,6 +44,6 @@ const CustomCarousel = ({ children, ...props }) => {
       {children}
     </Carousel>
   );
-};
+});
 
 export default CustomCarousel;
