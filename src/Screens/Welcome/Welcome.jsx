@@ -1,6 +1,6 @@
 import "./Welcome.css";
 import Group468 from "../../assets/Group 468.png";
-import { useState } from "react";
+import { useState, useRef  } from "react";
 import { Divider } from "@mui/material";
 import JDCreation from "../../assets/JD creation_img.png";
 import MultiUser from "../../assets/multi user_img.png";
@@ -154,6 +154,8 @@ function Welcome() {
   const prevSlide = () => {
     setCurrent((prev) => (prev - 1 + jobData.length) % jobData.length);
   };
+
+  const carouselRef = useRef();
   return (
     <div className="App">
       <Navbar>
@@ -237,10 +239,7 @@ function Welcome() {
               </p>
             </div>
             <div className="hero-right">
-
-              
-                <img src={Group468} alt="Hero" />
-              
+              <img src={Group468} alt="Hero" />
 
               <div className="hero-text">
                 <h1>
@@ -433,10 +432,10 @@ function Welcome() {
             <section className="academia-section">
               <h2>Trusted Academia Partners</h2>
               <div className="academia-wrapper">
-                <CustomCarousel arrows={false} showDots>
+                <CustomCarousel ref={carouselRef} arrows={false} showDots>
                   {[1, 2, 3, 4, 5, 6].map((job) => {
                     return (
-                      <div>
+                      <div key={job}>
                         <img
                           src={TrueTalentDark}
                           alt="App Ringer"
@@ -449,8 +448,10 @@ function Welcome() {
               </div>{" "}
             </section>
             <div className="carousel-controls">
-              <span className="arrow">&#8592;</span>
-              <span className="arrow">&#8594;</span>
+              {/* <span className="arrow">&#8592;</span>
+              <span className="arrow">&#8594;</span> */}
+              <span className="arrow" onClick={() => carouselRef.current?.prev()}>&#8592;</span>
+        <span className="arrow" onClick={() => carouselRef.current?.next()}>&#8594;</span>
             </div>
           </div>
           <Footer />
