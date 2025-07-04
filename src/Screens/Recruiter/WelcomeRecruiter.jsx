@@ -10,7 +10,7 @@ import PayAsYouGo from "../../assets/pay as you go_img.png";
 
 import right from "../../assets/right nav.svg";
 import left from "../../assets/left nav.svg";
-import React, { useState } from "react";
+import React, { useState, useRef} from "react";
 import { Divider } from "@mui/material";
 
 import TrueTalentWhite from "../../assets/TT logo-new-white.png";
@@ -166,6 +166,8 @@ function WelcomeRecruiter() {
   const prevSlide = () => {
     setCurrent((prev) => (prev - 1 + jobData.length) % jobData.length);
   };
+
+  const carouselRef = useRef();
   return (
     <div className="App-recruiter">
       <Navbar>
@@ -385,18 +387,35 @@ function WelcomeRecruiter() {
           <div className="academia-section-container">
             <section className="academia-section">
               <h2>Trusted Academia Partners</h2>
-              <div className="academia-wrapper">
+              {/* <div className="academia-wrapper">
                 <div className="academia-track">
                   <img src={TrueTalentDark} alt="App Ringer" />
                   <img src={TrueTalentDark} alt="Learnbay" />
                   <img src={TrueTalentDark} alt="Innovate Technologies" />
                   <img src={TrueTalentDark} alt="Imarticus Learning" />
                 </div>
+              </div>{" "} */}
+              <div className="academia-wrapper">
+                <CustomCarousel ref={carouselRef} arrows={false} showDots>
+                  {[1, 2, 3, 4, 5, 6].map((job) => {
+                    return (
+                      <div>
+                        <img
+                          src={TrueTalentDark}
+                          alt="App Ringer"
+                          className="academia-track-image"
+                        />
+                      </div>
+                    );
+                  })}
+                </CustomCarousel>
               </div>{" "}
             </section>
             <div className="carousel-controls">
-              <span className="arrow">&#8592;</span>
-              <span className="arrow">&#8594;</span>
+              {/* <span className="arrow">&#8592;</span>
+              <span className="arrow">&#8594;</span> */}
+              <span className="arrow" onClick={() => carouselRef.current?.prev()}>&#8592;</span>
+        <span className="arrow" onClick={() => carouselRef.current?.next()}>&#8594;</span>
             </div>
           </div>
           <div className="footer-recruiter">
