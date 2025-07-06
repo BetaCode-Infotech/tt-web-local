@@ -601,7 +601,7 @@
   position: relative;
   overflow: hidden;
   /* max-width: 1000px; */
-  margin: 3rem auto;
+  margin: 1.5rem auto;
 }
 
 .container-2 .carousel-track {
@@ -622,11 +622,10 @@
   justify-content: center;
   align-items: center;
   transition: transform 0.5s ease;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
-.container-2 .carousel-track img,
-.container-2 .academia-track img {
+.container-2 .carousel-track img{
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -636,7 +635,7 @@
   box-shadow: 0 0 0 4px #ffffff, 0 0 0 6px #00a8e8;
 }
 .container-2 .academia-track-image {
-  width: 300px;
+  width: 200px;
   height: 150px;
   object-fit: contain;
   background: white;
@@ -679,17 +678,8 @@
 
 .container-2 .academia-section h2 {
   color: black;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   text-align: center;
-}
-
-.container-2 .academia-track img {
-  width: 160px;
-  height: auto;
-  background: none;
-  border-radius: 0;
-  padding: 0;
-  box-shadow: none;
 }
 
 .container-2 .logo {
@@ -1123,5 +1113,11 @@
 
   .container-2 .hero-left {
     flex: 1;
+  }
+
+   .container-2-recruiter .academia-section-container {
+    background: linear-gradient(to bottom, #002c90, #00a8e8);
+    padding: 0;
+    min-height: 36vh;
   }
 }

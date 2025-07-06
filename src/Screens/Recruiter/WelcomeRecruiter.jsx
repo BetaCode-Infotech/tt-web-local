@@ -399,7 +399,7 @@ function WelcomeRecruiter() {
                 <CustomCarousel ref={carouselRef} arrows={false} showDots>
                   {[1, 2, 3, 4, 5, 6].map((job) => {
                     return (
-                      <div>
+                      <div className="academia-track" key={job}>
                         <img
                           src={TrueTalentDark}
                           alt="App Ringer"

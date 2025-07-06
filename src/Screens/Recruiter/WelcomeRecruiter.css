@@ -602,7 +602,7 @@
 .container-2-recruiter .academia-wrapper {
   position: relative;
   overflow: hidden;
-  margin: 3rem auto;
+  margin: 1.5rem auto;
 }
 
 .container-2-recruiter .academia-track {
@@ -611,11 +611,10 @@
   justify-content: center;
   align-items: center;
   transition: transform 0.5s ease;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
-.container-2-recruiter .carousel-track img,
-.container-2-recruiter .academia-track img {
+.container-2-recruiter .carousel-track img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -625,7 +624,7 @@
 }
 
 .container-2-recruiter .academia-track-image {
-  width: 300px;
+  width: 200px;
   height: 150px;
   object-fit: contain;
   background: white;
@@ -668,18 +667,18 @@
 
 .container-2-recruiter .academia-section h2 {
   color: black;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   text-align: center;
 }
 
-.container-2-recruiter .academia-track img {
+/* .container-2-recruiter .academia-track img {
   width: 160px;
   height: auto;
   background: none;
   border-radius: 0;
   padding: 0;
   box-shadow: none;
-}
+} */
 
 .container-2-recruiter .logo {
   font-size: 2rem;

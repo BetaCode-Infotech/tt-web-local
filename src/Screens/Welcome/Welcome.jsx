@@ -1,6 +1,6 @@
 import "./Welcome.css";
 import Group468 from "../../assets/Group 468.png";
-import { useState, useRef  } from "react";
+import { useState, useRef } from "react";
 import { Divider } from "@mui/material";
 import JDCreation from "../../assets/JD creation_img.png";
 import MultiUser from "../../assets/multi user_img.png";
@@ -435,7 +435,7 @@ function Welcome() {
                 <CustomCarousel ref={carouselRef} arrows={false} showDots>
                   {[1, 2, 3, 4, 5, 6].map((job) => {
                     return (
-                      <div key={job}>
+                      <div className="academia-track" key={job}>
                         <img
                           src={TrueTalentDark}
                           alt="App Ringer"
@@ -450,8 +450,18 @@ function Welcome() {
             <div className="carousel-controls">
               {/* <span className="arrow">&#8592;</span>
               <span className="arrow">&#8594;</span> */}
-              <span className="arrow" onClick={() => carouselRef.current?.prev()}>&#8592;</span>
-        <span className="arrow" onClick={() => carouselRef.current?.next()}>&#8594;</span>
+              <span
+                className="arrow"
+                onClick={() => carouselRef.current?.prev()}
+              >
+                &#8592;
+              </span>
+              <span
+                className="arrow"
+                onClick={() => carouselRef.current?.next()}
+              >
+                &#8594;
+              </span>
             </div>
           </div>
           <Footer />
