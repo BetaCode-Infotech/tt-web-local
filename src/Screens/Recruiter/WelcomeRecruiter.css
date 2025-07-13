@@ -212,6 +212,7 @@
   text-decoration: none;
   font-weight: bold;
   transition: background 0.3s ease;
+  min-width: 150px;
 }
 
 .container-2-recruiter .the-ultimate-hiring-recruiter .check-out:hover {
@@ -794,7 +795,7 @@
     width: 100%;
   }
 
- .container-2 .the-ultimate-hiring .check-out {
+  .container-2 .the-ultimate-hiring .check-out {
     align-self: right;
     min-width: 150px;
   }

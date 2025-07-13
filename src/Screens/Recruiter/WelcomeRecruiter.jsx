@@ -235,9 +235,7 @@ function WelcomeRecruiter() {
                 <Link
                   to="/"
                   className="check-out"
-                  style={{
-                    minWidth: "150px",
-                  }}
+             
                 >
                   Check out ➚
                 </Link>
