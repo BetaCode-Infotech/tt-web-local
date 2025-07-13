@@ -231,6 +231,17 @@ function Welcome() {
           {/* Hero Section */}
           <section className="hero">
             <div className="hero-left">
+              <h3 className="hero-left-title">
+                Land Your Dream Job at Top
+                <br />
+                <span className="highlight">companies</span>
+                <br />
+                at the lowest prices
+              </h3>
+              <p className="description">
+                Unlock opportunities with our AI-powered Talent Matching
+                Platform
+              </p>
               <p className="subtext">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
