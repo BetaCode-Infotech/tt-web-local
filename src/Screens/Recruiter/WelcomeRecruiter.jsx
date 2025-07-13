@@ -10,7 +10,7 @@ import PayAsYouGo from "../../assets/pay as you go_img.png";
 
 import right from "../../assets/right nav.svg";
 import left from "../../assets/left nav.svg";
-import React, { useState, useRef} from "react";
+import React, { useState, useRef } from "react";
 import { Divider } from "@mui/material";
 
 import TrueTalentWhite from "../../assets/TT logo-new-white.png";
@@ -232,7 +232,13 @@ function WelcomeRecruiter() {
               </div>
               <div className="recruiter">
                 Are you a candidate? <br />
-                <Link to="/" className="check-out">
+                <Link
+                  to="/"
+                  className="check-out"
+                  style={{
+                    minWidth: "150px",
+                  }}
+                >
                   Check out ➚
                 </Link>
               </div>
@@ -414,8 +420,18 @@ function WelcomeRecruiter() {
             <div className="carousel-controls">
               {/* <span className="arrow">&#8592;</span>
               <span className="arrow">&#8594;</span> */}
-              <span className="arrow" onClick={() => carouselRef.current?.prev()}>&#8592;</span>
-        <span className="arrow" onClick={() => carouselRef.current?.next()}>&#8594;</span>
+              <span
+                className="arrow"
+                onClick={() => carouselRef.current?.prev()}
+              >
+                &#8592;
+              </span>
+              <span
+                className="arrow"
+                onClick={() => carouselRef.current?.next()}
+              >
+                &#8594;
+              </span>
             </div>
           </div>
           <div className="footer-recruiter">

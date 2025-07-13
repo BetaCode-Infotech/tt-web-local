@@ -217,14 +217,25 @@
   text-align: left;
 }
 
-.container-2 .hero-left h1 {
+.container-2 .hero-left h3 {
   font-size: 3rem;
   line-height: 1.2;
+  text-align: left;
+}
+.container-2 .hero-left .description {
+  margin-top: 1rem;
+  /* margin-left: 1rem; */
+  font-size: 18px;
+  color: #bdbdbd;
+  font-family: "Montserrat", sans-serif;
+  max-width: 30rem;
+  text-align: left;
 }
 
 .container-2 .highlight {
   color: #00f0c8;
   font-size: 3rem;
+  text-align: left;
 }
 
 .container-2 .description {
@@ -625,7 +636,7 @@
   /* margin-top: 10px; */
 }
 
-.container-2 .carousel-track img{
+.container-2 .carousel-track img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -774,6 +785,7 @@
 
   .container-2 .the-ultimate-hiring .check-out {
     align-self: right;
+    min-width: 150px;
   }
 
   .job-list-container .joblist-header {
@@ -808,6 +820,30 @@
   .container-2 .hero-left {
     flex: 0;
     margin-bottom: 1rem;
+    text-align: left;
+  }
+  .container-2 .hero-left h3 {
+    font-size: 2rem;
+    line-height: 1;
+    text-align: left;
+    margin-left: 1rem;
+  }
+
+  .container-2 .hero-left .highlight {
+    color: #00f0c8;
+    font-size: 3rem;
+    font-family: "Montserrat", sans-serif;
+    text-align: left;
+  }
+
+  .container-2 .hero-left .description {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-size: 18px;
+    color: #bdbdbd;
+    font-family: "Montserrat", sans-serif;
+    max-width: 30rem;
+    text-align: left;
   }
 
   .container-2 .featured-jobs {
@@ -1115,7 +1151,7 @@
     flex: 1;
   }
 
-   .container-2-recruiter .academia-section-container {
+  .container-2-recruiter .academia-section-container {
     background: linear-gradient(to bottom, #002c90, #00a8e8);
     padding: 0;
     min-height: 36vh;

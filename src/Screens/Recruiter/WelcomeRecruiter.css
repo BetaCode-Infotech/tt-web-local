@@ -794,8 +794,9 @@
     width: 100%;
   }
 
-  .container-2 .the-ultimate-hiring .check-out {
+ .container-2 .the-ultimate-hiring .check-out {
     align-self: right;
+    min-width: 150px;
   }
 
   .container-2-recruiter .hero {
