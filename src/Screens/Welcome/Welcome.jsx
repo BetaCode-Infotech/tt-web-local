@@ -238,15 +238,15 @@ function Welcome() {
                 <br />
                 at the lowest prices
               </h3>
-              <p className="description">
+              {/* <p className="description">
                 Unlock opportunities with our AI-powered Talent Matching
                 Platform
-              </p>
+              </p> */}
               <p className="subtext">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                Unlock opportunities with our AI-powered Talent Matching
+                Platform Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s,
               </p>
             </div>
             <div className="hero-right">
