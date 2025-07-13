@@ -222,13 +222,6 @@
   line-height: 1.2;
   text-align: left;
 }
-
-.container-2 .hero-left .highlight {
-  color: #00f0c8;
-  font-size: 2rem;
-  font-family: "Montserrat", sans-serif;
-  text-align: left;
-}
 .container-2 .hero-left .description {
   margin-top: 1rem;
   /* margin-left: 1rem; */
@@ -241,7 +234,7 @@
 
 .container-2 .highlight {
   color: #00f0c8;
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: left;
 }
 
@@ -838,7 +831,7 @@
 
   .container-2 .hero-left .highlight {
     color: #00f0c8;
-    font-size: 2rem;
+    font-size: 3rem;
     font-family: "Montserrat", sans-serif;
     text-align: left;
   }
