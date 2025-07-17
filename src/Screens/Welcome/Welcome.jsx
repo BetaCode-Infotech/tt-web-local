@@ -32,6 +32,7 @@ import Chemical from "../../assets/chemical icon.svg";
 import Travel from "../../assets/travel icon.svg";
 import Retail from "../../assets/retail icon.svg";
 import { Link } from "react-router-dom";
+import AIAnimatedSphere from "./AIAnimatedSphere";
 
 function Welcome() {
   const smartContentData = [
@@ -159,8 +160,8 @@ function Welcome() {
   return (
     <div className="App">
       <Navbar>
+        {/* <AIAnimatedSphere /> */}
         {/* <div className="ai-circle">AI</div> */}
-
         <section className="container-2">
           <img src={AIimage} alt={AIimage} className="hero-mobile-img" />
           <div className="hero-image-top-filled" />
