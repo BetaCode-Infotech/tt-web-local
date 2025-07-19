@@ -39,6 +39,7 @@ import Chemical from "../../assets/chemical icon.svg";
 import Travel from "../../assets/travel icon.svg";
 import Retail from "../../assets/retail icon.svg";
 import { Link } from "react-router-dom";
+import AIAnimatedSphere from "../Welcome/AIAnimatedSphere";
 
 function WelcomeRecruiter() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -169,13 +170,13 @@ function WelcomeRecruiter() {
 
   const carouselRef = useRef();
   return (
-    <div className="App-recruiter">
+    <div className="true-talent-container">
       <Navbar>
         <section className="container-2-recruiter">
-          <img src={AIimage} alt={AIimage} className="hero-mobile-img" />
-          <div className="hero-image-top-filled" />
-
           <div className="the-ultimate-hiring-recruiter">
+            <div className="ai-background">
+              <AIAnimatedSphere />
+            </div>
             <div className="left">
               <h1>
                 The <span className="highlight">Ultimate</span>
@@ -232,11 +233,7 @@ function WelcomeRecruiter() {
               </div>
               <div className="recruiter">
                 Are you a candidate? <br />
-                <Link
-                  to="/"
-                  className="check-out"
-             
-                >
+                <Link to="/" className="check-out">
                   Check out ➚
                 </Link>
               </div>
@@ -391,14 +388,6 @@ function WelcomeRecruiter() {
           <div className="academia-section-container">
             <section className="academia-section">
               <h2>Trusted Academia Partners</h2>
-              {/* <div className="academia-wrapper">
-                <div className="academia-track">
-                  <img src={TrueTalentDark} alt="App Ringer" />
-                  <img src={TrueTalentDark} alt="Learnbay" />
-                  <img src={TrueTalentDark} alt="Innovate Technologies" />
-                  <img src={TrueTalentDark} alt="Imarticus Learning" />
-                </div>
-              </div>{" "} */}
               <div className="academia-wrapper">
                 <CustomCarousel ref={carouselRef} arrows={false} showDots>
                   {[1, 2, 3, 4, 5, 6].map((job) => {

@@ -163,7 +163,7 @@ function Welcome() {
         {/* <div className="ai-circle">AI</div> */}
 
         <section className="container-2">
-          <img src={AIimage} alt={AIimage} className="hero-mobile-img" />
+          {/* <img src={AIimage} alt={AIimage} className="hero-mobile-img" /> */}
           <div className="hero-image-top-filled" />
           <div className="the-ultimate-hiring">
             <div className="ai-background">
