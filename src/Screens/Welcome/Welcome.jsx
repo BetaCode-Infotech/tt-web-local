@@ -32,6 +32,7 @@ import Chemical from "../../assets/chemical icon.svg";
 import Travel from "../../assets/travel icon.svg";
 import Retail from "../../assets/retail icon.svg";
 import { Link } from "react-router-dom";
+import AIAnimatedSphere from "./AIAnimatedSphere";
 
 function Welcome() {
   const smartContentData = [
@@ -53,14 +54,14 @@ function Welcome() {
       id: 3,
       title: "Unlimited Free Job Posting",
       subheading:
-        "Why spend large sums of money for job posting, without the surety of getting applicants? TrueTalent has a zero charge foryour job postings. Go ahead and post all your open positions.",
+        "Why spend large sums of money for job posting, without the surety of getting applicants? TrueTalent has a zero charge foryour job postings.",
       image: JobPosting,
     },
     {
       id: 4,
       title: "Pay-as-you-go",
       subheading:
-        "Are you paying for the service you never use? We do not sell packages unless you need them. All our offerings come with a Pay-as-you-go model, on TrueTalent you pay for only what you need.",
+        "Are you paying for the service you never use? We do not sell packages unless you need them. All our offerings come with a Pay-as-you-go model.",
       image: PayAsYouGo,
     },
   ];
@@ -157,7 +158,7 @@ function Welcome() {
 
   const carouselRef = useRef();
   return (
-    <div className="App">
+    <div className="true-talent-container">
       <Navbar>
         {/* <div className="ai-circle">AI</div> */}
 
@@ -165,6 +166,9 @@ function Welcome() {
           <img src={AIimage} alt={AIimage} className="hero-mobile-img" />
           <div className="hero-image-top-filled" />
           <div className="the-ultimate-hiring">
+            <div className="ai-background">
+              <AIAnimatedSphere />
+            </div>
             <div className="left">
               <h1>
                 The <br />
@@ -231,18 +235,15 @@ function Welcome() {
           {/* Hero Section */}
           <section className="hero">
             <div className="hero-left">
-              <h3 className="hero-left-title">
+              <h1>
                 Land Your Dream Job at Top
                 <br />
-                <span className="highlight">companies</span>
+                <span className="highlight">Companies</span>
                 <br />
-                at the lowest prices
-              </h3>
-              {/* <p className="description">
-                Unlock opportunities with our AI-powered Talent Matching
-                Platform
-              </p> */}
-              <p className="subtext">
+                At the lowest prices
+              </h1>
+              <br />
+              <p className="description">
                 Unlock opportunities with our AI-powered Talent Matching
                 Platform Lorem Ipsum is simply dummy text of the printing and
                 typesetting industry. Lorem Ipsum has been the industry's
@@ -280,7 +281,6 @@ function Welcome() {
             </div>
             <div className="right">
               <CustomCarousel>
-                {/* <div className="job-cards"> */}
                 {[1, 2, 3, 4, 5, 6].map((job) => (
                   <div key={"card2" + job} className="job-card">
                     <div className="job-header">
@@ -421,7 +421,7 @@ function Welcome() {
             </div>
           </section>
 
-          <section className="carousel-section">
+          <div className="carousel-section">
             <h2>Top Hiring Companies</h2>
             <div className="carousel-wrapper">
               <div className="carousel-track">
@@ -436,7 +436,7 @@ function Welcome() {
                 <span className="arrow">&#8594;</span>
               </div> */}
             </div>
-          </section>
+          </div>
 
           {/* Trusted Academia Partners */}
           <div className="academia-section-container">

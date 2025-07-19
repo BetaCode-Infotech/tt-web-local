@@ -1,0 +1,60 @@
+:root {
+    /* TT Container Breakpoints */
+    /* --container-padding: 0.75rem; */
+    --container-max-width-sm: 540px;
+    --container-max-width-md: 720px;
+    --container-max-width-lg: 960px;
+    --container-max-width-xl: 1140px;
+    --container-max-width-xxl: 1600px;
+    --container-max-width-xxxl: 1660px;
+  
+    /* TT Colors */
+    --black: #919191;
+    --black2: #2c2c2c;
+    --black3: #263238;
+    --black4: #0b264c;
+    --white: #ffffff;
+    --gray: #eaeaf0;
+    --gray1: #f2f2f2;
+    --gray2: #f4f4f9;
+    --gray3: #f7f7f7;
+    --gray4: #9398a1;
+    --gray5: #dbdbdb;
+    --gray6: #747a8d;
+    --gray7: #75879e;
+    --gray8: #656a72;
+    --light-blue: #effffc;
+    --green: #14bc9a;
+    --viewed: #e7fdf949;
+    --light-green: #edf8f6;
+    --border-green: #76d5c297;
+    --light-red: #fce1da;
+    --red: #fd815e;
+    --blue: #4b8bff;
+    --text-color: #11263c;
+    --highlight-light: #f3963980;
+    --border-light: #edf2f7;
+    --border: #cbd5e0;
+  
+    /* TT Fonts */
+    --h1: 1.6rem;   /* 25.6px */
+    --h2: 1.5rem;   /* 24px */
+    --h3: 1.3rem;   /* 22.4px */
+    --h4: 1.2rem;   /* 20.8px */
+    --h5: 1.1rem;   /* 19.2px */
+    --h6: 1rem;     /* 17.6px */
+    --h7: 0.9rem;   /* 14.4px */
+    --p0: 0.65rem;  /* 10.4px */
+    --p: 0.75rem;   /* 12px */
+    --p1: 0.8rem;   /* 12.8px */
+    --p2: 1rem;     /* 16px */
+    --link: 0.9rem; /* 14.4px */
+  
+    /* TT Constants */
+    --border-radius: 5px;
+    --input-icon: 14px;
+    --modal-title: 1.2rem;
+    --input-height: 46px;
+    --input-border: 1px solid var(--gray2);
+  }
+  
