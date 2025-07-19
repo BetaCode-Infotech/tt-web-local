@@ -10,7 +10,6 @@ import JobDetails from "./Screens/JobDetails/JobDetails";
 import ExperienceHiring from "./Screens/ExperienceHiring/ExperienceHiring";
 import WelcomeRecruiter from "./Screens/Recruiter/WelcomeRecruiter";
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -21,7 +20,7 @@ function App() {
         <Route path="/job-list" element={<JobList />} />
         <Route path="/job-details" element={<JobDetails />} />
         <Route path="/experience-hiring" element={<ExperienceHiring />} />
-        <Route path="/recruiter-welcome" element={<WelcomeRecruiter/>} />
+        <Route path="/recruiter-welcome" element={<WelcomeRecruiter />} />
       </Routes>
     </BrowserRouter>
   );
