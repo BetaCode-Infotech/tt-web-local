@@ -1,31 +1,107 @@
+@import "./variable.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 .container-2 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+.true-talent-container {
+  padding: 0 var(--container-padding);
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  .true-talent-container {
+    max-width: var(--container-max-width-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  .true-talent-container {
+    max-width: var(--container-max-width-md);
+  }
+}
+
+@media (min-width: 992px) {
+  .true-talent-container {
+    max-width: var(--container-max-width-lg);
+  }
+}
+
+/* 🧑‍💻 Disable max-width on laptop screens (1024px–1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .true-talent-container {
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .true-talent-container {
+    max-width: var(--container-max-width-xl);
+  }
+}
+
+@media (min-width: 1440px) {
+  .true-talent-container {
+    max-width: var(--container-max-width-xxl);
+    margin: 0 auto !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  .true-talent-container {
+    max-width: var(--container-max-width-xxxl);
+  }
+}
+
 .container-2 {
   font-family: "Segoe UI", sans-serif;
   color: white;
-  /* padding: 2rem; */
 }
 .container-2 .the-ultimate-hiring {
   font-family: "Segoe UI", sans-serif;
-  background-image: url("../../assets/hero-image-desktop.jpg");
-  background-size: 100%; /* adjust this as needed to reduce width */
+  /* REMOVE the line below */
+  /* background-image: url("../../assets/hero-image-desktop.jpg"); */
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-position: left center; /* aligns image to the left */
+  background-position: left center;
   color: white;
-  height: 100vh;
+  /* max-height: 100vh; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 40px;
   position: relative;
+  overflow: hidden; /* <--- Important to contain absolute children */
 }
+.the-ultimate-hiring .ai-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.the-ultimate-hiring {
+  position: relative; /* <-- this is critical */
+  overflow: hidden; /* contain canvas & effects */
+}
+.the-ultimate-hiring .left,
+.the-ultimate-hiring .right-container {
+  position: relative;
+  z-index: 1;
+}
+
 .container-2 .hero-image-top-filled {
   background-color: #00115f;
-  height: 2rem;
+  /* height: 2rem; */
 }
 
 .container-2 .hero-mobile-img {
@@ -49,6 +125,7 @@
   color: rgb(87, 185, 156);
   font-weight: 700;
   font-size: 4rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container-2 .the-ultimate-hiring .dots {
@@ -116,18 +193,29 @@
 .container-2 .the-ultimate-hiring .options {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0;
+
   margin-bottom: 20px;
-  font-size: 10px;
-  /* color: #00ffb3; */
+  font-size: 12px;
+
   color: #fff;
   text-align: left;
+  min-height: 40px;
+  transition: all 0.3s ease-in-out;
   /* padding: 0 3rem; */
 }
 .container-2 .the-ultimate-hiring .options span::before {
-  content: "✔"; /* Use basic Unicode character instead of emoji */
-  color: #00ff7f;
-  margin-right: 8px;
+  color: #00ffc8;
+}
+.container-2 .the-ultimate-hiring .options-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.container-2 .the-ultimate-hiring .options-checkbox input[type="checkbox"] {
+  accent-color: #00ffc8; /* Works in modern browsers */
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 }
 
 .container-2 .the-ultimate-hiring .search-btn-container {
@@ -196,13 +284,13 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
-  min-height: 70vh;
   padding: 0 4rem;
+  position: relative; /* <---- THIS FIXES YOUR ISSUE */
 }
+
 .container-2 .hero-text {
   position: absolute;
-  right: 160px;
-  /* margin-top: -70px; */
+  right: 10%;
   text-align: left;
 }
 
@@ -213,7 +301,7 @@
 .container-2 .subtext {
   font-size: 1rem;
   color: #fff;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   text-align: left;
 }
 
@@ -250,31 +338,33 @@
 }
 
 .container-2 .hero-right img {
-  max-width: 80%;
+  width: 100%;
+  max-width: 500px; /* adjust based on design */
   height: auto;
   margin-top: 80px;
+  object-fit: contain;
 }
 
 /* Featured Jobs Section */
 .container-2 .featured-jobs {
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   text-align: left;
   display: flex;
   gap: 1rem;
-  margin-top: 4rem;
+  align-items: center;
+  /* margin-top: 4rem; */
 
   padding: 0 4rem;
 }
 .container-2 .featured-jobs-2 {
-  margin-top: 4rem;
   text-align: left;
   display: flex;
   gap: 1rem;
-  margin-top: 4rem;
   padding: 0 4rem;
+  align-items: center;
 }
 .container-2 .featured-jobs-2 .left {
-  width: 80%;
+  width: 90%;
   padding: 1rem;
   border-radius: 10px;
   display: flex;
@@ -284,15 +374,15 @@
 }
 
 .container-2 .featured-jobs-2 .right {
-  width: 20%;
+  width: 10%;
   border-radius: 10px;
 }
 .container-2 .featured-jobs .left {
-  width: 20%;
+  width: 10%;
   border-radius: 10px;
 }
 .container-2 .featured-jobs .right {
-  width: 80%;
+  width: 90%;
   padding: 1rem;
   border-radius: 10px;
   display: flex;
@@ -314,6 +404,7 @@
 .container-2 .faded {
   color: rgb(63, 67, 123);
   font-size: 2rem;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .container-2 .job-cards {
@@ -456,7 +547,7 @@
   color: #00f0c8;
 }
 
-.smart-search-subheading {
+.container-2 .smart-search-subheading {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
@@ -466,12 +557,12 @@
   color: rgb(180, 179, 179);
 }
 
-.smart-search-subheading.open {
+.container-2 .smart-search-subheading.open {
   max-height: 500px;
   opacity: 1;
 }
 
-.c .smart-content-description {
+.container-2 .smart-content-description {
   cursor: pointer;
   margin: 0.5rem 0;
   font-size: 15px;
@@ -479,19 +570,21 @@
   color: rgb(180, 179, 179);
 }
 
-.custom-search-button {
+.container-2 .custom-search-button {
   background: linear-gradient(to right, #1a73e8, #00bfa6);
   color: white;
   padding: 8px 24px; /* paddingX: 3 = 24px */
   border-radius: 25px;
+  /* min-width: 140px; */
   font-weight: 600;
+  font-size: 11px;
   text-transform: none;
   border: none;
   cursor: pointer;
   transition: opacity 0.3s ease;
 }
 
-.custom-search-button:hover {
+.container-2 .custom-search-button:hover {
   background: linear-gradient(to right, #1a73e8, #00bfa6);
   opacity: 0.9;
 }
@@ -584,7 +677,6 @@
   position: absolute;
   /* bottom: -1.5rem; */
   left: 100%;
-
   transform: translateX(-50%);
 }
 
@@ -595,9 +687,7 @@
 }
 
 .container-2 .carousel-section {
-  /* margin-bottom: 4rem; */
-  position: relative;
-  min-height: 50vh;
+  padding: 4rem;
   padding-top: 1rem;
   background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2720%27%20height%3D%274%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Ccircle%20cx%3D%272%27%20cy%3D%272%27%20r%3D%272%27%20fill%3D%27white%27%20/%3E%3C/svg%3E");
   background: linear-gradient(to bottom, rgb(22, 64, 164), #00a8e8);
@@ -605,6 +695,7 @@
 .container-2 .carousel-section h2 {
   /* margin-bottom: 4rem; */
   text-align: center;
+  margin: 0;
 }
 
 .container-2 .carousel-wrapper,
@@ -684,12 +775,11 @@
 .container-2 .academia-section-container {
   background: linear-gradient(to bottom, #00a8e8, rgb(78, 173, 198));
   padding: 20px;
-  min-height: 36vh;
 }
 
 .container-2 .academia-section h2 {
   color: black;
-  margin-bottom: 0;
+  margin: 0;
   text-align: center;
 }
 
@@ -739,6 +829,12 @@
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+  /* 476 */
+  /* 786 */
+  /* 1092 */
+  /* 1366 */
+  /* 1440 */
+  /* 1920 */
   .container-2 .the-ultimate-hiring {
     flex-direction: column;
     padding: 20px;
@@ -810,6 +906,9 @@
     color: #fff;
     margin: 0 15px;
     text-align: left;
+  }
+  .container-2 .hero-left h1 {
+    margin-left: 1rem;
   }
 
   .container-2 .hero-left h1,
@@ -888,15 +987,15 @@
     padding: 20px;
   }
 
-  .container-2 .hero-mobile-img {
+  /* .container-2 .hero-mobile-img {
     display: block;
     width: 100%;
     max-width: 500px;
     height: auto;
     margin-bottom: 20px;
-  }
+  } */
   .container-2 .the-ultimate-hiring .left {
-    margin-top: -70%;
+    margin-top: 10%;
   }
 
   .custom-search-button {
@@ -916,7 +1015,7 @@
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    min-height: 55vh;
+    /* min-height: 55vh; */
     padding: 0 20px;
   }
 
@@ -1032,7 +1131,7 @@
   .container-2 .academia-section {
     padding: 2rem 1rem;
     background-color: #fff;
-    border-radius: 0rem;
+    border-radius: 1rem;
     max-width: 1000px;
     margin: 0 auto;
   }
@@ -1040,13 +1139,17 @@
   .container-2 .academia-section h2 {
     color: black;
     margin-bottom: 0;
+    margin: 0;
+
     text-align: center;
   }
 
   .container-2 .carousel-section {
     /* margin-bottom: 4rem; */
     /* position: relative; */
-    min-height: 35vh;
+    /* min-height: 35vh; */
+    position: relative;
+
     /* padding-top: 1rem; */
     background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2720%27%20height%3D%274%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Ccircle%20cx%3D%272%27%20cy%3D%272%27%20r%3D%272%27%20fill%3D%27white%27%20/%3E%3C/svg%3E");
     background: linear-gradient(to bottom, rgb(22, 64, 164), #00a8e8);
@@ -1153,7 +1256,7 @@
 
   .container-2-recruiter .academia-section-container {
     background: linear-gradient(to bottom, #002c90, #00a8e8);
-    padding: 0;
-    min-height: 36vh;
+    /* padding: 0;
+    min-height: 36vh; */
   }
 }

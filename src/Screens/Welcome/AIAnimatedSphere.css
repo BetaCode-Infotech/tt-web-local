@@ -1,0 +1,200 @@
+.ai-container {
+  /* height: 100vh; */
+  /* width: 100vw; */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 15%;
+  /* justify-content: center; */
+}
+
+.blue-glow {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 1%,
+    rgba(0, 58, 181, 1) 10%,
+    rgba(0, 58, 181, 0.7) 30%,
+    rgba(0, 58, 181, 0.4) 50%,
+    transparent 70%
+  );
+  filter: blur(8px);
+  box-shadow: 0 0 60px 30px rgba(0, 58, 181, 0.9),
+    0 0 30px 15px rgba(0, 58, 181, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.orange-glow {
+  position: absolute;
+  top: 50%;
+  left: 38%;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 140, 0, 1) 10%,
+    /* Stronger bright orange core */ rgba(255, 80, 0, 0.9) 25%,
+    /* Rich orange mid-glow */ rgba(255, 255, 255, 01) 50%,
+    /* Warm fading glow */ transparent 75%
+  );
+  filter: blur(8px); /* Slightly tighter glow */
+  box-shadow: 0 0 120px 60px rgba(255, 100, 0, 0.8),
+    /* Strong outer glow */ 0 0 60px 20px rgba(255, 180, 0, 1); /* Bright sharp inner halo */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle-wrapper {
+  position: relative;
+  width: clamp(250px, 40vw, 650px);
+  height: clamp(250px, 40vw, 650px);
+  z-index: 2;
+}
+
+.ai-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(5rem, 20vw, 20rem);
+  font-weight: bold;
+  color: #2d568e;
+  z-index: 10;
+  pointer-events: none;
+  font-family: "Arial Black", sans-serif;
+  opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+  .orange-glow {
+    left: 75%;
+    width: 100px;
+    height: 100px;
+  }
+
+  .blue-glow {
+    left: 2%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .particle-wrapper {
+    width: 60vw;
+    height: 60vw;
+  }
+
+  .ai-label {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .orange-glow {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(
+      circle,
+      rgba(255, 140, 0, 1) 10%,
+      /* Stronger bright orange core */ rgba(255, 80, 0, 0.9) 25%,
+      /* Rich orange mid-glow */ rgba(255, 255, 255, 01) 50%,
+      /* Warm fading glow */ transparent 75%
+    );
+  }
+
+  .blue-glow {
+    position: absolute;
+    left: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 30px 15px rgba(0, 58, 181, 0.6),
+      0 0 15px 8px rgba(0, 58, 181, 0.8);
+  }
+
+  .particle-wrapper {
+    width: 75vw;
+    height: 75vw;
+    position: relative;
+    margin: 0 auto;
+  }
+}
+/* 
+@media (max-width: 768px) {
+  .orange-glow {
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 30px 15px rgba(255, 100, 0, 0.5),
+      0 0 15px 8px rgba(255, 180, 0, 0.7);
+    z-index: -1;
+  }
+
+  .blue-glow {
+    position: absolute;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 25px 12px rgba(0, 58, 181, 0.5),
+      0 0 12px 6px rgba(0, 58, 181, 0.7);
+    z-index: -1;
+  }
+
+  .particle-wrapper {
+    width: 60vw;
+    height: 60vw;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .ai-label {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .orange-glow {
+    right: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 0 25px 12px rgba(255, 100, 0, 0.4),
+      0 0 12px 6px rgba(255, 180, 0, 0.6);
+  }
+
+  .blue-glow {
+    left: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 0 20px 10px rgba(0, 58, 181, 0.4),
+      0 0 10px 5px rgba(0, 58, 181, 0.6);
+  }
+
+  .particle-wrapper {
+    width: 70vw;
+    height: 70vw;
+  }
+} */

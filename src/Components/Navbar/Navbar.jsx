@@ -98,180 +98,171 @@ export default function Navbar(props) {
     <React.Fragment>
       <CssBaseline />
       {/* <HideOnScroll {...props}> */}
-        <AppBar elevation={0}>
-          <Toolbar disableGutters style={{ backgroundColor: "rgb(5, 21, 89)" }}>
-            <Box
-              className="navbar-container-web-view"
-              sx={{
-                backgroundColor: "rgb(5, 21, 89)",
-                alignItems: "center",
-                justifyContent: "space-between",
-                width: "100%",
-                marginLeft: 20,
-                marginRight: 20,
-              }}
-            >
-              <Link to="/">
-                <img
-                  src={TrueTalentWhite}
-                  alt="logo"
-                  style={{
-                    width: "150px",
-                    height: "auto",
-                    objectFit: "contain",
-                  }}
-                />
-              </Link>
-              <Stack direction="row" spacing={4} sx={{ alignItems: "center" }}>
-                {tabs.map((tab) => (
-                  <Typography
-                    key={tab}
-                    onClick={() => {
-                      // setActiveTab(tab);
-                      navigate(tab.path); // Navigate to job page
-                    }}
-                    className={`tab-link ${
-                      getActiveTab() === tab.label ? "active" : ""
-                    }`}
-                    sx={{
-                      fontWeight: "bold",
-                    }}
-                  >
-                    {tab.label}
-                  </Typography>
-                ))}
-              </Stack>
-
-              {/* Actions */}
-              <Stack direction="row" spacing={2} sx={{ alignItems: "center" }}>
-                <Button
-                  sx={{
-                    background: "linear-gradient(to right, #1a73e8, #00bfa6)",
-                    color: "white",
-                    paddingX: 3,
-                    borderRadius: "25px",
-                    fontWeight: 600,
-                    textTransform: "none",
-                    gap: 1,
-                    "&:hover": {
-                      background: "linear-gradient(to right, #1a73e8, #00bfa6)",
-                      opacity: 0.9,
-                    },
-                  }}
-                >
-                  <img src={SearchIcon} /> AI Search
-                </Button>
-                <Button
-                  variant="outlined"
-                  sx={{
-                    color: "white",
-                    borderColor: "white",
-                    borderRadius: "25px",
-                    textTransform: "none",
-                    paddingX: 3,
-                    "&:hover": {
-                      borderColor: "white",
-                      backgroundColor: "rgba(255, 255, 255, 0.1)",
-                    },
-                  }}
-                  onClick={() => {
-                    setLoginModalOpen(true);
-                  }}
-                >
-                  Login
-                </Button>
-                <Button
-                  variant="outlined"
-                  sx={{
-                    color: "white",
-                    borderColor: "white",
-                    borderRadius: "25px",
-                    textTransform: "none",
-                    paddingX: 3,
-                    "&:hover": {
-                      borderColor: "white",
-                      backgroundColor: "rgba(255, 255, 255, 0.1)",
-                    },
-                  }}
-                >
-                  Register
-                </Button>
-              </Stack>
-            </Box>
-            <Box
-              className="navbar-container-mobile-view"
-              sx={{
-                backgroundColor: "rgb(5, 21, 89)",
-                alignItems: "center",
-                justifyContent: "space-between",
-                width: "100%",
-                pl: 1,
-                pr: 1,
-              }}
-            >
-              <Link to="/">
-                <img
-                  src={TrueTalentWhite}
-                  alt="logo"
-                  style={{
-                    width: "150px",
-                    height: "auto",
-                    objectFit: "contain",
-                  }}
-                />
-              </Link>
+      <AppBar elevation={0}>
+        <Toolbar disableGutters style={{ backgroundColor: "rgb(5, 21, 89)" }}>
+          <div className="navbar-container-web-view true-talent-container">
+            <Link to="/">
               <img
-                className="mobile-view-hamburger"
-                src={HamburgerMenu}
-                onClick={() => setMenuOpen(true)}
+                src={TrueTalentWhite}
                 alt="logo"
                 style={{
-                  width: "30px",
-                  height: "30px",
+                  width: "150px",
+                  height: "auto",
+                  objectFit: "contain",
                 }}
               />
-              <div className={`mobile-nav-modal ${menuOpen ? "open" : ""}`}>
-                <div className="mobile-nav-content">
-                  <button
-                    className="close-btn"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    ✕
-                  </button>
-                  <ul>
-                    {tabs.map((tab) => (
-                      <li
-                        key={tab}
-                        onClick={() => {
-                          // setActiveTab(tab);
-                          navigate(tab.path); // Navigate to job page
-                        }}
-                        className={`tab-link ${
-                          getActiveTab() === tab.label ? "active" : ""
-                        }`}
-                        sx={{
-                          fontWeight: "bold",
-                        }}
-                      >
-                        {tab.label}
-                      </li>
-                    ))}
+            </Link>
+            <Stack direction="row" spacing={4} sx={{ alignItems: "center" }}>
+              {tabs.map((tab) => (
+                <Typography
+                  key={tab}
+                  onClick={() => {
+                    // setActiveTab(tab);
+                    navigate(tab.path); // Navigate to job page
+                  }}
+                  className={`tab-link ${
+                    getActiveTab() === tab.label ? "active" : ""
+                  }`}
+                  sx={{
+                    fontWeight: "bold",
+                  }}
+                >
+                  {tab.label}
+                </Typography>
+              ))}
+            </Stack>
 
+            {/* Actions */}
+            <Stack direction="row" spacing={2} sx={{ alignItems: "center" }}>
+              <Button
+                sx={{
+                  background: "linear-gradient(to right, #1a73e8, #00bfa6)",
+                  color: "white",
+                  paddingX: 3,
+                  borderRadius: "25px",
+                  fontWeight: 600,
+                  minWidth: "150px",
+                  textTransform: "none",
+                  gap: 1,
+                  "&:hover": {
+                    background: "linear-gradient(to right, #1a73e8, #00bfa6)",
+                    opacity: 0.9,
+                  },
+                }}
+              >
+                <img src={SearchIcon} /> AI Search
+              </Button>
+              <Button
+                variant="outlined"
+                sx={{
+                  color: "white",
+                  borderColor: "white",
+                  borderRadius: "25px",
+                  textTransform: "none",
+                  paddingX: 3,
+                  "&:hover": {
+                    borderColor: "white",
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  },
+                }}
+                onClick={() => {
+                  setLoginModalOpen(true);
+                }}
+              >
+                Login
+              </Button>
+              <Button
+                variant="outlined"
+                sx={{
+                  color: "white",
+                  borderColor: "white",
+                  borderRadius: "25px",
+                  textTransform: "none",
+                  paddingX: 3,
+                  "&:hover": {
+                    borderColor: "white",
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  },
+                }}
+              >
+                Register
+              </Button>
+            </Stack>
+          </div>
+          <Box
+            className="navbar-container-mobile-view"
+            sx={{
+              backgroundColor: "rgb(5, 21, 89)",
+              alignItems: "center",
+              justifyContent: "space-between",
+              width: "100%",
+              pl: 1,
+              pr: 1,
+            }}
+          >
+            <Link to="/">
+              <img
+                src={TrueTalentWhite}
+                alt="logo"
+                style={{
+                  width: "150px",
+                  height: "auto",
+                  objectFit: "contain",
+                }}
+              />
+            </Link>
+            <img
+              className="mobile-view-hamburger"
+              src={HamburgerMenu}
+              onClick={() => setMenuOpen(true)}
+              alt="logo"
+              style={{
+                width: "30px",
+                height: "30px",
+              }}
+            />
+            <div className={`mobile-nav-modal ${menuOpen ? "open" : ""}`}>
+              <div className="mobile-nav-content">
+                <button
+                  className="close-btn"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  ✕
+                </button>
+                <ul>
+                  {tabs.map((tab) => (
                     <li
+                      key={tab}
                       onClick={() => {
-                        setMenuOpen(false);
-                        setLoginModalOpen(true);
+                        // setActiveTab(tab);
+                        navigate(tab.path); // Navigate to job page
+                      }}
+                      className={`tab-link ${
+                        getActiveTab() === tab.label ? "active" : ""
+                      }`}
+                      sx={{
+                        fontWeight: "bold",
                       }}
                     >
-                      Login
+                      {tab.label}
                     </li>
-                    <li>Register</li>
-                  </ul>
-                </div>
+                  ))}
+
+                  <li
+                    onClick={() => {
+                      setMenuOpen(false);
+                      setLoginModalOpen(true);
+                    }}
+                  >
+                    Login
+                  </li>
+                  <li>Register</li>
+                </ul>
               </div>
-            </Box>
-          </Toolbar>
-        </AppBar>
+            </div>
+          </Box>
+        </Toolbar>
+      </AppBar>
       {/* </HideOnScroll> */}
       <Toolbar />
       <div style={{}}>
