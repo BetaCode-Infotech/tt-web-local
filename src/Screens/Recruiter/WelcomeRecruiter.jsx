@@ -1,31 +1,17 @@
 import "./WelcomeRecruiter.css";
-// import Group468 from "../../assets/Group 468.png";
 import hiringkeyimage from "../../assets/hiring key image.png";
 import candidate from "../../assets/candidate_img.png";
-
 import JDCreation from "../../assets/JD creation_img.png";
 import MultiUser from "../../assets/multi user_img.png";
 import JobPosting from "../../assets/job posting_img.png";
 import PayAsYouGo from "../../assets/pay as you go_img.png";
-
-import right from "../../assets/right nav.svg";
-import left from "../../assets/left nav.svg";
-import React, { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Divider } from "@mui/material";
-
-import TrueTalentWhite from "../../assets/TT logo-new-white.png";
 import TrueTalentDark from "../../assets/TT logo-new-black.png";
-import SmartSearch from "../../assets/smart search-img@2x.png";
-import RecruitersImg from "../../assets/recruiter_img.png";
 import SearchIcon from "../../assets/search icon.svg";
-import AIimage from "../../assets/hero-image-mobile.jpg";
-
 import CustomCarousel from "../../Components/CustomCarousel/CustomCarousel";
-// import Navbar from "../../Navbar/Navbar";
-// import Footer from "../../Components/Footer/Footer";
 import Footer from "../../Components/Footer/Footer";
 import Navbar from "../../Components/Navbar/Navbar";
-// import WhatsAppImg from "../../assets/whatsapp.png";
 import Technology from "../../assets/technology icon.svg";
 import Education from "../../assets/education icon.svg";
 import Hospitality from "../../assets/hospitality icon.svg";
@@ -42,12 +28,6 @@ import { Link } from "react-router-dom";
 import AIAnimatedSphere from "../Welcome/AIAnimatedSphere";
 
 function WelcomeRecruiter() {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const handleAccordionClick = (index) => {
-    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
-
   const smartContentData = [
     {
       id: 1,
@@ -79,24 +59,6 @@ function WelcomeRecruiter() {
     },
   ];
 
-  const jobData = [
-    {
-      company: "Commvault Systems India",
-      title: "Associate, Global Employment",
-      type: "Full Time · 2Y-3Y",
-      location: "Bangalore",
-      timeAgo: "1 mo ago",
-    },
-    {
-      company: "Findr Pro Technologies Pvt Ltd",
-      title: "Python Developer",
-      type: "Fixed Price",
-      location: "Remote",
-      timeAgo: "1 mo ago",
-    },
-    // Add more job cards here
-  ];
-
   const industries = [
     { label: "Technology", icon: Technology },
     { label: "Education", icon: Education },
@@ -116,24 +78,6 @@ function WelcomeRecruiter() {
     { label: "Retail", icon: Retail },
   ];
 
-  // const industries = [
-  //   { label: "Technology", icon: techIcon },
-  //   { label: "Education", icon: educationIcon },
-  //   { label: "Hospitality", icon: hospitalityIcon },
-  //   { label: "Healthcare", icon: healthcareIcon },
-  //   {
-  //     label: "Engineering & Construction",
-  //     icon: engineeringIcon,
-  //     highlight: true,
-  //   },
-  //   { label: "Banking", icon: bankingIcon },
-  //   { label: "Finance", icon: financeIcon },
-  //   { label: "Automotive", icon: automotiveIcon },
-  //   { label: "Telecom", icon: telecomIcon },
-  //   { label: "Chemical", icon: chemicalIcon },
-  //   { label: "Travel", icon: travelIcon },
-  //   { label: "Retail", icon: retailIcon },
-  // ];
   const [activeId, setActiveId] = useState(1);
   const [selectedImage, setSelectedImage] = useState(smartContentData[0].image);
 
@@ -158,15 +102,30 @@ function WelcomeRecruiter() {
     }
   };
 
-  const [current, setCurrent] = useState(0);
+  const [searchType, setSearchType] = useState(null); // default: Keyword Search
 
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % jobData.length);
+  const handleSearchTypeChange = (event) => {
+    setSearchType(event.target.value);
   };
+  const [hoveredItemId, setHoveredItemId] = useState(null);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Pause only if hovered item matches active
+      if (hoveredItemId !== activeId) {
+        setActiveId((prevId) => {
+          const currentIndex = smartContentData.findIndex(
+            (item) => item.id === prevId
+          );
+          const nextIndex = (currentIndex + 1) % smartContentData.length;
+          const nextItem = smartContentData[nextIndex];
+          setSelectedImage(nextItem.image);
+          return nextItem.id;
+        });
+      }
+    }, 3000);
 
-  const prevSlide = () => {
-    setCurrent((prev) => (prev - 1 + jobData.length) % jobData.length);
-  };
+    return () => clearInterval(interval);
+  }, [hoveredItemId, activeId, smartContentData]);
 
   const carouselRef = useRef();
   return (
@@ -201,20 +160,49 @@ function WelcomeRecruiter() {
 
                 <div className="search-type1">
                   <label>
-                    <input type="radio" className="search" />
+                    <input
+                      type="radio"
+                      className="search"
+                      value="smart"
+                      checked={searchType === "smart"}
+                      defaultChecked
+                      onChange={handleSearchTypeChange}
+                    />
                     TT Smart Search
                   </label>
                   <label>
-                    <input type="radio" className="search" defaultChecked />
+                    <input
+                      type="radio"
+                      className="search"
+                      value="keyword"
+                      checked={searchType === "keyword"}
+                      onChange={handleSearchTypeChange}
+                    />
                     Keyword Search
                   </label>
                 </div>
 
                 <div className="options">
-                  <span>Title</span>
-                  <span>Description</span>
-                  <span>Skills</span>
-                  <span>Company Name</span>
+                  {searchType === "keyword" && (
+                    <>
+                      <span className="options-checkbox">
+                        <input type="checkbox" />
+                        Title
+                      </span>
+                      <span className="options-checkbox">
+                        <input type="checkbox" />
+                        Description
+                      </span>
+                      <span className="options-checkbox">
+                        <input type="checkbox" />
+                        Skills
+                      </span>
+                      <span className="options-checkbox">
+                        <input type="checkbox" />
+                        Company Name
+                      </span>
+                    </>
+                  )}
                 </div>
 
                 <div className="search-btn-container">
@@ -234,7 +222,7 @@ function WelcomeRecruiter() {
               <div className="recruiter">
                 Are you a candidate? <br />
                 <Link to="/" className="check-out">
-                  Check out ➚
+                  Search for jobs/gigs
                 </Link>
               </div>
             </div>
@@ -321,7 +309,11 @@ function WelcomeRecruiter() {
             {/* Right Side Accordions */}
             <div className="smart-content">
               {smartContentData.map((item) => (
-                <div key={item.id}>
+                <div
+                  key={item.id}
+                  onMouseEnter={() => setHoveredItemId(item.id)}
+                  onMouseLeave={() => setHoveredItemId(null)}
+                >
                   <div
                     onClick={() => toggleAccordion(item.id, item.image)}
                     className="smart-content-title"

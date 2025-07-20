@@ -193,18 +193,29 @@
 .container-2 .the-ultimate-hiring .options {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0;
+
   margin-bottom: 20px;
-  font-size: 10px;
-  /* color: #00ffb3; */
+  font-size: 12px;
+
   color: #fff;
   text-align: left;
+  min-height: 40px;
+  transition: all 0.3s ease-in-out;
   /* padding: 0 3rem; */
 }
 .container-2 .the-ultimate-hiring .options span::before {
-  content: "✔"; /* Use basic Unicode character instead of emoji */
-  color: #00ff7f;
-  margin-right: 8px;
+  color: #00ffc8;
+}
+.container-2 .the-ultimate-hiring .options-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.container-2 .the-ultimate-hiring .options-checkbox input[type="checkbox"] {
+  accent-color: #00ffc8; /* Works in modern browsers */
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 }
 
 .container-2 .the-ultimate-hiring .search-btn-container {

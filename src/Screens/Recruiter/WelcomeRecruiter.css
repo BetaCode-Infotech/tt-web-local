@@ -158,12 +158,12 @@
   margin-bottom: 12px;
   font-size: 14px;
 }
-.container-2-recruiter
+/* .container-2-recruiter
   .the-ultimate-hiring-recruiter
   .search-type
   input[type="radio"] {
   margin-right: 8px;
-}
+} */
 
 .search[type="radio"] {
   accent-color: #ff7059;
@@ -179,18 +179,32 @@
 .container-2-recruiter .the-ultimate-hiring-recruiter .options {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0;
+
   margin-bottom: 20px;
-  font-size: 10px;
-  /* color: #00ffb3; */
+  font-size: 12px;
+
   color: #fff;
   text-align: left;
+  min-height: 40px;
+  transition: all 0.3s ease-in-out;
   /* padding: 0 3rem; */
 }
 .container-2-recruiter .the-ultimate-hiring-recruiter .options span::before {
-  content: "✔"; /* Use basic Unicode character instead of emoji */
   color: #ff7059;
-  margin-right: 8px;
+}
+.container-2-recruiter .the-ultimate-hiring-recruiter .options-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.container-2-recruiter
+  .the-ultimate-hiring-recruiter
+  .options-checkbox
+  input[type="checkbox"] {
+  accent-color: #ff7059; /* Works in modern browsers */
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 }
 
 .container-2-recruiter .the-ultimate-hiring-recruiter .search-btn-container {
@@ -887,7 +901,7 @@
     margin-bottom: 20px;
   }
   .container-2-recruiter .the-ultimate-hiring-recruiter .left {
-    margin-top: -70%;
+    margin-top: 10%;
   }
   .container-2-recruiter .hero {
     display: flex;
