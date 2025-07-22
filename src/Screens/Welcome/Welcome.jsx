@@ -6,18 +6,13 @@ import JDCreation from "../../assets/JD creation_img.png";
 import MultiUser from "../../assets/multi user_img.png";
 import JobPosting from "../../assets/job posting_img.png";
 import PayAsYouGo from "../../assets/pay as you go_img.png";
-
-// import TrueTalentWhite from "../assets/Group 6068.svg";
 import TrueTalentWhite from "../../assets/TT logo-new-white.png";
 import TrueTalentDark from "../../assets/TT logo-new-black.png";
-import SmartSearch from "../../assets/smart search-img@2x.png";
 import RecruitersImg from "../../assets/recruiter_img.png";
 import SearchIcon from "../../assets/search icon.svg";
 import CustomCarousel from "../../Components/CustomCarousel/CustomCarousel";
-// import Navbar from "../../Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import Navbar from "../../Components/Navbar/Navbar";
-// import WhatsAppImg from "../../assets/whatsapp.png";
 import AIimage from "../../assets/hero-image-mobile.jpg";
 import Technology from "../../assets/technology icon.svg";
 import Education from "../../assets/education icon.svg";
@@ -179,7 +174,7 @@ function Welcome() {
                 <span></span>
                 <span></span>
               </div>
-              {/* <div className="ai-circle">AI</div> */}
+              
             </div>
 
             <div className="right-container">
