@@ -1,6 +1,6 @@
 import "./Welcome.css";
 import Group468 from "../../assets/Group 468.png";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { Divider } from "@mui/material";
 import JDCreation from "../../assets/JD creation_img.png";
 import MultiUser from "../../assets/multi user_img.png";
@@ -10,15 +10,11 @@ import PayAsYouGo from "../../assets/pay as you go_img.png";
 // import TrueTalentWhite from "../assets/Group 6068.svg";
 import TrueTalentWhite from "../../assets/TT logo-new-white.png";
 import TrueTalentDark from "../../assets/TT logo-new-black.png";
-import SmartSearch from "../../assets/smart search-img@2x.png";
 import RecruitersImg from "../../assets/recruiter_img.png";
 import SearchIcon from "../../assets/search icon.svg";
 import CustomCarousel from "../../Components/CustomCarousel/CustomCarousel";
-// import Navbar from "../../Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import Navbar from "../../Components/Navbar/Navbar";
-// import WhatsAppImg from "../../assets/whatsapp.png";
-import AIimage from "../../assets/hero-image-mobile.jpg";
 import Technology from "../../assets/technology icon.svg";
 import Education from "../../assets/education icon.svg";
 import Hospitality from "../../assets/hospitality icon.svg";
@@ -35,54 +31,39 @@ import { Link } from "react-router-dom";
 import AIAnimatedSphere from "./AIAnimatedSphere";
 
 function Welcome() {
-  const smartContentData = [
-    {
-      id: 1,
-      title: "AI Driven JD Creation",
-      subheading:
-        "Do not have a JD? Fret not! In just 2 minutes, TrueTalent assists you in creating a well articulated and thorough JD for each position you have.",
-      image: JDCreation,
-    },
-    {
-      id: 2,
-      title: "Free Multi-user Access",
-      subheading:
-        "Why pay additional charges to access the same database for each recruiter? TrueTalent lets you create multiple user accesses without any aditional charge.",
-      image: MultiUser,
-    },
-    {
-      id: 3,
-      title: "Unlimited Free Job Posting",
-      subheading:
-        "Why spend large sums of money for job posting, without the surety of getting applicants? TrueTalent has a zero charge foryour job postings.",
-      image: JobPosting,
-    },
-    {
-      id: 4,
-      title: "Pay-as-you-go",
-      subheading:
-        "Are you paying for the service you never use? We do not sell packages unless you need them. All our offerings come with a Pay-as-you-go model.",
-      image: PayAsYouGo,
-    },
-  ];
-
-  const jobData = [
-    {
-      company: "Commvault Systems India",
-      title: "Associate, Global Employment",
-      type: "Full Time · 2Y-3Y",
-      location: "Bangalore",
-      timeAgo: "1 mo ago",
-    },
-    {
-      company: "Findr Pro Technologies Pvt Ltd",
-      title: "Python Developer",
-      type: "Fixed Price",
-      location: "Remote",
-      timeAgo: "1 mo ago",
-    },
-    // Add more job cards here
-  ];
+  const smartContentData = useMemo(
+    () => [
+      {
+        id: 1,
+        title: "AI Driven JD Creation",
+        subheading:
+          "Do not have a JD? Fret not! In just 2 minutes, TrueTalent assists you in creating a well articulated and thorough JD for each position you have.",
+        image: JDCreation,
+      },
+      {
+        id: 2,
+        title: "Free Multi-user Access",
+        subheading:
+          "Why pay additional charges to access the same database for each recruiter? TrueTalent lets you create multiple user accesses without any aditional charge.",
+        image: MultiUser,
+      },
+      {
+        id: 3,
+        title: "Unlimited Free Job Posting",
+        subheading:
+          "Why spend large sums of money for job posting, without the surety of getting applicants? TrueTalent has a zero charge foryour job postings.",
+        image: JobPosting,
+      },
+      {
+        id: 4,
+        title: "Pay-as-you-go",
+        subheading:
+          "Are you paying for the service you never use? We do not sell packages unless you need them. All our offerings come with a Pay-as-you-go model.",
+        image: PayAsYouGo,
+      },
+    ],
+    []
+  );
 
   const industries = [
     { label: "Technology", icon: Technology },
@@ -146,14 +127,30 @@ function Welcome() {
     }
   };
 
-  const [current, setCurrent] = useState(0);
+  const [hoveredItemId, setHoveredItemId] = useState(null);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Pause only if hovered item matches active
+      if (hoveredItemId !== activeId) {
+        setActiveId((prevId) => {
+          const currentIndex = smartContentData.findIndex(
+            (item) => item.id === prevId
+          );
+          const nextIndex = (currentIndex + 1) % smartContentData.length;
+          const nextItem = smartContentData[nextIndex];
+          setSelectedImage(nextItem.image);
+          return nextItem.id;
+        });
+      }
+    }, 3000);
 
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % jobData.length);
-  };
+    return () => clearInterval(interval);
+  }, [hoveredItemId, activeId, smartContentData]);
 
-  const prevSlide = () => {
-    setCurrent((prev) => (prev - 1 + jobData.length) % jobData.length);
+  const [searchType, setSearchType] = useState("smart");
+
+  const handleSearchTypeChange = (event) => {
+    setSearchType(event.target.value);
   };
 
   const carouselRef = useRef();
@@ -163,7 +160,7 @@ function Welcome() {
         {/* <div className="ai-circle">AI</div> */}
 
         <section className="container-2">
-          <img src={AIimage} alt={AIimage} className="hero-mobile-img" />
+          {/* <img src={AIimage} alt={AIimage} className="hero-mobile-img" /> */}
           <div className="hero-image-top-filled" />
           <div className="the-ultimate-hiring">
             <div className="ai-background">
@@ -194,25 +191,53 @@ function Welcome() {
 
                 <div className="search-type">
                   <label>
-                    <input type="radio" name="search" />
+                    <input
+                      type="radio"
+                      name="search"
+                      value="smart"
+                      checked={searchType === "smart"}
+                      onChange={handleSearchTypeChange}
+                    />
                     TT Smart Search
                   </label>
                   <label>
-                    <input type="radio" name="search" defaultChecked />
+                    <input
+                      type="radio"
+                      name="search"
+                      value="keyword"
+                      checked={searchType === "keyword"}
+                      onChange={handleSearchTypeChange}
+                    />
                     Keyword Search
                   </label>
                 </div>
 
                 <div className="options">
-                  <span>Title</span>
-                  <span>Description</span>
-                  <span>Skills</span>
-                  <span>Company Name</span>
+                  {searchType === "keyword" && (
+                    <>
+                      <span className="options-checkbox">
+                        <input type="checkbox" />
+                        Title
+                      </span>
+                      <span className="options-checkbox">
+                        <input type="checkbox" />
+                        Description
+                      </span>
+                      <span className="options-checkbox">
+                        <input type="checkbox" />
+                        Skills
+                      </span>
+                      <span className="options-checkbox">
+                        <input type="checkbox" />
+                        Company Name
+                      </span>
+                    </>
+                  )}
                 </div>
 
                 <div className="search-btn-container">
                   <button className="search-btn">
-                    <img src={SearchIcon} />
+                    <img src={SearchIcon} alt="smart-search"/>
                     AI Search
                   </button>
                 </div>
@@ -227,7 +252,7 @@ function Welcome() {
               <div className="recruiter">
                 Are you a recruiter? <br />
                 <Link to="/recruiter-welcome" className="check-out">
-                  Check out ➚
+                  Search for candidates
                 </Link>
               </div>
             </div>
@@ -356,7 +381,11 @@ function Welcome() {
             {/* Right Side Accordions */}
             <div className="smart-content">
               {smartContentData.map((item) => (
-                <div key={item.id}>
+                <div
+                  key={item.id}
+                  onMouseEnter={() => setHoveredItemId(item.id)}
+                  onMouseLeave={() => setHoveredItemId(null)}
+                >
                   <div
                     onClick={() => toggleAccordion(item.id, item.image)}
                     className="smart-content-title"

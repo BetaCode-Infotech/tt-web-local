@@ -6,50 +6,77 @@
 }
 
 .container-2-recruiter {
-  /* background: linear-gradient(to bottom, #002c90, #00a8e8); */
   font-family: "Segoe UI", sans-serif;
   color: white;
-  /* padding: 2rem; */
-}
-.container-2-recruiter .hero-image-top-filled {
-  background-color: #00115f;
-  height: 2rem;
 }
 .container-2-recruiter .the-ultimate-hiring-recruiter {
   font-family: "Segoe UI", sans-serif;
-  background-image: url("../../assets/hero-image-desktop.jpg");
-  background-size: 100%; /* adjust this as needed to reduce width */
+  /* REMOVE the line below */
+  /* background-image: url("../../assets/hero-image-desktop.jpg"); */
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-position: left center; /* aligns image to the left */
+  background-position: left center;
   color: white;
-  height: 100vh;
+  /* max-height: 100vh; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 40px;
   position: relative;
+  overflow: hidden; /* <--- Important to contain absolute children */
 }
+.container-2-recruiter .the-ultimate-hiring-recruiter .ai-background {
+  left: 10%; /* ⬅️ Shift the canvas circle slightly to the right */
+}
+.container-2-recruiter .particle-wrapper {
+  margin-left: 5%;
+}
+
+.the-ultimate-hiring-recruiter .ai-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.the-ultimate-hiring-recruiter {
+  position: relative; /* <-- this is critical */
+  overflow: hidden; /* contain canvas & effects */
+}
+.the-ultimate-hiring-recruiter .left,
+.the-ultimate-hiring-recruiter .right-container {
+  position: relative;
+  z-index: 1;
+}
+
+.container-2-recruiter .hero-image-top-filled {
+  background-color: #00115f;
+  /* height: 2rem; */
+}
+
 .container-2-recruiter .hero-mobile-img {
   display: none;
 }
-
 /* Left Section */
 .container-2-recruiter .the-ultimate-hiring-recruiter .left {
   flex: 0.1;
   padding-left: 10px;
   text-align: left;
 }
-
 .container-2-recruiter .the-ultimate-hiring-recruiter .left h1 {
   font-size: 48px;
   line-height: 1.4;
   margin-bottom: 20px;
-  /* text-align: left; */
 }
 
 .container-2-recruiter .the-ultimate-hiring-recruiter .left .highlight {
   color: #ff7059;
   font-weight: 700;
+  font-family: "Montserrat", sans-serif;
   font-size: 4rem;
 }
 
@@ -87,10 +114,11 @@
 } */
 
 /* Right Section */
+/* Target only recruiter section */
+
 .container-2-recruiter .the-ultimate-hiring-recruiter .right {
   flex: 1;
-  padding: 40px;
-  /* background: rgba(42, 58, 127, 0.5); */
+  padding: 40px 40px 0px 40px;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 30px;
   backdrop-filter: blur(10px);
@@ -106,6 +134,7 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
 }
+
 .container-2-recruiter .divider-container {
   margin-bottom: 20px;
   margin-top: 20px;
@@ -129,6 +158,12 @@
   margin-bottom: 12px;
   font-size: 14px;
 }
+/* .container-2-recruiter
+  .the-ultimate-hiring-recruiter
+  .search-type
+  input[type="radio"] {
+  margin-right: 8px;
+} */
 
 .search[type="radio"] {
   accent-color: #ff7059;
@@ -144,18 +179,32 @@
 .container-2-recruiter .the-ultimate-hiring-recruiter .options {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0;
+
   margin-bottom: 20px;
-  font-size: 14px;
-  /* color: #00ffb3; */
+  font-size: 12px;
+
   color: #fff;
   text-align: left;
+  min-height: 40px;
+  transition: all 0.3s ease-in-out;
   /* padding: 0 3rem; */
 }
 .container-2-recruiter .the-ultimate-hiring-recruiter .options span::before {
-  content: "✔"; /* Use basic Unicode character instead of emoji */
   color: #ff7059;
-  margin-right: 8px;
+}
+.container-2-recruiter .the-ultimate-hiring-recruiter .options-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.container-2-recruiter
+  .the-ultimate-hiring-recruiter
+  .options-checkbox
+  input[type="checkbox"] {
+  accent-color: #ff7059; /* Works in modern browsers */
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 }
 
 .container-2-recruiter .the-ultimate-hiring-recruiter .search-btn-container {
@@ -226,7 +275,7 @@
   align-items: center;
   flex-wrap: wrap;
   /* gap: 4rem; */
-  min-height: 70vh;
+  /* min-height: 70vh; */
   padding: 4rem;
 }
 .container-2-recruiter .hero-text {
@@ -283,11 +332,11 @@
 
 /* Featured Jobs Section */
 .container-2-recruiter .featured-jobs-recruiter {
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   text-align: left;
   display: flex;
   gap: 1rem;
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   padding: 0 4rem;
 }
 
@@ -395,7 +444,7 @@
   background-color: #00d0b0;
 }
 
-.container-2-recruiter .smart-search {
+/* .container-2-recruiter .smart-search {
   background-image: url("../../assets/background-rounded.png");
   background-size: contain;
   background-position: center;
@@ -406,14 +455,43 @@
   justify-content: center;
   padding: 5rem;
   margin-top: 5rem;
+} */
+/* .container-2-recruiter .smart-image {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* transition: opacity 0.5s ease-out; */
+  /* perspective: 1000px;
+} */
+.container-2-recruiter .smart-search {
+  background-image: url("../../assets/background-rounded.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%; /* Changed from min-width to width */
+  display: flex;
+  flex-wrap: wrap; /* Make it responsive */
+  align-items: flex-start; /* Align items to top */
+  justify-content: center;
+  padding: 5rem;
+  text-align: left;
+  margin-top: 5rem;
+  box-sizing: border-box; /* Ensure padding is included in width */
+  overflow: hidden; /* Prevent content from spilling out */
+  
 }
+
 .container-2-recruiter .smart-image {
   flex: 0 0 40%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* transition: opacity 0.5s ease-out; */
-  perspective: 1000px;
+  transition: opacity 0.5s ease-out;
+  max-width: 40%;
+  box-sizing: border-box;
+  margin-left: -2rem; /* Add this */
+
 }
 
 .container-2-recruiter .smart-image img {
@@ -435,12 +513,24 @@
   }
 }
 
-.container-2-recruiter .smart-content {
+/* .container-2-recruiter .smart-content {
   flex: 0 0 28%;
   max-width: 100%;
   display: flex;
   flex-direction: column;
   color: white;
+} */
+.container-2-recruiter .smart-content {
+  flex: 0 0 25%;
+  max-width: 25%; /* Limit width to prevent overflow */
+  display: flex;
+  flex-direction: column;
+  color: white;
+  box-sizing: border-box;
+  word-wrap: break-word; /* Wrap long words */
+  overflow-wrap: break-word;
+  margin-left: -2rem; /* Add this */
+
 }
 
 .container-2-recruiter .smart-content-title {
@@ -663,7 +753,7 @@
 .container-2-recruiter .academia-section-container {
   background: linear-gradient(to bottom, #002c90, #00a8e8);
   padding: 20px;
-  min-height: 36vh;
+  /* min-height: 36vh; */
 }
 
 .container-2-recruiter .academia-section h2 {
@@ -852,14 +942,14 @@
     margin-bottom: 20px;
   }
   .container-2-recruiter .the-ultimate-hiring-recruiter .left {
-    margin-top: -70%;
+    margin-top: 10%;
   }
   .container-2-recruiter .hero {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     gap: 2rem;
-    min-height: 70vh;
+    /* min-height: 70vh; */
     padding: 0 2rem;
   }
   .container-2-recruiter .hero-right {
@@ -984,7 +1074,7 @@
   .container-2-recruiter .academia-section-container {
     background: linear-gradient(to bottom, #002c90, #00a8e8);
     padding: 0;
-    min-height: 36vh;
+    /* min-height: 36vh; */
   }
 
   .container-2-recruiter .carousel-controls {
@@ -1085,6 +1175,34 @@
   .container-2-recruiter .academia-section-container {
     background: linear-gradient(to bottom, #002c90, #00a8e8);
     padding: 0;
-    min-height: 36vh;
+    /* min-height: 36vh; */
   }
 }
+@media (max-width: 1100px) {
+  .container-2-recruiter .smart-search {
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+  }
+
+  .container-2-recruiter .smart-image,
+  .container-2-recruiter .smart-content {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding-left: 0;
+    margin-bottom: 2rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .container-2-recruiter .smart-content {
+    align-items: center;
+  }
+
+  .container-2-recruiter .smart-content-title,
+  .container-2-recruiter .smart-search-title,
+  .container-2-recruiter .smart-search-subheading {
+    text-align: center;
+  }
+}
+
