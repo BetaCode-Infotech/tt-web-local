@@ -29,6 +29,9 @@ import AIAnimatedSphere from "../Welcome/AIAnimatedSphere";
 import CustomJobCarousel from "../../Components/CustomCarousel/CustomJobCarousel";
 
 function WelcomeRecruiter() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const smartContentData = [
     {
       id: 1,
@@ -103,7 +106,7 @@ function WelcomeRecruiter() {
     }
   };
 
-  const [searchType, setSearchType] = useState(null); // default: Keyword Search
+  const [searchType, setSearchType] = useState("smart");
 
   const handleSearchTypeChange = (event) => {
     setSearchType(event.target.value);

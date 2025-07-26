@@ -25,7 +25,7 @@ function ExperienceHiring() {
   };
 
   return (
-    <>
+    <div className="true-talent-container">
       <Navbar />
       <div className="experience-hiring-container">
         <div className="first-container">
@@ -102,7 +102,6 @@ function ExperienceHiring() {
                   </div>
                 </div>
 
-                
                 <div className="second-container">
                   <div className="card-grid">
                     <div className="grid-card">
@@ -327,7 +326,7 @@ function ExperienceHiring() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

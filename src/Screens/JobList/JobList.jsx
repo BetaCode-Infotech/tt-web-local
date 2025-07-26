@@ -328,9 +328,15 @@ const JobList = () => {
   const handleJobClick = () => {
     navigate("/job-details");
   };
+  const [searchType, setSearchType] = useState("smart");
+
+  const handleSearchTypeChange = (event) => {
+    setSearchType(event.target.value);
+  };
 
   return (
-    <Navbar>
+    <div className="true-talent-container">
+      <Navbar />
       <div className="job-list-container">
         <div className="search-bar-container">
           <div className="search-bar-wrapper">
@@ -345,20 +351,49 @@ const JobList = () => {
 
           <div className="search-options">
             <label className="radio-option">
-              <input type="radio" name="searchType" />
-              <span className="circle" /> TT Smart Search
+              <input
+                type="radio"
+                name="searchType"
+                value="smart"
+                checked={searchType === "smart"}
+                onChange={handleSearchTypeChange}
+              />
+              TT Smart Search
             </label>
             <label className="radio-option">
-              <input type="radio" name="searchType" defaultChecked />
-              <span className="circle checked" /> Keyword Search
+              <input
+                type="radio"
+                name="searchType"
+                value="keyword"
+                checked={searchType === "keyword"}
+                onChange={handleSearchTypeChange}
+              />
+              Keyword Search
             </label>
-
-            <div className="tag-options">
-              <span className="tag">Title</span>
-              <span className="tag">Description</span>
-              <span className="tag">Skills</span>
-              <span className="tag">Company Name</span>
-            </div>
+            {searchType == "keyword" && (
+              <div className="tag-options">
+                {/* <span className="tag">Title</span>
+                <span className="tag">Description</span>
+                <span className="tag">Skills</span>
+                <span className="tag">Company Name</span> */}
+                <span className="options-checkbox tag">
+                  <input type="checkbox" />
+                  Title
+                </span>
+                <span className="options-checkbox tag">
+                  <input type="checkbox" />
+                  Description
+                </span>
+                <span className="options-checkbox tag">
+                  <input type="checkbox" />
+                  Skills
+                </span>
+                <span className="options-checkbox tag">
+                  <input type="checkbox" />
+                  Company Name
+                </span>
+              </div>
+            )}
           </div>
         </div>
         <div className="green-divider" />
@@ -376,7 +411,9 @@ const JobList = () => {
               <div className="view-toggle">
                 <GridIcon
                   onClick={() => setView("grid")}
-                  className={`list-view icon ${view === "grid" ? "active" : ""}`}
+                  className={`list-view icon ${
+                    view === "grid" ? "active" : ""
+                  }`}
                 />
                 <ListIcon
                   onClick={() => setView("card")}
@@ -479,7 +516,7 @@ const JobList = () => {
         </div>
       </div>
       <Footer />
-    </Navbar>
+    </div>
   );
 };
 

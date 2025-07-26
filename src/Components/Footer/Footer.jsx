@@ -78,7 +78,11 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Navigate</h4>
           <ul>
-            <li>Home</li>
+            <li>
+              <Link to="/" className="footer-link">
+                Home
+              </Link>
+            </li>
             {/* <li>About Us</li> */}
             {/* <li>Contact Us</li> */}
             <li>
@@ -93,7 +97,16 @@ const Footer = () => {
             </li>
             <li>Terms of Use</li>
             <li>Privacy Policy</li>
-            <li>Blog</li>
+            <li>
+              <a
+                href="https://truetalent.io/blog/"
+                className="footer-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Blog
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -104,12 +117,49 @@ const Footer = () => {
         </p>
         <div className="social-icons">
           <p className="connected-text"> Stay Connected</p>
-          <i className="fa-brands fa-facebook"></i>
-          <i className="fa-brands fa-linkedin"></i>
-          <i className="fab fa-twitter"></i>
-          <i className="fab fa-instagram"></i>
-          <i className="fab fa-youtube"></i>
-          <img src={WhatsAppImg} alt="WhatsApp" className="whatsapp-icon" />
+          <a
+            href="https://www.facebook.com/TrueTalent.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-brands fa-facebook"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/truetalent-io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            href="https://x.com/Truetalent_io"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-twitter"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/Truetalent_io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-instagram"></i>
+          </a>
+
+          <a
+            href="https://www.youtube.com/@TrueTalent_io"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-youtube"></i>
+          </a>
+          <a
+            href="https://wa.me/919090690936"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={WhatsAppImg} alt="WhatsApp" className="whatsapp-icon" />
+          </a>
         </div>
       </div>
     </footer>
