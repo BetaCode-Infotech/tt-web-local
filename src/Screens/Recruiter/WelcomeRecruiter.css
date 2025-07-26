@@ -64,8 +64,12 @@
 /* Left Section */
 .container-2-recruiter .the-ultimate-hiring-recruiter .left {
   flex: 0.1;
+  max-width: 25%;
   padding-left: 10px;
   text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 .container-2-recruiter .the-ultimate-hiring-recruiter .left h1 {
   font-size: 48px;
@@ -115,6 +119,70 @@
 
 /* Right Section */
 /* Target only recruiter section */
+
+/* code start */
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .custom-carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.container-2-recruiter
+  .the-ultimate-hiring-recruiter
+  .custom-carousel-wrapper
+  .custom-carousel-track {
+  display: flex;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden; /* if you want scroll via JS, don't make it interactive */
+  pointer-events: none; /* ✅ This allows events to pass through */
+}
+
+.container-2-recruiter
+  .the-ultimate-hiring-recruiter
+  .custom-carousel-wrapper
+  .custom-carousel-track::-webkit-scrollbar {
+  display: none; /* Safari/Chrome */
+}
+
+.container-2-recruiter
+  .the-ultimate-hiring-recruiter
+  .custom-carousel-wrapper
+  .custom-carousel-track
+  .custom-carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: start;
+  min-height: 200px;
+  z-index: inherit;
+}
+
+.container-2-recruiter .the-ultimate-hiring-recruiter .custom-carousel-dots {
+  text-align: left;
+  padding: 10px;
+  margin-top: 10px;
+}
+.container-2-recruiter
+  .the-ultimate-hiring-recruiter
+  .custom-carousel-dots
+  .custom-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+}
+.container-2-recruiter
+  .the-ultimate-hiring-recruiter
+  .custom-carousel-dots
+  .custom-dot.active {
+  background-color: #ff7059;
+}
+/* code end */
 
 .container-2-recruiter .the-ultimate-hiring-recruiter .right {
   flex: 1;

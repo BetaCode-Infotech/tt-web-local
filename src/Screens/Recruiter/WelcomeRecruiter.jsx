@@ -26,6 +26,7 @@ import Travel from "../../assets/travel icon.svg";
 import Retail from "../../assets/retail icon.svg";
 import { Link } from "react-router-dom";
 import AIAnimatedSphere from "../Welcome/AIAnimatedSphere";
+import CustomJobCarousel from "../../Components/CustomCarousel/CustomJobCarousel";
 
 function WelcomeRecruiter() {
   const smartContentData = [
@@ -127,6 +128,57 @@ function WelcomeRecruiter() {
     return () => clearInterval(interval);
   }, [hoveredItemId, activeId, smartContentData]);
 
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slideRef = useRef(null);
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+    const width = slideRef.current.clientWidth;
+    slideRef.current.scrollTo({ left: width * index, behavior: "smooth" });
+  };
+  const slides = [
+    {
+      id: 1,
+      content: (
+        <h1>
+          The <br />
+          <span className="highlight">Ultimate</span>
+          <br />
+          Hiring
+          <br />
+          Platform
+        </h1>
+      ),
+    },
+    {
+      id: 2,
+      content: (
+        <h1>
+          Hire Top
+          <br />
+          <span className="highlight"> Talent</span>
+          <br />
+          Faster
+          <br />
+          Smarter
+        </h1>
+      ),
+    },
+  ];
+  // Auto-scroll every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => {
+        const next = (prev + 1) % slides.length;
+        const width = slideRef.current.clientWidth;
+        slideRef.current.scrollTo({ left: width * next, behavior: "smooth" });
+        return next;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [slides.length]);
+
   const carouselRef = useRef();
   return (
     <div className="true-talent-container">
@@ -137,7 +189,28 @@ function WelcomeRecruiter() {
               <AIAnimatedSphere />
             </div>
             <div className="left">
-              <h1>
+              <div className="custom-carousel-wrapper">
+                <div className="custom-carousel-track" ref={slideRef}>
+                  {slides.map((slide) => (
+                    <div key={slide.id} className="custom-carousel-slide">
+                      {slide.content}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="custom-carousel-dots">
+                  {slides.map((_, idx) => (
+                    <span
+                      key={idx}
+                      className={`custom-dot ${
+                        currentSlide === idx ? "active" : ""
+                      }`}
+                      onClick={() => goToSlide(idx)}
+                    ></span>
+                  ))}
+                </div>
+              </div>
+              {/* <h1>
                 The <span className="highlight">Ultimate</span>
                 <br />
                 Hiring
@@ -148,13 +221,14 @@ function WelcomeRecruiter() {
                 <span></span>
                 <span></span>
                 <span></span>
-              </div>
+              </div> */}
+
               {/* <div className="ai-circle">AI</div> */}
             </div>
 
             <div className="right-container">
               <div className="right">
-                <h2>Search Jobs</h2>
+                <h2>Search Candidates</h2>
                 <input type="text" placeholder="Skill / job roles" />
                 <input type="text" placeholder="City" />
 
@@ -275,7 +349,7 @@ function WelcomeRecruiter() {
               </button>
             </div>
             <div className="right">
-              <CustomCarousel>
+              <CustomJobCarousel>
                 {[1, 2, 3, 4, 5, 6].map((job) => (
                   <div key={job} className="job-card-recruiter">
                     <div className="job-header"></div>
@@ -296,7 +370,7 @@ function WelcomeRecruiter() {
                     </p>
                   </div>
                 ))}
-              </CustomCarousel>
+              </CustomJobCarousel>
             </div>
           </section>
 
