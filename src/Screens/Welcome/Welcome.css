@@ -286,6 +286,12 @@
   height: 16px;
   cursor: pointer;
 }
+.container-2 .the-ultimate-hiring .search-type input[type="radio"] {
+  accent-color: #00ffc8;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
 
 .container-2 .the-ultimate-hiring .search-btn-container {
   display: flex;
@@ -576,7 +582,6 @@
   margin-top: 5rem;
   box-sizing: border-box; /* Ensure padding is included in width */
   overflow: hidden; /* Prevent content from spilling out */
-  
 }
 
 .container-2 .smart-image {
@@ -588,7 +593,6 @@
   max-width: 40%;
   box-sizing: border-box;
   margin-left: -2rem; /* Add this */
-
 }
 
 .container-2 .smart-image img {
@@ -637,7 +641,6 @@
   word-wrap: break-word; /* Wrap long words */
   overflow-wrap: break-word;
   margin-left: -2rem; /* Add this */
-
 }
 
 .container-2 .smart-content-title {
@@ -1397,4 +1400,3 @@
     text-align: center;
   }
 }
-

@@ -66,227 +66,233 @@ const JobDetails = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <Navbar>
-      <div className="job-details-page">
-        <div className="header">
-          <div className="title-with-icon">
-            <img
-              src={leftNav}
-              alt="logo"
-              className="back-icon"
-              onClick={() => {
-                navigate(-1);
+    <div className="true-talent-container">
+      <Navbar/>
+        <div className="job-details-page">
+          <div className="header">
+            <div className="title-with-icon">
+              <img
+                src={leftNav}
+                alt="logo"
+                className="back-icon"
+                onClick={() => {
+                  navigate(-1);
+                }}
+              />
+              <div className="title">Sales Executive</div>
+            </div>
+            <Button
+              className="apply-btn-web"
+              sx={{
+                background: "linear-gradient(to right, #1a73e8, #00bfa6)",
+                color: "white",
+                paddingX: 3,
+                width: "130px",
+                borderRadius: "25px",
+                fontWeight: 600,
+                textTransform: "none",
+                gap: 1,
+                "&:hover": {
+                  background: "linear-gradient(to right, #1a73e8, #00bfa6)",
+                  opacity: 0.9,
+                },
               }}
-            />
-            <div className="title">Sales Executive</div>
+            >
+              Apply
+            </Button>
           </div>
-          <Button
-            className="apply-btn-web"
-            sx={{
-              background: "linear-gradient(to right, #1a73e8, #00bfa6)",
-              color: "white",
-              paddingX: 3,
-              width: "130px",
-              borderRadius: "25px",
-              fontWeight: 600,
-              textTransform: "none",
-              gap: 1,
-              "&:hover": {
+
+          <div className="location-info">
+            <span>Bangalore, Karnataka</span>
+            <span className="dot"> • </span>
+            <span>Posted 1 day ago</span>
+            <span className="dot"> • </span>
+            <span>Posted By Tapan kumar Jena</span>
+            <span className="dot"> • </span>
+            <span>Updated 20 hours ago</span>
+          </div>
+          <div className="apply-btn-mobile">
+            <Button
+              className="apply-btn-mobile"
+              sx={{
                 background: "linear-gradient(to right, #1a73e8, #00bfa6)",
-                opacity: 0.9,
-              },
-            }}
-          >
-            Apply
-          </Button>
-        </div>
-
-        <div className="location-info">
-          <span>Bangalore, Karnataka</span>
-          <span className="dot"> • </span>
-          <span>Posted 1 day ago</span>
-          <span className="dot"> • </span>
-          <span>Posted By Tapan kumar Jena</span>
-          <span className="dot"> • </span>
-          <span>Updated 20 hours ago</span>
-        </div>
-        <div className="apply-btn-mobile">
-          <Button
-            className="apply-btn-mobile"
-            sx={{
-              background: "linear-gradient(to right, #1a73e8, #00bfa6)",
-              color: "white",
-              paddingX: 3,
-              width: "130px",
-              borderRadius: "25px",
-              fontWeight: 600,
-              textTransform: "none",
-              gap: 1,
-              "&:hover": {
-                background: "linear-gradient(to right, #1a73e8, #00bfa6)",
-                opacity: 0.9,
-              },
-            }}
-          >
-            Apply
-          </Button>
-        </div>
-
-        <div className="meta-box">
-          <div className="meta-item">
-            <div className="meta-label">Experience</div>
-            <div className="meta-value">1Y - 3Y</div>
+                color: "white",
+                paddingX: 3,
+                width: "130px",
+                borderRadius: "25px",
+                fontWeight: 600,
+                textTransform: "none",
+                gap: 1,
+                "&:hover": {
+                  background: "linear-gradient(to right, #1a73e8, #00bfa6)",
+                  opacity: 0.9,
+                },
+              }}
+            >
+              Apply
+            </Button>
           </div>
-          <div className="meta-item">
-            <div className="meta-label">Industry Domain</div>
-            <div className="meta-value">Others</div>
+
+          <div className="meta-box">
+            <div className="meta-item">
+              <div className="meta-label">Experience</div>
+              <div className="meta-value">1Y - 3Y</div>
+            </div>
+            <div className="meta-item">
+              <div className="meta-label">Industry Domain</div>
+              <div className="meta-value">Others</div>
+            </div>
+            <div className="meta-item">
+              <div className="meta-label">Job Type</div>
+              <div className="meta-value">Full Time</div>
+            </div>
+            <div className="meta-item">
+              <div className="meta-label">Work Location</div>
+              <div className="meta-value">Jaipur</div>
+            </div>
+            <div className="meta-item">
+              <div className="meta-label">Job Duration</div>
+              <div className="meta-value">Permanent</div>
+            </div>
+            <div className="meta-item">
+              <div className="meta-label">Joining</div>
+              <div className="meta-value">Immediate</div>
+            </div>
+            <div className="meta-item">
+              <div className="meta-label">Engagement Mode</div>
+              <div className="meta-value">On-Site</div>
+            </div>
+            <div className="meta-item">
+              <div className="meta-label">Travel Required</div>
+              <div className="meta-value">Yes (50%)</div>
+            </div>
           </div>
-          <div className="meta-item">
-            <div className="meta-label">Job Type</div>
-            <div className="meta-value">Full Time</div>
-          </div>
-          <div className="meta-item">
-            <div className="meta-label">Work Location</div>
-            <div className="meta-value">Jaipur</div>
-          </div>
-          <div className="meta-item">
-            <div className="meta-label">Job Duration</div>
-            <div className="meta-value">Permanent</div>
-          </div>
-          <div className="meta-item">
-            <div className="meta-label">Joining</div>
-            <div className="meta-value">Immediate</div>
-          </div>
-          <div className="meta-item">
-            <div className="meta-label">Engagement Mode</div>
-            <div className="meta-value">On-Site</div>
-          </div>
-          <div className="meta-item">
-            <div className="meta-label">Travel Required</div>
-            <div className="meta-value">Yes (50%)</div>
-          </div>
-        </div>
 
-        {/* Merged Content Container */}
+          {/* Merged Content Container */}
 
-        <div className="content-container">
-          <div className="details-panel">
-            <div className="left-right-content">
-              {/* LEFT SIDE */}
-              <div className="left-side">
-                <div className="section">
-                  <div className="section-title">Skills</div>
-                  <div className="sub-title">Required Skills</div>
-                  <ul>
-                    <li>Customer relation</li>
-                    <li>Marketing</li>
-                  </ul>
-                  <div className="sub-title">Additional Skills</div>
-                  <ul>
-                    <li>Communication</li>
-                    <li>Negotiation skill</li>
-                  </ul>
-                </div>
-                <div className="separator"></div>
-
-                <div className="section">
-                  <div className="section-title">Education</div>
-                  <div>N/A</div>
-                </div>
-
-                <div className="section">
-                  <div className="section-title">No. of positions</div>
-                  <div>1</div>
-                </div>
-
-                <div className="section">
-                  <div className="section-title">Salary Range (Monthly)</div>
-                  <div>₹ 20,000 - ₹ 40,000</div>
-                </div>
-
-                <div className="section">
-                  <div className="section-title">Incentive/Bonus</div>
-                  <div>Quarterly</div>
-                </div>
-
-                <div className="section">
-                  <div className="section-title">Benefits and Perks</div>
-                  <div>Dental Insurance</div>
-                  <div>Maternity Leave</div>
-                </div>
-              </div>
-
-              {/* RIGHT SIDE */}
-              <div className="right-side">
-                <div className="section">
-                  <div className="section-title">Job Description</div>
-                  <p className="job-desc-text">{jobDescription.description}</p>
-                  <div className="job-desc-responsibilities">
-                    <p>Responsibilities:</p>
+          <div className="content-container">
+            <div className="details-panel">
+              <div className="left-right-content">
+                {/* LEFT SIDE */}
+                <div className="left-side">
+                  <div className="section">
+                    <div className="section-title">Skills</div>
+                    <div className="sub-title">Required Skills</div>
                     <ul>
-                      {jobDescription.responsibilities.map((item, index) => (
-                        <li key={index}>- {item}</li>
-                      ))}
+                      <li>Customer relation</li>
+                      <li>Marketing</li>
+                    </ul>
+                    <div className="sub-title">Additional Skills</div>
+                    <ul>
+                      <li>Communication</li>
+                      <li>Negotiation skill</li>
                     </ul>
                   </div>
-                  <div className="job-desc-requirements">
-                    <p>Requirements:</p>
-                    <ul>
-                      {jobDescription.requirements.map((item, index) => (
-                        <li key={index}>- {item}</li>
-                      ))}
-                    </ul>
+                  <div className="separator"></div>
+
+                  <div className="section">
+                    <div className="section-title">Education</div>
+                    <div>N/A</div>
                   </div>
-                  <div className="job-desc-benefits">
-                    <p>Benefits:</p>
-                    <ul>
-                      {jobDescription.benefits.map((item, index) => (
-                        <li key={index}>- {item}</li>
-                      ))}
-                    </ul>
+
+                  <div className="section">
+                    <div className="section-title">No. of positions</div>
+                    <div>1</div>
                   </div>
-                  <p className="job-desc-text">{jobDescription.closing}</p>
+
+                  <div className="section">
+                    <div className="section-title">Salary Range (Monthly)</div>
+                    <div>₹ 20,000 - ₹ 40,000</div>
+                  </div>
+
+                  <div className="section">
+                    <div className="section-title">Incentive/Bonus</div>
+                    <div>Quarterly</div>
+                  </div>
+
+                  <div className="section">
+                    <div className="section-title">Benefits and Perks</div>
+                    <div>Dental Insurance</div>
+                    <div>Maternity Leave</div>
+                  </div>
+                </div>
+
+                {/* RIGHT SIDE */}
+                <div className="right-side">
+                  <div className="section">
+                    <div className="section-title">Job Description</div>
+                    <p className="job-desc-text">
+                      {jobDescription.description}
+                    </p>
+                    <div className="job-desc-responsibilities">
+                      <p>Responsibilities:</p>
+                      <ul>
+                        {jobDescription.responsibilities.map((item, index) => (
+                          <li key={index}>- {item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="job-desc-requirements">
+                      <p>Requirements:</p>
+                      <ul>
+                        {jobDescription.requirements.map((item, index) => (
+                          <li key={index}>- {item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="job-desc-benefits">
+                      <p>Benefits:</p>
+                      <ul>
+                        {jobDescription.benefits.map((item, index) => (
+                          <li key={index}>- {item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <p className="job-desc-text">{jobDescription.closing}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="company-info">
-            <div className="company-about">About the Company</div>
+            <div className="company-info">
+              <div className="company-about">About the Company</div>
 
-            <div className="company-logo">LOGO</div>
-            <div className="company-header">
-              <div className="company-name">Findr Pro Technologies Pvt Ltd</div>
-              <img src={extLink} alt="logo" className="external-link-icon" />
-            </div>
+              <div className="company-logo">LOGO</div>
+              <div className="company-header">
+                <div className="company-name">
+                  Findr Pro Technologies Pvt Ltd
+                </div>
+                <img src={extLink} alt="logo" className="external-link-icon" />
+              </div>
 
-            <div className="company-website">
-              <span className="website-label">Website:</span>
-              <a
-                href="http://www.findr.pro"
-                className="company-link"
-                target="_blank"
-                rel="noreferrer"
-              >
-                http://www.findr.pro
-              </a>
-            </div>
-            <p className="company-employee">Employee: 1-49</p>
+              <div className="company-website">
+                <span className="website-label">Website:</span>
+                <a
+                  href="http://www.findr.pro"
+                  className="company-link"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  http://www.findr.pro
+                </a>
+              </div>
+              <p className="company-employee">Employee: 1-49</p>
 
-            <div className="company-desc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <div className="company-desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <Footer />
-    </Navbar>
+        <Footer />
+
+    </div>
   );
 };
 

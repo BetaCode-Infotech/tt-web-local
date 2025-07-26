@@ -60,21 +60,11 @@
   cursor: pointer;
 }
 
-.job-list-container .radio-option input {
-  display: none;
-}
-
-.job-list-container .radio-option .circle {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  border: 2px solid white;
-  display: inline-block;
-}
-
-.job-list-container .radio-option .circle.checked {
-  background: #2ce4af;
-  border-color: #2ce4af;
+.job-list-container .tag-options  input[type="checkbox"] {
+  accent-color: #00ffc8;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 }
 
 .job-list-container .tag-options {
@@ -83,10 +73,15 @@
   flex-wrap: wrap;
 }
 
+.job-list-container .radio-option input[type="radio"] {
+  accent-color: #00ffc8;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
 .job-list-container .tag {
   background-color: transparent;
   border-radius: 20px;
-  padding: 0.3rem 0.8rem;
   display: flex;
   align-items: center;
   gap: 0.4rem;

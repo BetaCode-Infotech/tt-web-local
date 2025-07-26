@@ -33,35 +33,37 @@ import CustomJobCarousel from "../../Components/CustomCarousel/CustomJobCarousel
 
 function Welcome() {
   const carouselRef = useRef();
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const smartContentData = useMemo(
     () => [
       {
         id: 1,
-        title: "AI Driven JD Creation",
+        title: "Job Match",
         subheading:
-          "Do not have a JD? Fret not! In just 2 minutes, TrueTalent assists you in creating a well articulated and thorough JD for each position you have.",
+          "Find roles that align with your skills and aspirations—personalized job matches made just for you",
         image: JDCreation,
       },
       {
         id: 2,
-        title: "Free Multi-user Access",
+        title: "Smart Job Apply",
         subheading:
-          "Why pay additional charges to access the same database for each recruiter? TrueTalent lets you create multiple user accesses without any aditional charge.",
+          "Apply to multiple jobs with a single click fast, efficient, and hassle-free applications tailored to your profile.",
         image: MultiUser,
       },
       {
         id: 3,
-        title: "Unlimited Free Job Posting",
+        title: "Recruiter Connect",
         subheading:
-          "Why spend large sums of money for job posting, without the surety of getting applicants? TrueTalent has a zero charge foryour job postings.",
+          "Get directly discovered by top recruiters—build meaningful connections that lead to real opportunities.",
         image: JobPosting,
       },
       {
         id: 4,
-        title: "Pay-as-you-go",
+        title: "Pre Validated",
         subheading:
-          "Are you paying for the service you never use? We do not sell packages unless you need them. All our offerings come with a Pay-as-you-go model.",
+          "Stand out with a verified profile—showcase your skills, experience, and credibility upfront.",
         image: PayAsYouGo,
       },
     ],
