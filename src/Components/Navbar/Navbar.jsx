@@ -93,6 +93,29 @@ export default function Navbar(props) {
     const activeTab = tabs.find((tab) => currentPath.startsWith(tab.path));
     return activeTab ? activeTab.label : "";
   };
+  const [profileType, setProfileType] = useState([
+    {
+      id: 0,
+      img: Path4452,
+      title: "I’m a candidate",
+      desc: "I’m here to find my next job.",
+      active: false,
+    },
+    {
+      id: 1,
+      img: Path4453,
+      title: "I’m an employer",
+      desc: "I’m here to look for job seekers.",
+      active: true,
+    },
+    {
+      id: 2,
+      img: evaluator125703be,
+      title: "I’m an evaluator",
+      desc: "Here to help you identify quality candidates.",
+      active: false,
+    },
+  ]);
 
   return (
     <React.Fragment>
@@ -349,7 +372,7 @@ export default function Navbar(props) {
                   ✕
                 </button>
                 <h2>Select Your Profile</h2>
-                <div className="profile-options">
+                {/* <div className="profile-options">
                   <div className="profile-card">
                     <div className="icon">
                       <img src={Path4452} alt="profile-icon" />
@@ -372,6 +395,32 @@ export default function Navbar(props) {
                     <strong>I’m an evaluator</strong>
                     <p>Here to help you identify quality candidates.</p>
                   </div>
+                </div> */}
+                <div className="profile-options">
+                  {profileType?.map((item) => (
+                    <div
+                      key={item.id}
+                      className={`profile-card ${
+                        item.active === true ? "active" : ""
+                      }`}
+                      onClick={() => {
+                        setProfileType((prev) =>
+                          prev.map((profile) =>
+                            profile.id === item.id
+                              ? { ...profile, active: true }
+                              : { ...profile, active: false }
+                          )
+                        );
+                       
+                      }}
+                    >
+                      <div className="icon">
+                        <img src={item.img} alt="profile-icon" />
+                      </div>
+                      <strong>{item.title}</strong>
+                      <p>{item.desc}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

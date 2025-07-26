@@ -541,7 +541,7 @@
   background-color: #00d0b0;
 }
 
-.container-2 .smart-search {
+/* .container-2 .smart-search {
   background-image: url("../../assets/background-rounded.png");
   background-size: contain;
   background-position: center;
@@ -560,6 +560,35 @@
   justify-content: center;
   align-items: center;
   transition: opacity 0.5s ease-out;
+} */
+.container-2 .smart-search {
+  background-image: url("../../assets/background-rounded.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%; /* Changed from min-width to width */
+  display: flex;
+  flex-wrap: wrap; /* Make it responsive */
+  align-items: flex-start; /* Align items to top */
+  justify-content: center;
+  padding: 5rem;
+  text-align: left;
+  margin-top: 5rem;
+  box-sizing: border-box; /* Ensure padding is included in width */
+  overflow: hidden; /* Prevent content from spilling out */
+  
+}
+
+.container-2 .smart-image {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease-out;
+  max-width: 40%;
+  box-sizing: border-box;
+  margin-left: -2rem; /* Add this */
+
 }
 
 .container-2 .smart-image img {
@@ -591,12 +620,24 @@
   transform: rotateY(0deg);
 } */
 
-.container-2 .smart-content {
+/* .container-2 .smart-content {
   flex: 0 0 28%;
   max-width: 100%;
   display: flex;
   flex-direction: column;
   color: white;
+} */
+.container-2 .smart-content {
+  flex: 0 0 25%;
+  max-width: 25%; /* Limit width to prevent overflow */
+  display: flex;
+  flex-direction: column;
+  color: white;
+  box-sizing: border-box;
+  word-wrap: break-word; /* Wrap long words */
+  overflow-wrap: break-word;
+  margin-left: -2rem; /* Add this */
+
 }
 
 .container-2 .smart-content-title {
@@ -1329,3 +1370,31 @@
     min-height: 36vh; */
   }
 }
+@media (max-width: 1100px) {
+  .container-2 .smart-search {
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+  }
+
+  .container-2 .smart-image,
+  .container-2 .smart-content {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding-left: 0;
+    margin-bottom: 2rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .container-2 .smart-content {
+    align-items: center;
+  }
+
+  .container-2 .smart-content-title,
+  .container-2 .smart-search-title,
+  .container-2 .smart-search-subheading {
+    text-align: center;
+  }
+}
+
