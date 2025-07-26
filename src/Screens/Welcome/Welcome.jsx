@@ -29,8 +29,11 @@ import Travel from "../../assets/travel icon.svg";
 import Retail from "../../assets/retail icon.svg";
 import { Link } from "react-router-dom";
 import AIAnimatedSphere from "./AIAnimatedSphere";
+import CustomJobCarousel from "../../Components/CustomCarousel/CustomJobCarousel";
 
 function Welcome() {
+  const carouselRef = useRef();
+
   const smartContentData = useMemo(
     () => [
       {
@@ -105,6 +108,7 @@ function Welcome() {
 
   const [activeId, setActiveId] = useState(1);
   const [selectedImage, setSelectedImage] = useState(smartContentData[0].image);
+  // const [currentSlide, setCurrentSlide] = useState(0);
 
   const toggleAccordion = (id, image) => {
     if (activeId === id) {
@@ -152,8 +156,56 @@ function Welcome() {
   const handleSearchTypeChange = (event) => {
     setSearchType(event.target.value);
   };
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slideRef = useRef(null);
 
-  const carouselRef = useRef();
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+    const width = slideRef.current.clientWidth;
+    slideRef.current.scrollTo({ left: width * index, behavior: "smooth" });
+  };
+  const slides = [
+    {
+      id: 1,
+      content: (
+        <h1>
+          The <br />
+          <span className="highlight">Ultimate</span>
+          <br />
+          Hiring
+          <br />
+          Platform
+        </h1>
+      ),
+    },
+    {
+      id: 2,
+      content: (
+        <h1>
+          Your
+          <br />
+          <span className="highlight"> Dream</span>
+          <br />
+          Job <br />
+          Here
+        </h1>
+      ),
+    },
+  ];
+  // Auto-scroll every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => {
+        const next = (prev + 1) % slides.length;
+        const width = slideRef.current.clientWidth;
+        slideRef.current.scrollTo({ left: width * next, behavior: "smooth" });
+        return next;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [slides.length]);
+
   return (
     <div className="true-talent-container">
       <Navbar>
@@ -161,26 +213,33 @@ function Welcome() {
 
         <section className="container-2">
           {/* <img src={AIimage} alt={AIimage} className="hero-mobile-img" /> */}
-          <div className="hero-image-top-filled" />
+          {/* <div className="hero-image-top-filled" /> */}
           <div className="the-ultimate-hiring">
             <div className="ai-background">
               <AIAnimatedSphere />
             </div>
             <div className="left">
-              <h1>
-                The <br />
-                <span className="highlight">Ultimate</span>
-                <br />
-                Hiring
-                <br />
-                Platform
-              </h1>
-              <div className="dots">
-                <span></span>
-                <span></span>
-                <span></span>
+              <div className="custom-carousel-wrapper">
+                <div className="custom-carousel-track" ref={slideRef}>
+                  {slides.map((slide) => (
+                    <div key={slide.id} className="custom-carousel-slide">
+                      {slide.content}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="custom-carousel-dots">
+                  {slides.map((_, idx) => (
+                    <span
+                      key={idx}
+                      className={`custom-dot ${
+                        currentSlide === idx ? "active" : ""
+                      }`}
+                      onClick={() => goToSlide(idx)}
+                    ></span>
+                  ))}
+                </div>
               </div>
-              {/* <div className="ai-circle">AI</div> */}
             </div>
 
             <div className="right-container">
@@ -237,7 +296,7 @@ function Welcome() {
 
                 <div className="search-btn-container">
                   <button className="search-btn">
-                    <img src={SearchIcon} alt="smart-search"/>
+                    <img src={SearchIcon} alt="smart-search" />
                     AI Search
                   </button>
                 </div>
@@ -305,7 +364,7 @@ function Welcome() {
               <button className="custom-search-button">View All Jobs</button>
             </div>
             <div className="right">
-              <CustomCarousel>
+              <CustomJobCarousel>
                 {[1, 2, 3, 4, 5, 6].map((job) => (
                   <div key={"card2" + job} className="job-card">
                     <div className="job-header">
@@ -329,12 +388,12 @@ function Welcome() {
                     <p className="posted">1 mo ago</p>
                   </div>
                 ))}
-              </CustomCarousel>
+              </CustomJobCarousel>
             </div>
           </section>
           <section className="featured-jobs-2">
             <div className="left">
-              <CustomCarousel>
+              <CustomJobCarousel>
                 {[1, 2, 3, 4, 5, 6].map((job) => (
                   <div key={"card1" + job} className="job-card">
                     <div className="job-header">
@@ -358,7 +417,7 @@ function Welcome() {
                     <p className="posted">1 mo ago</p>
                   </div>
                 ))}
-              </CustomCarousel>
+              </CustomJobCarousel>
             </div>
 
             <div className="right">
